@@ -5,13 +5,14 @@ let passwordRepetida = document.getElementById("confirmarContrasena") ;
 let form = document.getElementById("formularioRegistro") ;
 let parrafo = document.getElementById("mensajeRegistro") ;
 let dni = document.getElementById("dniInput") ;
-let direccion = document.getElementById("direccionOrdenador") ;
+let fecha = document.getElementById("fechaNacimiento") ;
 
 let errorNombre = document.getElementById("errorNombre") ;
 let errorEmail = document.getElementById("errorEmail") ;
 let errorPassword = document.getElementById("errorPassword") ;
 let errorPasswordRepetida = document.getElementById("errorPasswordRepetida") ;
 let errorDni = document.getElementById("errorDni") ;
+let errorFecha = document.getElementById("errorFecha") ;
 
 /**
  * Normas validación nombre:
@@ -192,6 +193,49 @@ function validarPasswordRepeticion() {
     }
 }
 
+/**
+ * Normas validaciones fecha
+ * Fecha real(no puede ser superior a la actual)
+ * Fecha no superior al año actual
+ */
+
+function validarFecha(){
+
+    
+    let fechaNacimiento = new Date(fecha.value);
+
+    // Obtengo la fecha actual
+    let fechaActual = new Date();
+
+    // Calcular la diferencia en milisegundos entre las dos fechas
+    let diferenciaMilisegundos = fechaActual - fechaNacimiento;
+
+    // Calcular la edad dividiendo la diferencia en milisegundos por el número de milisegundos en un año
+    let edad = Math.floor(diferenciaMilisegundos / (1000 * 60 * 60 * 24 * 365.25));
+
+    // Comparar la edad con la edad mínima para ser considerado mayor de edad (por ejemplo, 18)
+    // y limite de edad para personas adultas
+
+    // Imprimir el resultado
+    if (edad >= 18 && edad < 120 )
+    {
+        alert('La persona es mayor de edad.');
+    }
+    else if(edad >= 120)
+    {
+        alert("No creo que con esa edad estés vivo...") ;
+    }
+    else
+    {
+        alert('La persona no es mayor de edad.');
+    }
+}
+
+/**
+ * Normas validaciones DNI
+ * Tiene que ser un DNI válido
+ */
+
 function validarDNI() {
 
     // Expresión regular
@@ -266,17 +310,18 @@ function eliminaGuiones(cadena) {
 
 function comenzar() {
 
-   form.addEventListener("submit", e =>{
+    form.addEventListener("submit", e =>{
 
         e.preventDefault() ;
 
         validarDNI() ;
+        validarFecha() ;
         validarPasswordRepeticion() ;
         validarPassword() ;
         validarEmail() ;
         validarNombre() ;
 
-   }, false) ;
+    }, false) ;
     
 }
 
