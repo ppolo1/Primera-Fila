@@ -1,0 +1,127 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #D3A97B, #fff);
+}
+
+.contenedor{
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff; /* Blanco */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #503B0A; 
+}
+
+label {
+  margin-top: 10px;
+  display: block;
+}
+
+input, select {
+  width: calc(100% - 22px); /* Considerando el padding */
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #503B0A; 
+  color: #fff; 
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+#submit{
+  width: 100%;
+  padding: 10px;
+  background-color: #503B0A; 
+  color: #fff; 
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+button:hover {
+  background-color: #503B0A; 
+}
+
+.columna_1 {
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+.columna_2 {
+  float: right;
+  width: 50%;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+.adicionales {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border:Sol 
+}
+
+#tarjeta_Movil{
+  display: none;
+}
+#direccionMovil{
+  display: none;
+}
+
+@media(max-width:767px) {
+  #direccionMovil{
+    display: flex;
+  }
+  #direccionOrdenador{
+    display: none;
+  }
+  #nombreCompleto{
+    display: grid;
+  }
+  .columna_1{
+    width: 100%;
+    float: none;
+    display: grid;
+  }
+  .columna_2{
+    width: 100%;
+    float: none;
+    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #genero{
+    display: flex;
+  }
+  #fechaNacimiento{
+    display: flex;
+  }
+  #pais{
+    display: flex;
+    width: 100%;
+  }
+  .adicionales{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  }
+  

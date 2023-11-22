@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'> -->
+</head>
+<body>
+    
+    <form id="formulario" method="get">
+
+        <label for="nombre"> Nombre y Apellidos </label> <br>
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+        <span id="errorNombre" style="color: red;"></span>
+        <br><br>
+
+        <label for="email"> Correo Electrónico </label> <br>
+        <input type="email" id="email" name="email" placeholder="Correo electrónico">
+        <span id="errorEmail" style="color: red;"></span>
+        <br><br>
+
+        <label for="password"> Contraseña </label><br>
+        <input type="text" id="password" name="password" placeholder="Contraseña">
+        <span id="errorPassword" style="color: red;"></span>
+        <br><br>
+
+        <label for="repetirPassword"> Repetir Contraseña: </label> <br>
+        <input type="input" id="repetirPassword" name="repetirPassword" placeholder="Repetir contraseña">
+        <span id="errorPasswordRepetida" style="color: red;"></span>
+        <br><br>
+
+        <input type="submit" id="submit" name="submit" value="Registrarse">
+
+        <!-- Párrafo donde se muestran los avisos -->
+
+    </form>
+
+    <p class="warnings" id="warnings"></p>
+
+    <script src='validaciones.js'></script>
+</body>
+</html>

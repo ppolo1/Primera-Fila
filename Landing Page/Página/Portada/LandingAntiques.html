@@ -1,0 +1,100 @@
+<head>
+  <title>Landing Page Eon Lux Antiques</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="LandingAntiques.css">
+  <link rel="stylesheet" href="LandingFormulario.css">
+  <link rel="stylesheet" href="icomoon/style.css">
+  <script src="landingAntiques.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="logo_transparente2.png">
+    </div>
+    <div class="info">
+      <button id="masinformacion">
+        <a href="Landing.html">INFÓRMATE</a>
+      </button>
+
+      <span class='icon-earth'>&nbsp;
+        <select name="idiomas" id="lang">
+          <option value="Español">Español</option>
+          <option value="Inglés">Inglés</option>
+        </select></span>
+    </div>
+  </header>
+
+  <nav>
+    <h1>EON LUX ANTIQUES</h1>
+    <p>Dinos que buscas y lo haremos realidad para ti </p>
+    <div class="teAyudamos">
+    <button id="teayudamos">
+      <a href="Landing.html">TE AYUDAMOS</a>
+    </button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="slide">
+      <div class="slide-inner">
+          <input class="slide-open" type="radio" id="slide-1" 
+                name="slide" aria-hidden="true" hidden="" checked="checked">
+          <div class="slide-item">
+              <img src="fotospro/antiguedades1.png">
+          </div>
+          <input class="slide-open" type="radio" id="slide-2" 
+                name="slide" aria-hidden="true" hidden="">
+          <div class="slide-item">
+              <img src="fotospro/relojes.png">
+          </div>
+          <input class="slide-open" type="radio" id="slide-3" 
+                name="slide" aria-hidden="true" hidden="">
+          <div class="slide-item">
+              <img src="fotospro/antiguedades2.png">
+          </div>
+          <label for="slide-3" class="slide-control prev control-1">‹</label>
+          <label for="slide-2" class="slide-control next control-1">›</label>
+          <label for="slide-1" class="slide-control prev control-2">‹</label>
+          <label for="slide-3" class="slide-control next control-2">›</label>
+          <label for="slide-2" class="slide-control prev control-3">‹</label>
+          <label for="slide-1" class="slide-control next control-3">›</label>
+          <ol class="slide-indicador">
+              <li>
+                  <label for="slide-1" class="slide-circulo">•</label>
+              </li>
+              <li>
+                  <label for="slide-2" class="slide-circulo">•</label>
+              </li>
+              <li>
+                  <label for="slide-3" class="slide-circulo">•</label>
+              </li>
+          </ol>
+      </div>
+  </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Política de Cookies</h3>
+        <p>Información sobre el uso de cookies en nuestro sitio.</p>
+        <a id="cookies" href="PoliticaDeCookies.html">Más información</a>
+      </div>
+      <div class="footer-section">
+        <h3>Redes Sociales</h3>
+        <div class="social-icons">
+          <span class='icon-instagram'>&nbsp
+            <span class='icon-facebook2'>&nbsp
+              <span class='icon-twitter'>&nbsp
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Derechos de Autor</h3>
+        <p>&copy; 2023 Eon Lux Antiques. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+</body>
