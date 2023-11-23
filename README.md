@@ -11,6 +11,7 @@ Trabajo formado por: Adriana, Cayetana, Adrián y Pablo
 ---
 > Enlace a la carpeta de Empresa con la documentación
 [Empresa]()
+---
 
 > Enlace a la carpeta de Diseño con la documentación
 [Diseño]()
