@@ -10,8 +10,10 @@ Trabajo formado por: Adriana, Cayetana, Adrián y Pablo
 
 ---
 >Enlace a la carpeta de Empresa con la documentación
+
 [Empresa](https://github.com/ppolo1/Primera-Fila/tree/main/Landing%20Page/P%C3%A1gina/Portada)
 ---
 
 >Enlace a la carpeta de Diseño con la documentación
+
 [Diseño](https://github.com/ppolo1/Primera-Fila/tree/main/Landing%20Page/P%C3%A1gina/Portada)
