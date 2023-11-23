@@ -202,7 +202,8 @@ function validarPasswordRepeticion() {
     
             errorDni.innerHTML = "" ;
         }
-
+// pruebas
+    }
 }
 
 function comenzar() {
@@ -223,4 +224,3 @@ function comenzar() {
 
 window.addEventListener("load", comenzar, false) ;
 
-}
