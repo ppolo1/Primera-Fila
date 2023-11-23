@@ -189,7 +189,7 @@ function validarPasswordRepeticion() {
 
         errorPasswordRepetida.innerHTML = "" ;
     }
-
+}
     function validarDNI() {
     
         if (dni.value.trim() === "") {
@@ -204,7 +204,7 @@ function validarPasswordRepeticion() {
         }
 // pruebas
     }
-}
+
 
 function comenzar() {
 
