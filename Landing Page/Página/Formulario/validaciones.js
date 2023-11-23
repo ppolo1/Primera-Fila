@@ -207,7 +207,7 @@ function validarPasswordRepeticion() {
 
 function comenzar() {
 
-   form.addEventListener("submit", e =>{
+    form.addEventListener("submit", e =>{
 
         e.preventDefault() ;
 
@@ -217,9 +217,10 @@ function comenzar() {
         validarEmail() ;
         validarNombre() ;
 
-   }, false) ;
+    }, false) ;
     
 }
 
 window.addEventListener("load", comenzar, false) ;
 
+}
