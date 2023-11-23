@@ -8,7 +8,7 @@
 <body>
   <div class="contenedor">
     <h2>Registro de Usuario</h2>
-    <form id="formularioRegistro">
+    <form id="formularioRegistro" novalidate>
       <div class="columna_1">
         <label for="nombreCompleto">Nombre y Apellidos:</label>
         <input type="text" id="nombreCompleto"  placeholder="Obligatorio">
@@ -38,6 +38,7 @@
 
         <label for="fechaNacimiento">Fecha de Nacimiento:</label>
         <input type="date" id="fechaNacimiento">
+        <span id="errorFecha" style="color: red;"></span>
         &nbsp;&nbsp;
 
         <label for="pais">País:</label>
