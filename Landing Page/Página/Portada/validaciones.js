@@ -237,13 +237,10 @@ function validarFecha(){
     {
         alert("No creo que con esa edad estés vivo...") ;
     }
-
-    else if(fechaNacimiento === "")
+    else if(fechaNacimiento == "Invalid Date")
     {
-
         errorFecha.innerHTML = "Ha petado" ;
     }
-
     else
     {
         alert('La persona no es mayor de edad.');
@@ -263,14 +260,7 @@ function validarDNI() {
     // Expresión regular
 
     let regexDNI = /^\d{8}[a-zA-Z]$/ ; // Validación DNI
-    // let regexDNICerosOmitidos = /^\d{1,8}[a-zA-Z]$/ ; // Validación alternativa que servirá para añadir los ceros omitidos
-
-    // else if (regexDNICerosOmitidos(dni.value))
-    //             // Si el DNI está completo pero pueden faltar ceros
-    //         {
-    //             errorDni.innerHTML = "Es posible que haya omitido los ceros de su DNI. Si es así añádalos" ;
-    //             dni.focus() ;
-    //         }
+    let regexDNICerosOmitidos = /^\d{1,7}[a-zA-Z]$/ ; // Validación alternativa que servirá para añadir los ceros omitidos
     
         if (dni.value.trim() === "") 
             // Si el DNI está vacío
@@ -287,9 +277,16 @@ function validarDNI() {
             if (!regexDNI.test(dni.value)) 
                 // Si el formato no es válido
             {
-                errorDni.innerHTML = "Debes introducir un DNI válido" ;
-                dni.focus() ;
-            }
+                if(regexDNICerosOmitidos.test(dni.value))
+                {
+                    errorDni.innerHTML = "Te falta añadir los ceros" ;
+                }
+                else
+                {
+                    errorDni.innerHTML = "Debes introducir un DNI válido" ;
+                    dni.focus() ;
+                }
+            } 
 
             else if (regexDNI.test(dni.value)) 
                 // Si el formato es válido
@@ -306,9 +303,9 @@ function validarDNI() {
                 if (letraDNI != letraCalculada)
                     // Si la letra del DNI no coincide con el cálculo
                 {
-    
                     errorDni.innerHTML = "La letra del DNI no es válida" ;
                 }
+                
 
             }
         }
@@ -329,8 +326,6 @@ function eliminaGuiones(cadena) {
 
     return cadena ;
 }
-
-
 
 function comenzar() {
 
