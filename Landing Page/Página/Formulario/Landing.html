@@ -10,11 +10,11 @@
     <form id="formularioRegistro" method="get">
       <div class="columna_1">
         <label for="nombreCompleto">Nombre y Apellidos:</label>
-        <input type="text" name="nombreCompleto" id="nombreCompleto" placeholder="Obligatorio">
+        <input type="text" name="nombreCompleto" id="nombreCompleto" placeholder="Obligatorio" oninput="">
         <span id="errorNombre" style="color: red;"></span>
 
         <label for="correoElectronico">Correo Electrónico:</label>
-        <input type="email" id="correoElectronico"  placeholder="Obligatorio">
+        <input type="email" id="correoElectronico"  placeholder="Obligatorio" oninput="">
         <span id="errorEmail" style="color: red;"></span>
 
         <label for="contrasena">Contraseña:</label>
@@ -22,7 +22,7 @@
         <span id="errorPassword" style="color: red;"></span>
 
         <label for="confirmarContrasena">Confirmar Contraseña:</label>
-        <input type="password" id="confirmarContrasena"  placeholder="Obligatorio">
+        <input type="password" id="confirmarContrasena"  placeholder="Obligatorio" oninput="">
         <span id="errorPasswordRepetida" style="color: red;"></span>
 
         <label for="direccion" id="direccionMovil">Dirección:</label>
@@ -281,7 +281,7 @@
           </select>
 
           <label for="dniInput" id="dniLabel">DNI:</label>
-          <input type="text" id="dniInput"/>
+          <input type="text" id="dniInput" oninput=""/>
 
           <label for="direccion" id="direccionOrdenador">Dirección:</label>
           <input type="text" id="direccionOrdenador"  placeholder="Obligatorio">
