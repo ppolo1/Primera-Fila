@@ -1,18 +1,29 @@
-let nombre = document.getElementById("nombreCompleto") ;
-let email = document.getElementById("correoElectronico") ;
-let password = document.getElementById("contrasena") ;
-let passwordRepetida = document.getElementById("confirmarContrasena") ;
-let form = document.getElementById("formularioRegistro") ;
-let parrafo = document.getElementById("mensajeRegistro") ;
-let dni = document.getElementById("dniInput") ;
-let fecha = document.getElementById("fechaNacimiento") ;
+// ELEMENTOS DEL DOM
 
-let errorNombre = document.getElementById("errorNombre") ;
-let errorEmail = document.getElementById("errorEmail") ;
-let errorPassword = document.getElementById("errorPassword") ;
-let errorPasswordRepetida = document.getElementById("errorPasswordRepetida") ;
-let errorDni = document.getElementById("errorDni") ;
-let errorFecha = document.getElementById("errorFecha") ;
+let nombre = document.getElementById("nombreCompleto") ; // Nombre
+let email = document.getElementById("correoElectronico") ; // Email
+let password = document.getElementById("contrasena") ; // Contraseña
+let passwordRepetida = document.getElementById("confirmarContrasena") ; // Confirmar contraseña
+let form = document.getElementById("formularioRegistro") ; // Formulario
+let parrafo = document.getElementById("mensajeRegistro") ; // Mensaje de registro
+let dni = document.getElementById("dniInput") ; // DNI
+let fecha = document.getElementById("fechaNacimiento") ; // Fecha de nacimiento
+
+// MENSAJES DE ERROR
+
+let errorNombre = document.getElementById("errorNombre") ; // Nombre
+let errorEmail = document.getElementById("errorEmail") ; // Email
+let errorPassword = document.getElementById("errorPassword") ; // Contraseña
+let errorPasswordRepetida = document.getElementById("errorPasswordRepetida") ; // Confirmación de contraseña
+let errorDni = document.getElementById("errorDni") ; // DNI
+let errorFecha = document.getElementById("errorFecha") ; // Fecha de nacimiento
+
+
+// Colores
+
+let rojo = "#FA7575" ;
+let verde = "#B8FAA1" ;
+
 
 /**
  * Normas validación nombre:
@@ -24,28 +35,44 @@ let errorFecha = document.getElementById("errorFecha") ;
  */
 function validarNombre() {
 
+    let valido = false ;
+
     // Expresiones regulares
 
     let regNombre = /^[A-ZÁÉÍÓÚÜÑa-záéíóúüñ]+(?:-[A-ZÁÉÍÓÚÜÑa-záéíóúüñ]+)?(?: [A-ZÁÉÍÓÚÜÑa-záéíóúüñ]+(?:-[A-ZÁÉÍÓÚÜÑa-záéíóúüñ]+)?)+$/ ; // Debe estar formado por al menos dos palabras separadas por un espacio
     
-        if (nombre.value.trim() === "") {
+        if (nombre.value.trim() === "")
             // Si el nombre está vacío
+        {
             errorNombre.innerHTML = "El nombre es requerido" ;
             nombre.focus() ;
             nombre.value = "" ;
-        }
-        else if(!regNombre.test(nombre.value)){
-            // Si el nombre no es válido
 
+            valido = false ;
+        }
+
+        else if (!regNombre.test(nombre.value))
+            // Si el nombre no es válido
+        {
             errorNombre.innerHTML = "Debes introducir un nombre válido" ;
             nombre.focus() ;
-        }
-        else{
 
-            errorNombre.innerHTML = "" ;
+            valido = false ;
         }
+        
+        else
+            // Si es válido
+        {
+            errorNombre.innerHTML = "" ;
+            valido = true ;
+        }
+
+
+    return valido ;
 
 }
+
+
 
 /**
  * Normas validación email:
@@ -57,29 +84,46 @@ function validarNombre() {
  */
 function validarEmail() {
 
+    let valido = false ;
+
     // Expresión regular
 
     let regEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,5})+$/ ;
-    
-    if (email.value.trim() === ""){
-        // Si el email está vacío
 
+
+    
+    if (email.value.trim() === "")
+        // Si el email está vacío
+    {
         errorEmail.innerHTML = "El email es requerido" ;
         email.focus() ;
         email.value = "" ;
-    }
-    else if (!regEmail.test(email.value)) {
-        // Si el email no es válido
 
+        valido = false ;
+    }
+
+    else if (!regEmail.test(email.value))
+        // Si el email no es válido
+    {
         errorEmail.innerHTML = "Debes introducir un email válido" ;
         email.focus() ;
-    } 
-    else{
 
-        errorEmail.innerHTML = "" ;
+        valido = false ;
     }
 
+    else
+        // Si el email es válido
+    {
+        errorEmail.innerHTML = "" ;
+        valido = true ;
+    }
+
+    return valido ;
+
 }
+
+
+
 /**
  * Normas validación contraseña:
  *  - No puede estar vacía. REQUERIDA.
@@ -92,6 +136,8 @@ function validarEmail() {
  */
 function validarPassword() {
 
+    let valido = false ;
+
     // Expresiones regulares
 
     let min8Caracteres = /^.{8,}$/ ; // Mínimo 8 caracteres
@@ -103,69 +149,106 @@ function validarPassword() {
     let contieneCaracterEspecial = /[¡!@#$%^&*(),.¿?":{}|<>_/\\\'\'ºª·€¬=\[\]\+\-";]/ ; // Debe contener al menos un carácter especial ; // Debe contener al menos un carácter especial
 
     
-    if(password.value.trim() === ""){
+    if (password.value.trim() === "")
         // Si la contraseña está vacía
-
+    {
         errorPassword.innerHTML = "La contraseña es requerida" ;
         password.focus() ;
         password.value = "" ;
-    }
-    else if(password.value.trim() != ""){
-        // Si la contraseña no es válida
-        
-        if(!min8Caracteres.test(password.value)){
-            // Si tiene menos de 8 caracteres
+        password.style.backgroundColor = "white" ;
 
+        valido = false ;
+    }
+
+    else if (password.value.trim() != "")
+        // Si la contraseña no es válida
+    {
+        if(!min8Caracteres.test(password.value))
+            // Si tiene menos de 8 caracteres
+        {
             errorPassword.innerHTML = "Debe tener un mínino de 8 caracteres" ;
             password.focus() ;
-        }
-        else if (!max15Caracteres.test(password.value)) {
-            // Si tiene más de 15 caracteres
+            password.style.backgroundColor = rojo ;
 
+            valido = false ;
+        }
+
+        else if (!max15Caracteres.test(password.value))
+            // Si tiene más de 15 caracteres
+        {
             errorPassword.innerHTML = "Debe tener un máximo de 15 caracteres" ;
             password.focus() ;
-        }
-        else if(!contieneMayuscula.test(password.value)){
-            // Si no contiene ninguna mayúscula
+            password.style.backgroundColor = rojo ;
 
+            valido = false ;
+        }
+
+        else if (!contieneMayuscula.test(password.value))
+            // Si no contiene ninguna mayúscula
+        {
             errorPassword.innerHTML = "Debe contener al menos una mayúscula" ;
             password.focus() ;
-        }
-        else if(!contieneMinuscula.test(password.value)){
-            // Si no contiene ninguna minúscula
+            password.style.backgroundColor = rojo ;
 
+            valido = false ;
+        }
+
+        else if (!contieneMinuscula.test(password.value))
+            // Si no contiene ninguna minúscula
+        {
             errorPassword.innerHTML = "Debe contener al menos una minúscula" ;
             password.focus() ;
-        }
-        else if(!contieneDigito.test(password.value)){
-            // Si no contiene ningún dígito
+            password.style.backgroundColor = rojo ;
 
+            valido = false ;
+        }
+
+        else if (!contieneDigito.test(password.value))
+            // Si no contiene ningún dígito
+        {
             errorPassword.innerHTML = "Debe contener al menos un dígito" ;
             password.focus() ;
-        }
-        else if(!noContieneEspacios.test(password.value)){
-            // Si no contiene espacios
+            password.style.backgroundColor = rojo ;
 
+            valido = false ;
+        }
+
+        else if (!noContieneEspacios.test(password.value))
+            // Si no contiene espacios
+        {
             errorPassword.innerHTML = "No debe contener espacios" ;
             password.focus() ;
-        }
-        else if(!contieneCaracterEspecial.test(password.value)){
-            // Si no contiene ningún carácter especial
+            password.style.backgroundColor = rojo ;
 
+            valido = false ;
+        }
+
+        else if (!contieneCaracterEspecial.test(password.value))
+            // Si no contiene ningún carácter especial
+        {
             errorPassword.innerHTML = "Debe contener al menos un carácter especial" ;
             password.focus() ;
+            password.style.backgroundColor = rojo ;
+
+            valido = false ;
         }
-        else{
+
+        else
+            // Si es válida
+        {
             errorPassword.innerHTML = "" ;
+            password.style.backgroundColor = verde ;
+
+            valido = true ;
         }
 
     }
-    else{
 
-        errorPassword.innerHTML = "" ;
-    }
+    return valido ;
 
 }
+
+
 
 /**
  * Normas validación confirmación contraseña:
@@ -173,47 +256,57 @@ function validarPassword() {
  *  - Debe coincidir con la contraseña introducida.
  */
 function validarPasswordRepeticion() {
+
+    let valido = false ;
+
     
-    if (passwordRepetida.value.trim() === "") {
+    if (passwordRepetida.value.trim() === "")
         // Si la contraseña no está vacía
+    {
         errorPasswordRepetida.innerHTML = "No puede estar en blanco" ;
         passwordRepetida.focus() ;
         passwordRepetida.value = "" ;
-    }
-    else if(passwordRepetida.value !== password.value){
-        // Si la contraseña repetida es igual a la original
 
+        valido = false ;
+    }
+
+    else if (passwordRepetida.value !== password.value)
+        // Si la contraseña repetida no coincide
+    {
         errorPasswordRepetida.innerHTML = "La contraseña no coincide" ;
         passwordRepetida.focus() ;
 
+        valido = false ;
     }
-    else{
 
+    else
+        // Si la contraseña repetida coincide
+    {
         errorPasswordRepetida.innerHTML = "" ;
+        valido = true ;
     }
+
+
+    return valido ;
+
 }
 
+
+
 /**
- * Normas validaciones fecha
- * Fecha real(no puede ser superior a la actual)
- * Fecha no superior al año actual
+ * Normas validaciones fecha:
+ *  - Debe existir.
+ *  - Debe ser mayor de edad.
+ *  - El usuario puede tener hasta 120 años.
  */
 
 function validarFecha(){
 
+    let valido = false ;
+
+
     let fechaNacimiento = new Date(fecha.value);
     fechaNacimiento.setHours(0) ;
-    
-    if(fechaNacimiento == "Invalid Date")
-    {
-        errorFecha.innerHTML = "Ha petado" ;
-    }
-
-    else
-    {
-        errorFecha.innerHTML = "" ;
-    }
-    //alert(fechaNacimiento) ;
     
     // Obtengo la fecha actual
     let fechaActual = new Date() ;
@@ -225,48 +318,72 @@ function validarFecha(){
     // Calcular la edad dividiendo la diferencia en milisegundos por el número de milisegundos en un año
     let edad = Math.floor(diferenciaMilisegundos / (1000 * 60 * 60 * 24 * 365.25));
 
-    // Comparar la edad con la edad mínima para ser considerado mayor de edad (por ejemplo, 18) y limite de edad para personas adultas
-
-    // Imprimir el resultado
     
+
     if ((edad >= 18 && edad < 120))
+        // Si la fecha es válida (es mayor de edad y se supone vivo)
     {
         alert('La persona es mayor de edad.');
-    }
-    else if(edad >= 120)
-    {
-        alert("No creo que con esa edad estés vivo...") ;
-    }
-    else if(fechaNacimiento == "Invalid Date")
-    {
-        errorFecha.innerHTML = "Ha petado" ;
-    }
-    else
-    {
-        alert('La persona no es mayor de edad.');
+        fecha.innerHTML = "" ;
+
+        valido = true ;
     }
 
-    // Comprobar si DATE está bien hecha    
+    else if (edad >= 120)
+        // Si es probable que esté muerto
+    {
+        alert("No creo que con esa edad estés vivo...") ;
+        
+        valido = false ;
+    }
+
+    else if (fechaNacimiento == "Invalid Date")
+        // Si la fecha no es válida
+    {
+        errorFecha.innerHTML = "Debes introducir una fecha válida" ;
+
+        valido = false ;
+    }
+    else
+        // Si es menor de edad
+    {
+        alert('La persona no es mayor de edad.') ;
+
+        valido = false ;
+    }
+
+
+    return valido ;
     
 }
 
+
+
 /**
- * Normas validaciones DNI
- * Tiene que ser un DNI válido
+ * Normas validaciones DNI:
+ *  - Debe tener un formato válido (los guiones serán omitidos). Es decir:
+ *      - Debe tener 8 dígitos.
+ *      - Debe tener una letra y que sea válida.
  */
 
 function validarDNI() {
+
+    let valido = false ;
+
 
     // Expresión regular
 
     let regexDNI = /^\d{8}[a-zA-Z]$/ ; // Validación DNI
     let regexDNICerosOmitidos = /^\d{1,7}[a-zA-Z]$/ ; // Validación alternativa que servirá para añadir los ceros omitidos
+
     
         if (dni.value.trim() === "") 
             // Si el DNI está vacío
         {
             dni.focus() ;
             dni.value = "" ;
+
+            valido = false ;
         }
 
         else if (dni.value.trim() !== "") // Si no está vacío
@@ -278,13 +395,20 @@ function validarDNI() {
                 // Si el formato no es válido
             {
                 if(regexDNICerosOmitidos.test(dni.value))
+                    // Si faltan ceros pero puede que sea válido
                 {
                     errorDni.innerHTML = "Te falta añadir los ceros" ;
+
+                    valido = false ;
                 }
+
                 else
+                    // Si el formato no es válido nuevamente
                 {
                     errorDni.innerHTML = "Debes introducir un DNI válido" ;
                     dni.focus() ;
+
+                    valido = false ;
                 }
             } 
 
@@ -299,21 +423,31 @@ function validarDNI() {
                 let letrasPosibles = "TRWAGMYFPDXBNJZSQVHLCKE" ;
     
                 let letraCalculada = letrasPosibles.charAt(numeroDNI % 23) ;
+
+                valido = true ;
     
                 if (letraDNI != letraCalculada)
                     // Si la letra del DNI no coincide con el cálculo
                 {
                     errorDni.innerHTML = "La letra del DNI no es válida" ;
-                }
-                
 
+                    valido = false ;
+                }
             }
         }
+
         else
         {
             errorDni.innerHTML = "" ;
+            valido = false ;
         }
+
+
+        return valido ;
+
     }
+
+
 
 function eliminaGuiones(cadena) {
     // Elimina los guiones de una cadena
@@ -326,6 +460,12 @@ function eliminaGuiones(cadena) {
 
     return cadena ;
 }
+
+
+
+// ---------------- EVENTOS ------------------
+
+password.addEventListener("input", validarPassword, false) ;
 
 function comenzar() {
 
