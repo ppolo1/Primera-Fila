@@ -25,6 +25,9 @@ let rojo = "#FA7575" ;
 let verde = "#B8FAA1" ;
 
 
+// --------------- VALIDACIONES --------------------
+
+
 /**
  * Normas validación nombre:
  *  - No puede estar vacío. REQUERIDO.
@@ -32,6 +35,8 @@ let verde = "#B8FAA1" ;
  *  - Las palabras deben estar separadas por un único espacio.
  *  - Se permite el guion (-) entre palabras. Ejemplo: Martín-Arroyo
  *  - Se permiten tildes y otros caracteres comunes en los nombres. Ejemplos válidos serían: Pière, Adrián o Gümba.
+ * 
+ * @returns Devuelve true si el nombre es válido.
  */
 function validarNombre() {
 
@@ -40,6 +45,8 @@ function validarNombre() {
     // Expresiones regulares
 
     let regNombre = /^[A-ZÁÉÍÓÚÜÑa-záéíóúüñ]+(?:-[A-ZÁÉÍÓÚÜÑa-záéíóúüñ]+)?(?: [A-ZÁÉÍÓÚÜÑa-záéíóúüñ]+(?:-[A-ZÁÉÍÓÚÜÑa-záéíóúüñ]+)?)+$/ ; // Debe estar formado por al menos dos palabras separadas por un espacio
+    let dobleEspacio = /  /g ;
+
     
         if (nombre.value.trim() === "")
             // Si el nombre está vacío
@@ -47,6 +54,15 @@ function validarNombre() {
             errorNombre.innerHTML = "El nombre es requerido" ;
             nombre.focus() ;
             nombre.value = "" ;
+
+            valido = false ;
+        }
+
+        else if(dobleEspacio.test(nombre.value))
+            // Si se introducen dos espacios seguidos
+        {
+            errorNombre.innerHTML = "No se permiten dos espacios seguidos" ;
+            nombre.focus() ;
 
             valido = false ;
         }
@@ -81,6 +97,8 @@ function validarNombre() {
  *  - Debe contener una @ en su sitio correspondiente.
  *  - Debe tener su estructura habitual: nombre + dominio.
  *  - Debe ser un dominio válido. ".c" no sería válido.
+ * 
+ * @returns Devuelve true si el email es válido.
  */
 function validarEmail() {
 
@@ -125,14 +143,16 @@ function validarEmail() {
 
 
 /**
- * Normas validación contraseña:
- *  - No puede estar vacía. REQUERIDA.
- *  - Debe tener entre 8 y 15 caracteres.
- *  - Debe contener al menos una mayúscula.
- *  - Debe contener al menos una minúscula.
- *  - Debe contener al menos un dígito.
- *  - No debe contener espacios.
- *  - Debe contener al menos un carácter especial.
+* Normas validación contraseña:
+*  - No puede estar vacía. REQUERIDA.
+*  - Debe tener entre 8 y 15 caracteres.
+*  - Debe contener al menos una mayúscula.
+*  - Debe contener al menos una minúscula.
+*  - Debe contener al menos un dígito.
+*  - No debe contener espacios.
+*  - Debe contener al menos un carácter especial.
+
+ * @returns Devuelve true si la contraseña tiene el formato válido.
  */
 function validarPassword() {
 
@@ -155,7 +175,6 @@ function validarPassword() {
         errorPassword.innerHTML = "La contraseña es requerida" ;
         password.focus() ;
         password.value = "" ;
-        password.style.backgroundColor = "white" ;
 
         valido = false ;
     }
@@ -168,7 +187,6 @@ function validarPassword() {
         {
             errorPassword.innerHTML = "Debe tener un mínino de 8 caracteres" ;
             password.focus() ;
-            password.style.backgroundColor = rojo ;
 
             valido = false ;
         }
@@ -178,7 +196,6 @@ function validarPassword() {
         {
             errorPassword.innerHTML = "Debe tener un máximo de 15 caracteres" ;
             password.focus() ;
-            password.style.backgroundColor = rojo ;
 
             valido = false ;
         }
@@ -188,7 +205,6 @@ function validarPassword() {
         {
             errorPassword.innerHTML = "Debe contener al menos una mayúscula" ;
             password.focus() ;
-            password.style.backgroundColor = rojo ;
 
             valido = false ;
         }
@@ -198,7 +214,6 @@ function validarPassword() {
         {
             errorPassword.innerHTML = "Debe contener al menos una minúscula" ;
             password.focus() ;
-            password.style.backgroundColor = rojo ;
 
             valido = false ;
         }
@@ -208,7 +223,6 @@ function validarPassword() {
         {
             errorPassword.innerHTML = "Debe contener al menos un dígito" ;
             password.focus() ;
-            password.style.backgroundColor = rojo ;
 
             valido = false ;
         }
@@ -218,7 +232,6 @@ function validarPassword() {
         {
             errorPassword.innerHTML = "No debe contener espacios" ;
             password.focus() ;
-            password.style.backgroundColor = rojo ;
 
             valido = false ;
         }
@@ -228,7 +241,6 @@ function validarPassword() {
         {
             errorPassword.innerHTML = "Debe contener al menos un carácter especial" ;
             password.focus() ;
-            password.style.backgroundColor = rojo ;
 
             valido = false ;
         }
@@ -237,7 +249,6 @@ function validarPassword() {
             // Si es válida
         {
             errorPassword.innerHTML = "" ;
-            password.style.backgroundColor = verde ;
 
             valido = true ;
         }
@@ -254,6 +265,8 @@ function validarPassword() {
  * Normas validación confirmación contraseña:
  *  - No debe estar vacío. REQUERIDO.
  *  - Debe coincidir con la contraseña introducida.
+ * 
+ * @returns Devuelve true si la contraña de confirmación coincide con la original.
  */
 function validarPasswordRepeticion() {
 
@@ -298,8 +311,9 @@ function validarPasswordRepeticion() {
  *  - Debe existir.
  *  - Debe ser mayor de edad.
  *  - El usuario puede tener hasta 120 años.
+ * 
+ * @returns Devuelve true si la fecha la fecha existe y el usuario es mayor de edad.
  */
-
 function validarFecha(){
 
     let valido = false ;
@@ -364,8 +378,9 @@ function validarFecha(){
  *  - Debe tener un formato válido (los guiones serán omitidos). Es decir:
  *      - Debe tener 8 dígitos.
  *      - Debe tener una letra y que sea válida.
+ * 
+ * @returns Devuelve true si el DNI es válido.
  */
-
 function validarDNI() {
 
     let valido = false ;
@@ -443,12 +458,122 @@ function validarDNI() {
         }
 
 
-        return valido ;
+    return valido ;
 
+}
+
+
+
+function validarFormulario() {
+
+    let valido = false ;
+    
+    let DNIValido = validarDNI() ;
+    let fechaValida = validarFecha() ;
+    let confirmacionContrasenaValida = validarPasswordRepeticion() ;
+    let contrasenaValida = validarPassword() ;
+    let emailValido = validarEmail() ;
+    let nombreValido = validarNombre() ;
+
+    if (DNIValido && fechaValida && confirmacionContrasenaValida && contrasenaValida && emailValido && nombreValido)
+        // Si todas las partes del formulario son válidas...
+    {
+        valido = true ; // ... valida el formulario.
     }
 
+    return valido ;
+
+}
+
+    // ------------------- MÉTODOS PARA MOSTRAR EN TIEMPO REAL LAS VALIDACIONES DE CARA AL USUARIO ----------------------
+    //                                    Estas funciones muestran, no validan
+
+// /**
+//  * Normas validación nombre:
+//  *  - No puede estar vacío. REQUERIDO.
+//  *  - Debe contener mínimo dos palabras.
+//  *  - Las palabras deben estar separadas por un único espacio.
+//  *  - Se permite el guion (-) entre palabras. Ejemplo: Martín-Arroyo
+//  *  - Se permiten tildes y otros caracteres comunes en los nombres. Ejemplos válidos serían: Pière, Adrián o Gümba.
+//  * 
+//  * @returns Devuelve true si el nombre es válido.
+//  */
+// function validarNombre() {
+
+//     let valido = false ;
+
+//     // Expresiones regulares
+
+//     let regNombre = /^[A-ZÁÉÍÓÚÜÑa-záéíóúüñ]+(?:-[A-ZÁÉÍÓÚÜÑa-záéíóúüñ]+)?(?: [A-ZÁÉÍÓÚÜÑa-záéíóúüñ]+(?:-[A-ZÁÉÍÓÚÜÑa-záéíóúüñ]+)?)+$/ ; // Debe estar formado por al menos dos palabras separadas por un espacio
+//     let dobleEspacio = /  /g ;
+
+    
+//         if (nombre.value.trim() === "")
+//             // Si el nombre está vacío
+//         {
+//             errorNombre.innerHTML = "El nombre es requerido" ;
+//             nombre.focus() ;
+//             nombre.value = "" ;
+
+//             valido = false ;
+//         }
+
+//         else if(dobleEspacio.test(nombre.value))
+//             // Si se introducen dos espacios seguidos
+//         {
+//             errorNombre.innerHTML = "No se permiten dos espacios seguidos" ;
+//             nombre.focus() ;
+
+//             valido = false ;
+//         }
+
+//         else if (!regNombre.test(nombre.value))
+//             // Si el nombre no es válido
+//         {
+//             errorNombre.innerHTML = "Debes introducir un nombre válido" ;
+//             nombre.focus() ;
+
+//             valido = false ;
+//         }
+        
+//         else
+//             // Si es válido
+//         {
+//             errorNombre.innerHTML = "" ;
+//             valido = true ;
+//         }
 
 
+//     return valido ;
+
+// }
+
+
+function cambiaColorInput(elemento, esValido) {
+    
+    if (elemento.value == "")
+    {
+        elemento.style.backgroundColor = "white" ;
+    }
+    else if (esValido)
+    {
+        elemento.style.backgroundColor = verde ;
+    }
+    else
+    {
+        elemento.style.backgroundColor = rojo ;
+    }
+}
+
+
+    // ------------------ OTRO MÉTODOS ----------------------
+
+/**
+ * Función que elimina los guiones de una cadena.
+ * 
+ * @param {*} cadena Cadena de la que se quiere eliminar el guion 
+ * @returns Devuelva la cadena sin guiones
+ */
 function eliminaGuiones(cadena) {
     // Elimina los guiones de una cadena
     
@@ -465,7 +590,7 @@ function eliminaGuiones(cadena) {
 
 // ---------------- EVENTOS ------------------
 
-password.addEventListener("input", validarPassword, false) ;
+
 
 function comenzar() {
 
@@ -473,15 +598,30 @@ function comenzar() {
 
         e.preventDefault() ;
 
-        validarDNI() ;
-        validarFecha() ;
-        validarPasswordRepeticion() ;
-        validarPassword() ;
-        validarEmail() ;
-        validarNombre() ;
+        validarFormulario() ;
 
     }, false) ;
     
 }
+
+nombre.addEventListener("input", function() {
+    cambiaColorInput(nombre, validarNombre()) ;
+}, false) ;
+
+email.addEventListener("input", function() {
+    cambiaColorInput(email, validarEmail()) ;
+}, false) ;
+
+password.addEventListener("input", function() {
+    cambiaColorInput(password, validarPassword()) ;
+}, false) ;
+
+passwordRepetida.addEventListener("input", function() {
+    cambiaColorInput(passwordRepetida, validarPasswordRepeticion()) ;
+}, false) ;
+
+dni.addEventListener("input", function() {
+    cambiaColorInput(dni, validarDNI()) ;
+}, false) ;
 
 window.addEventListener("load", comenzar, false) ;
