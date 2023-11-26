@@ -9,6 +9,16 @@ let parrafo = document.getElementById("mensajeRegistro") ; // Mensaje de registr
 let dni = document.getElementById("dniInput") ; // DNI
 let fecha = document.getElementById("fechaNacimiento") ; // Fecha de nacimiento
 
+let listaRequisitosPassword = document.getElementById("listaRequisitosPassword") ; // Lista de requisitos de la contraseña
+listaRequisitosPassword.style.display = "none" ;
+let caracteresMinimos = document.getElementById("caracteresMinimos") ;
+let caracteresMaximos = document.getElementById("caracteresMaximos") ;
+let mayusculaObligatoria = document.getElementById("mayusculaObligatoria") ;
+let minusculaObligatoria = document.getElementById("minusculaObligatoria") ;
+let digitoObligatorio = document.getElementById("digitoObligatorio") ;
+let espaciosProhibidos = document.getElementById("espaciosProhibidos") ;
+let caracterEspecialObligatorio = document.getElementById("caracterEspecialObligatorio") ;
+
 // MENSAJES DE ERROR
 
 let errorNombre = document.getElementById("errorNombre") ; // Nombre
@@ -46,7 +56,6 @@ function validarNombre() {
 
     let regNombre = /^[A-ZÁÉÍÓÚÜÑa-záéíóúüñ]+(?:-[A-ZÁÉÍÓÚÜÑa-záéíóúüñ]+)?(?: [A-ZÁÉÍÓÚÜÑa-záéíóúüñ]+(?:-[A-ZÁÉÍÓÚÜÑa-záéíóúüñ]+)?)+$/ ; // Debe estar formado por al menos dos palabras separadas por un espacio
     let dobleEspacio = /  /g ;
-
     
         if (nombre.value.trim() === "")
             // Si el nombre está vacío
@@ -156,8 +165,18 @@ function validarEmail() {
  */
 function validarPassword() {
 
+
     let valido = false ;
 
+    let caracteresMinimosValido = false ;
+    let caracteresMaximosValido = false ;
+    let mayusculaObligatoriaValido = false ;
+    let minusculaObligatoriaValido = false ;
+    let digitoObligatorioValido = false ;
+    let espaciosProhibidosValido = false ;
+    let caracterEspecialObligatorioValido = false ;
+
+    
     // Expresiones regulares
 
     let min8Caracteres = /^.{8,}$/ ; // Mínimo 8 caracteres
@@ -168,11 +187,12 @@ function validarPassword() {
     let noContieneEspacios = /^\S+$/ ; // No debe contener espacios
     let contieneCaracterEspecial = /[¡!@#$%^&*(),.¿?":{}|<>_/\\\'\'ºª·€¬=\[\]\+\-";]/ ; // Debe contener al menos un carácter especial ; // Debe contener al menos un carácter especial
 
-    
+
+
     if (password.value.trim() === "")
         // Si la contraseña está vacía
     {
-        errorPassword.innerHTML = "La contraseña es requerida" ;
+        // errorPassword.innerHTML = "La contraseña es requerida" ;
         password.focus() ;
         password.value = "" ;
 
@@ -180,12 +200,12 @@ function validarPassword() {
     }
 
     else if (password.value.trim() != "")
-        // Si la contraseña no es válida
+        // Si la contraseña no está vacía
     {
         if(!min8Caracteres.test(password.value))
             // Si tiene menos de 8 caracteres
         {
-            errorPassword.innerHTML = "Debe tener un mínino de 8 caracteres" ;
+            // errorPassword.innerHTML = "Debe tener un mínino de 8 caracteres" ;
             password.focus() ;
 
             valido = false ;
@@ -194,7 +214,7 @@ function validarPassword() {
         else if (!max15Caracteres.test(password.value))
             // Si tiene más de 15 caracteres
         {
-            errorPassword.innerHTML = "Debe tener un máximo de 15 caracteres" ;
+            // errorPassword.innerHTML = "Debe tener un máximo de 15 caracteres" ;
             password.focus() ;
 
             valido = false ;
@@ -203,7 +223,7 @@ function validarPassword() {
         else if (!contieneMayuscula.test(password.value))
             // Si no contiene ninguna mayúscula
         {
-            errorPassword.innerHTML = "Debe contener al menos una mayúscula" ;
+            // errorPassword.innerHTML = "Debe contener al menos una mayúscula" ;
             password.focus() ;
 
             valido = false ;
@@ -212,7 +232,7 @@ function validarPassword() {
         else if (!contieneMinuscula.test(password.value))
             // Si no contiene ninguna minúscula
         {
-            errorPassword.innerHTML = "Debe contener al menos una minúscula" ;
+            // errorPassword.innerHTML = "Debe contener al menos una minúscula" ;
             password.focus() ;
 
             valido = false ;
@@ -221,7 +241,7 @@ function validarPassword() {
         else if (!contieneDigito.test(password.value))
             // Si no contiene ningún dígito
         {
-            errorPassword.innerHTML = "Debe contener al menos un dígito" ;
+            // errorPassword.innerHTML = "Debe contener al menos un dígito" ;
             password.focus() ;
 
             valido = false ;
@@ -230,7 +250,7 @@ function validarPassword() {
         else if (!noContieneEspacios.test(password.value))
             // Si no contiene espacios
         {
-            errorPassword.innerHTML = "No debe contener espacios" ;
+            // errorPassword.innerHTML = "No debe contener espacios" ;
             password.focus() ;
 
             valido = false ;
@@ -239,7 +259,7 @@ function validarPassword() {
         else if (!contieneCaracterEspecial.test(password.value))
             // Si no contiene ningún carácter especial
         {
-            errorPassword.innerHTML = "Debe contener al menos un carácter especial" ;
+            // errorPassword.innerHTML = "Debe contener al menos un carácter especial" ;
             password.focus() ;
 
             valido = false ;
@@ -248,13 +268,121 @@ function validarPassword() {
         else
             // Si es válida
         {
-            errorPassword.innerHTML = "" ;
-
             valido = true ;
         }
 
     }
 
+    // ------- Gestión de la lista de errores -------
+
+    // Mínimo de caracteres
+
+    if(min8Caracteres.test(password.value))
+        // Si tiene más de 8 caracteres
+    {
+        caracteresMinimos.style.color = "green" ;
+    }
+    else
+    {
+        caracteresMinimos.style.color = "red" ;
+    }
+
+    // Máximo de caracteres
+
+    if (max15Caracteres.test(password.value))
+        // Si tiene menos de 15 caracteres
+    {
+        caracteresMaximos.style.color = "green" ;
+    }
+    else
+    {
+        caracteresMaximos.style.color = "red" ;
+    }
+
+    // Mayúscula obligatoria
+
+    if (contieneMayuscula.test(password.value))
+        // Si contiene alguna mayúscula
+    {
+        mayusculaObligatoria.style.color = "green" ;
+    }
+    else
+    {
+        mayusculaObligatoria.style.color = "red" ;
+    }
+
+    // Minúscula obligatoria
+
+    if (contieneMinuscula.test(password.value))
+        // Si contiene alguna minúscula
+    {
+        minusculaObligatoria.style.color = "green" ;
+    }
+    else
+    {
+        minusculaObligatoria.style.color = "red" ;
+    }
+
+    // Dígito obligatorio
+
+    if (contieneDigito.test(password.value))
+        // Si contiene algún dígito
+    {
+        digitoObligatorio.style.color = "green" ;
+    }
+    else
+    {
+        digitoObligatorio.style.color = "red" ;
+    }
+
+    // Espacios prohibidos
+
+    if (noContieneEspacios.test(password.value))
+        // Si no contiene espacios
+    {
+        espaciosProhibidos.style.color = "green" ;
+    }
+    else
+    {
+        espaciosProhibidos.style.color = "red" ;
+    }
+
+    // Caracter especial obligatorio
+
+    if (contieneCaracterEspecial.test(password.value))
+        // Si contiene algún carácter especial
+    {
+        caracterEspecialObligatorio.style.color = "green" ;
+    }
+    else
+    {
+        caracterEspecialObligatorio.style.color = "red" ;
+    }
+
+    // Contraseña validada
+
+    if (valido)
+        // Si la contraseña es válida
+    {
+        listaRequisitosPassword.style.display = "none" ;
+        errorPassword.innerHTML = "" ;
+    }
+
+    // Contraseña vacía
+    
+    if (password.value.trim() === "")
+        // Si la contraseña está vacía
+    {
+        listaRequisitosPassword.style.display = "none" ;
+        errorPassword.innerHTML = "La contraseña es requerida" ;
+    }
+    else
+    {
+        listaRequisitosPassword.style.display = "block" ;
+        errorPassword.innerHTML = "" ;
+    }
+
+    
     return valido ;
 
 }
@@ -337,8 +465,8 @@ function validarFecha(){
     if ((edad >= 18 && edad < 120))
         // Si la fecha es válida (es mayor de edad y se supone vivo)
     {
-        alert('La persona es mayor de edad.');
-        fecha.innerHTML = "" ;
+        // alert('La persona es mayor de edad.');
+        errorFecha.innerHTML = "" ;
 
         valido = true ;
     }
@@ -346,7 +474,8 @@ function validarFecha(){
     else if (edad >= 120)
         // Si es probable que esté muerto
     {
-        alert("No creo que con esa edad estés vivo...") ;
+        // alert("No creo que con esa edad estés vivo...") ;
+        errorFecha.innerHTML = "Fecha demasiado lejana"
         
         valido = false ;
     }
@@ -361,7 +490,8 @@ function validarFecha(){
     else
         // Si es menor de edad
     {
-        alert('La persona no es mayor de edad.') ;
+        // alert('La persona no es mayor de edad.') ;
+        errorFecha.innerHTML = "Debes ser mayor de edad" ;
 
         valido = false ;
     }
@@ -485,68 +615,6 @@ function validarFormulario() {
 
 }
 
-    // ------------------- MÉTODOS PARA MOSTRAR EN TIEMPO REAL LAS VALIDACIONES DE CARA AL USUARIO ----------------------
-    //                                    Estas funciones muestran, no validan
-
-// /**
-//  * Normas validación nombre:
-//  *  - No puede estar vacío. REQUERIDO.
-//  *  - Debe contener mínimo dos palabras.
-//  *  - Las palabras deben estar separadas por un único espacio.
-//  *  - Se permite el guion (-) entre palabras. Ejemplo: Martín-Arroyo
-//  *  - Se permiten tildes y otros caracteres comunes en los nombres. Ejemplos válidos serían: Pière, Adrián o Gümba.
-//  * 
-//  * @returns Devuelve true si el nombre es válido.
-//  */
-// function validarNombre() {
-
-//     let valido = false ;
-
-//     // Expresiones regulares
-
-//     let regNombre = /^[A-ZÁÉÍÓÚÜÑa-záéíóúüñ]+(?:-[A-ZÁÉÍÓÚÜÑa-záéíóúüñ]+)?(?: [A-ZÁÉÍÓÚÜÑa-záéíóúüñ]+(?:-[A-ZÁÉÍÓÚÜÑa-záéíóúüñ]+)?)+$/ ; // Debe estar formado por al menos dos palabras separadas por un espacio
-//     let dobleEspacio = /  /g ;
-
-    
-//         if (nombre.value.trim() === "")
-//             // Si el nombre está vacío
-//         {
-//             errorNombre.innerHTML = "El nombre es requerido" ;
-//             nombre.focus() ;
-//             nombre.value = "" ;
-
-//             valido = false ;
-//         }
-
-//         else if(dobleEspacio.test(nombre.value))
-//             // Si se introducen dos espacios seguidos
-//         {
-//             errorNombre.innerHTML = "No se permiten dos espacios seguidos" ;
-//             nombre.focus() ;
-
-//             valido = false ;
-//         }
-
-//         else if (!regNombre.test(nombre.value))
-//             // Si el nombre no es válido
-//         {
-//             errorNombre.innerHTML = "Debes introducir un nombre válido" ;
-//             nombre.focus() ;
-
-//             valido = false ;
-//         }
-        
-//         else
-//             // Si es válido
-//         {
-//             errorNombre.innerHTML = "" ;
-//             valido = true ;
-//         }
-
-
-//     return valido ;
-
-// }
 
 
 function cambiaColorInput(elemento, esValido) {
@@ -598,7 +666,10 @@ function comenzar() {
 
         e.preventDefault() ;
 
-        validarFormulario() ;
+        if(validarFormulario())
+        {
+            parrafo.innerHTML = "Se ha enviado el formulario" ;
+        }
 
     }, false) ;
     

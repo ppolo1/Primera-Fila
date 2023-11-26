@@ -20,7 +20,18 @@
 
         <label for="contrasena">Contraseña:</label>
         <input type="password" id="contrasena"  placeholder="Obligatorio">
-        <span id="errorPassword" style="color: red;"></span>
+        <div>
+          <p id="errorPassword" style="color: red"></p>
+          <ul id="listaRequisitosPassword">
+            <li id="caracteresMinimos"> Debe tener un mínimo de 8 caracteres </li>
+            <li id="caracteresMaximos"> Debe tener un máximo de 15 caracteres </li>
+            <li id="mayusculaObligatoria"> Debe contener al menos una mayúscula </li>
+            <li id="minusculaObligatoria"> Debe contener al menos una minúscula </li>
+            <li id="digitoObligatorio"> Debe contener al menos un dígito </li>
+            <li id="espaciosProhibidos"> No debe contener espacios </li>
+            <li id="caracterEspecialObligatorio"> Debe contener al menos un carácter especial </li>
+          </ul>
+        </div>
 
         <label for="confirmarContrasena">Confirmar Contraseña:</label>
         <input type="password" id="confirmarContrasena"  placeholder="Obligatorio">
