@@ -45,6 +45,7 @@ let verde = "#B8FAA1" ;
  *  - Las palabras deben estar separadas por un único espacio.
  *  - Se permite el guion (-) entre palabras. Ejemplo: Martín-Arroyo
  *  - Se permiten tildes y otros caracteres comunes en los nombres. Ejemplos válidos serían: Pière, Adrián o Gümba.
+ *  - Máximo de 50 caracteres
  * 
  * @returns Devuelve true si el nombre es válido.
  */
@@ -55,7 +56,8 @@ function validarNombre() {
     // Expresiones regulares
 
     let regNombre = /^[A-ZÁÉÍÓÚÜÑa-záéíóúüñ]+(?:-[A-ZÁÉÍÓÚÜÑa-záéíóúüñ]+)?(?: [A-ZÁÉÍÓÚÜÑa-záéíóúüñ]+(?:-[A-ZÁÉÍÓÚÜÑa-záéíóúüñ]+)?)+$/ ; // Debe estar formado por al menos dos palabras separadas por un espacio
-    let dobleEspacio = /  /g ;
+    let dobleEspacio = /  /g ; // No se permiten dos espacios seguidos
+    let limiteCaracteres = /^.{1,50}$/ // Límite de 50 caracteres
     
         if (nombre.value.trim() === "")
             // Si el nombre está vacío
@@ -63,6 +65,15 @@ function validarNombre() {
             errorNombre.innerHTML = "El nombre es requerido" ;
             nombre.focus() ;
             nombre.value = "" ;
+
+            valido = false ;
+        }
+
+        else if (!limiteCaracteres.test(nombre.value))
+            // Si se superan los 50 caracteres 
+        {
+            errorNombre.innerHTML = "El máximo son 50 caracteres" ;
+            nombre.focus() ;
 
             valido = false ;
         }
@@ -192,7 +203,6 @@ function validarPassword() {
     if (password.value.trim() === "")
         // Si la contraseña está vacía
     {
-        // errorPassword.innerHTML = "La contraseña es requerida" ;
         password.focus() ;
         password.value = "" ;
 
@@ -205,7 +215,6 @@ function validarPassword() {
         if(!min8Caracteres.test(password.value))
             // Si tiene menos de 8 caracteres
         {
-            // errorPassword.innerHTML = "Debe tener un mínino de 8 caracteres" ;
             password.focus() ;
 
             valido = false ;
@@ -214,7 +223,6 @@ function validarPassword() {
         else if (!max15Caracteres.test(password.value))
             // Si tiene más de 15 caracteres
         {
-            // errorPassword.innerHTML = "Debe tener un máximo de 15 caracteres" ;
             password.focus() ;
 
             valido = false ;
@@ -223,7 +231,6 @@ function validarPassword() {
         else if (!contieneMayuscula.test(password.value))
             // Si no contiene ninguna mayúscula
         {
-            // errorPassword.innerHTML = "Debe contener al menos una mayúscula" ;
             password.focus() ;
 
             valido = false ;
@@ -232,7 +239,6 @@ function validarPassword() {
         else if (!contieneMinuscula.test(password.value))
             // Si no contiene ninguna minúscula
         {
-            // errorPassword.innerHTML = "Debe contener al menos una minúscula" ;
             password.focus() ;
 
             valido = false ;
@@ -241,7 +247,6 @@ function validarPassword() {
         else if (!contieneDigito.test(password.value))
             // Si no contiene ningún dígito
         {
-            // errorPassword.innerHTML = "Debe contener al menos un dígito" ;
             password.focus() ;
 
             valido = false ;
@@ -250,7 +255,6 @@ function validarPassword() {
         else if (!noContieneEspacios.test(password.value))
             // Si no contiene espacios
         {
-            // errorPassword.innerHTML = "No debe contener espacios" ;
             password.focus() ;
 
             valido = false ;
@@ -259,7 +263,6 @@ function validarPassword() {
         else if (!contieneCaracterEspecial.test(password.value))
             // Si no contiene ningún carácter especial
         {
-            // errorPassword.innerHTML = "Debe contener al menos un carácter especial" ;
             password.focus() ;
 
             valido = false ;
@@ -273,7 +276,10 @@ function validarPassword() {
 
     }
 
+
     // ------- Gestión de la lista de errores -------
+
+
 
     // Mínimo de caracteres
 
@@ -373,12 +379,13 @@ function validarPassword() {
     if (password.value.trim() === "")
         // Si la contraseña está vacía
     {
-        listaRequisitosPassword.style.display = "none" ;
+        listaRequisitosPassword.style.display = "none" ; // Oculta la lista
         errorPassword.innerHTML = "La contraseña es requerida" ;
     }
-    else
+    else if ( (password.value.trim() != "") && !valido)
+        // Si la contraseña no está vacía y no es válida
     {
-        listaRequisitosPassword.style.display = "block" ;
+        listaRequisitosPassword.style.display = "block" ; // Muestra la lista
         errorPassword.innerHTML = "" ;
     }
 
@@ -668,7 +675,13 @@ function comenzar() {
 
         if(validarFormulario())
         {
+            parrafo.style.color = "black" ;
             parrafo.innerHTML = "Se ha enviado el formulario" ;
+        }
+        else
+        {
+            parrafo.style.color = "red" ;
+            parrafo.innerHTML = "Hay errores en el formulario" ;
         }
 
     }, false) ;
