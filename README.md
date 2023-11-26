@@ -16,7 +16,7 @@ Trabajo formado por: Adriana, Cayetana, Adrián y Pablo
 ---
 >Enlace a la carpeta de Diseño con la documentación
 
-[Diseño](https://github.com/ppolo1/Primera-Fila/tree/main/Landing%20Page/Bocetos)
+[Diseño](https://github.com/ppolo1/Primera-Fila/blob/main/SPRINT%20I-PRIMERA%20FILA/GU%C3%8DA%20DE%20ESTILO%20EON%20LUX%20ANTIQUES.pdf)
 
 ---
 >Enlace a la carpeta de Cliente
