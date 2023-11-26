@@ -6,7 +6,7 @@ Trabajo formado por: Adriana, Cayetana, Adrián y Pablo
 
 >Enlace a nuestra Landing Page
 
-[Landing Page](https://github.com/ppolo1/Primera-Fila/tree/main/Landing%20Page/P%C3%A1gina/Portada)
+[Landing Page](https://github.com/ppolo1/Primera-Fila/tree/main/SPRINT%20I-PRIMERA%20FILA/LANDING%20PAGE-EON%20LUX%20ANTIQUES)
 
 ---
 >Enlace a la carpeta de Empresa con la documentación
