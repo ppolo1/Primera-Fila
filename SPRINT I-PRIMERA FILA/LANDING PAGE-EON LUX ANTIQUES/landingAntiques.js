@@ -524,7 +524,7 @@ function validarFecha(){
         // Si la fecha de nacimiento es mayor que la fecha actual
         errorFecha.innerHTML = "La fecha de nacimiento no puede ser mayor al día de hoy.";
         valido = false;
-    } else {
+    } else if{
         // Resto de la lógica para validar la edad y otros casos
         let diferenciaMilisegundos = fechaActual - fechaNacimiento;
         let edad = Math.floor(diferenciaMilisegundos / (1000 * 60 * 60 * 24 * 365.25));
@@ -546,8 +546,10 @@ function validarFecha(){
             errorFecha.innerHTML = "Debes ser mayor de edad";
             valido = false;
         }
+    } else {
+        fechaActual="";
+        valido=true;
     }
-
     return valido;
 }
 
