@@ -23,14 +23,5 @@ Trabajo formado por: Adriana, Cayetana, Adrián y Pablo
 
 [Cliente](https://github.com/ppolo1/Primera-Fila/blob/main/SPRINT%20I-PRIMERA%20FILA/VALIDACIONES%20Y%20REQUERIMIENTOS%20EON%20LUX%20ANTIQUES.pdf)
 
----
->Enlace a la carpeta de Móviles
-
-[Móviles]()
-
----
->Enlace a la carpeta de Videojuegos
-
-[Videojuegos]()
 
 # Sprint 2: Página Web
