@@ -1,0 +1,396 @@
+@font-face {
+  font-family:'primeraFila' ;
+  src: url('Gikany-Regular.ttf');
+}
+body {
+  font-family: Georgia, serif;
+  /* Fuente elegante y clásica */
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  height: 100px;
+  padding-bottom: 1%;
+  background: linear-gradient(to bottom, #D3A97B, #fff);
+
+}
+
+.logo {
+  width: 78%;
+  display: flex;
+  align-items: center;
+  padding-left: 3%;
+}
+
+.logo img {
+  width: 20%;
+  height: 180px;
+
+}
+
+.conocenos {
+  width: 22%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1%;
+ 
+}
+
+.conocenos button {
+  width: 60%;
+  height: 60px;
+  background-color: #fff;
+  border: 2px solid #503B0A; /* Añade un borde */
+  border-radius: 30px; /* Borde redondeado */
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2); /* Sombreado */
+  transition: box-shadow 0.3s ease; /* Transición suave */
+  background: linear-gradient(to bottom, #e1be99, #fff);
+  font-family: Georgia, serif;
+  
+  /* Fuente elegante y clásica */
+}
+
+.conocenos button:hover {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4); /* Cambia el sombreado al pasar el cursor */
+}
+.conocenos a {
+  text-decoration: none;
+  color: #503B0A;
+
+}
+
+nav {
+  width: 100%;
+  text-align: center;
+  height: 30%;
+}
+nav button {
+  width: 15%;
+  height: 50px;
+  background-color: #fff;
+  border: 2px solid #503B0A; /* Añade un borde */
+  border-radius: 30px; /* Borde redondeado */
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2); /* Sombreado */
+  transition: box-shadow 0.3s ease; /* Transición suave */
+  font-family: Georgia, serif;
+  /* Fuente elegante y clásica */
+}
+
+nav button:hover {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4); /* Cambia el sombreado al pasar el cursor */
+}
+
+nav a {
+  text-decoration: none;
+  color: #503B0A;
+}
+
+nav h1 {
+  color: #503B0A;
+  font-size: 3em;
+  margin-top: -20px;
+  font-family: 'primeraFila';
+}
+nav p{
+  font-family: 'primeraFila';
+  font-size: 35px;
+}
+
+
+.slider-frame {
+	width:100%;
+  height: 49%;
+	margin:50px auto 0;
+	overflow: hidden;
+}
+
+.slider-frame ul {
+	display: flex;
+	padding: 0;
+	width: 400%;
+	
+	animation: slide 10S infinite alternate ease-in-out;
+}
+
+.slider-frame li {
+	width: 100%;
+	list-style: none;
+}
+
+.slider-frame img {
+	width: 100%;
+}
+
+
+
+#titulo {
+  width: 100%;
+  position: absolute;
+  padding: 0px;
+  margin: 0px auto;
+  text-align: center;
+  font-size: 27px;
+  color: rgba(255, 255, 255, 1);
+  font-family: 'Open Sans', sans-serif;
+  z-index: 9999;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33),
+    -1px 0px 2px rgba(255, 255, 255, 0);
+}
+
+.quienesSomos {
+  width: 100%;
+  background: linear-gradient(to bottom, #fff, #e1be99);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+  height: 110%;
+  padding-top: 2px;
+}
+.quienesSomos h1{
+  font-family: 'primeraFila';
+}
+*{
+  text-decoration: none; 
+}
+a{
+  color: black;
+  margin-left: 1%;
+}
+.quienes{
+  text-align: center;
+}
+.quienes h1{
+  font-size: 23px;
+}
+.quienes p{
+  font-family: georgia serif;
+  font-size: 23px;
+  
+}
+
+/*AQUI ES DONDE VAMOS HACER CLICK*/
+#atencion,#productos,#personalizado,#trato,#mundo{
+  width: 80%;
+  background:#D3A97B;
+  color: rgb(243, 231, 209);
+  margin-bottom: 1%;
+}
+#atencion h1,#productos h1,#personalizado h1,#trato h1,#mundo h1{
+  color: black;
+  margin-left: 1%;
+  margin-top: -0.7em;
+}
+figcaption{
+  text-align: end;
+  margin-right: 2%;
+  margin-top: 1%;
+}
+
+#atencion p,#productos p,#personalizado p,#trato p,#mundo p{
+  display:none;
+  margin-left: 1%;
+}
+.cerrar{
+  display: none;
+}
+#atencion:target p,#productos:target p,#personalizado:target p,#trato:target p,#mundo:target p{
+  display: block;
+}
+#atencion:target .abrir,#productos:target .abrir,#personalizado:target .abrir,#trato:target .abrir,#mundo:target .abrir{
+  display: none;
+}
+#atencion:target .cerrar,#productos:target .cerrar,#personalizado:target .cerrar,#trato:target .cerrar,#mundo:target .cerrar{
+  display:block;
+}
+
+#llamadaAccion p{
+  font-family: Georgia, serif;
+  font-size: 22px;
+}
+.info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px; 
+  margin-bottom: 1%;
+
+}
+
+.info button {
+  width: 12%;
+  height: 55px;
+  margin-top: -16px;
+  background-color: #fff;
+  border: 2px solid #503B0A;
+  border-radius: 30px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+  background: linear-gradient(to top, #D3A97B, #fff);
+  font-family: Georgia, serif;
+}
+
+.info button:hover {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.info a {
+  text-decoration: none;
+  color: #503B0A;
+}
+
+/* Pie de página */
+footer {
+ 
+  background-color:#996515 ;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer-content {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 0 20px;
+}
+
+.footer-section h3 {
+  color: #fff;
+}
+
+.social-icons {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #fff;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.footer-content a {
+  text-decoration: none;
+  color: white;
+}
+
+
+@keyframes slide {
+	0% {margin-left: 0;}
+	20% {margin-left: 0;}
+	
+	25% {margin-left: -100%;}
+	45% {margin-left: -100%;}
+	
+	50% {margin-left: -200%;}
+	70% {margin-left: -200%;}
+	
+	75% {margin-left: -300%;}
+	100% {margin-left: -300%;}
+}
+
+
+
+
+
+/** VERSIÓN MOVIL*/
+@media (max-width:767px){
+.logo {
+ width: 90%; 
+}
+.logo img {
+  width: 40%;
+  height: 150px;
+}
+nav h1{
+  margin-top: 10px;
+  font-size: 40px;
+}
+nav p{
+  font-family: 'primeraFila';
+  font-size: 20px;
+}
+.conocenos{
+  width: 30%;
+}
+.conocenos a{
+  font-size: 14px;
+}
+.conocenos button {
+  width:100%;
+  height: 40px;
+}
+.icon-earth{
+  display: none;
+}
+.teAyudamos button {
+  width: 40%;
+}
+.teAyudamos a{
+  font-size: 14px;
+}
+.footer-content p{
+  display:none;
+  font-size: 10px;
+}
+.footer-content h3{
+  font-size: 90%;
+}
+.social-icons{
+  font-size: 20px;
+}
+.footer-section a{
+  font-size: 10px;
+}
+nav p{
+  font-size: 25px;
+}
+
+#atencion,#productos,#personalizado,#trato,#mundo{
+  width: 90%;
+}
+#atencion h1,#productos h1,#personalizado h1,#trato h1,#mundo h1{
+  font-size: 20px;
+}
+.quienesSomos {
+height: 85%;
+}
+.quienes p{
+  display: none;
+}
+.info{
+  padding-bottom: 5%;
+}
+.info button{
+  width: 30%;
+  margin-top: 25px;
+}
+#llamadaAccion{
+  display: none;
+}
+a{
+  font-size: 20px;
+}
+.info button a{
+  font-size: 14PX;
+}
+
+.slider-frame img {
+	width: 100%;
+  height: 130%;
+}
+
+}
+
