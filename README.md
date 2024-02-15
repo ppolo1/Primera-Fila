@@ -31,7 +31,9 @@ Trabajo formado por: Adriana, Cayetana, Adrián y Pablo
 [Cliente]()
 
 >Enlace a la carpeta de Diseño
+
 [Diseño]()
 
 >Enlace a la carpeta de Servidor
+
 [Servidor]()
