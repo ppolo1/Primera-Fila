@@ -1,43 +1,50 @@
 <?php
 
 /**
- * Description of Web
+ * Aquí está la estructura del web y las partes más importantes. La intención es 
+ * llamar a la función web() y pasarle por parámetros lo que queremos añadir en 
+ * el body.
  *
  * @author Primera Fila
  */
 class Web {
     
-    public static function web(){
+    public static function completa(){
         
         echo '
         <!DOCTYPE html>
         <html lang="es">
         <head>
-            <title>Eon Lux Antiques</title>
+            <title> Eon Lux Antiques </title>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link href="css/style.css" rel="stylesheet">
-            <link rel="stylesheet" href="css/bootstrap.min.css">
+            <link rel="stylesheet" href="VISTA/css/estilo_logo.css">
+            <link rel="stylesheet" href="VISTA/css/bootstrap.min.css">
         </head>
         <body>' ;
-        
-        echo "Prueba" ;
 
         self::header() ;
-        self::about() ;
+        self::barraNavegacion() ;
+        
         self::footer() ;
 
         echo '
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="VISTA/js/popper.min.js"></script>
+        <script src="VISTA/js/bootstrap.bundle.min.js"></script>
         </body>
     
         </html>' ;
     }
-
+    
+    
+    
+    /**
+     * Pinta el código html del header. Hay que incluirlo en el body.
+     */
     public static function header(){
 
         echo '
+            <header>
             <div class="row align-items-center">
                 <!-- Icono de menú visible solo en xs -->
                 <div class="navbar navbar-expand-sm navbar-light">
@@ -49,7 +56,7 @@ class Web {
                 <!-- Logo centrado en todas las pantallas -->
                 <div class="col-xl-6 col-md-6 col-5 ms-4 ms-xl-5 text-end">
                     <a href="#" class="navbar-brand">
-                        <img src="img/logo_transparente2.png" alt="Logo" class="img-fluid">
+                        <img src="VISTA/img/logo_transparente2.png" alt="Logo" class="img-fluid">
                     </a>
                 </div>
 
@@ -86,9 +93,53 @@ class Web {
                     </div>
                 </div>
             </div>
+            </header>
         ';
     }
 
+    
+    /**
+     * Pinta el código html del footer. Hay que incluirlo en el body.
+     */
+    public static function footer(){
+
+        echo '
+        <footer class="footer">
+            <div class="container-fluid mt-5 bg-light">
+                <div class="row align-items-center text-center">
+                <div class="col-4 col-md-4">
+                    <h4>Política de Cookies</h4>
+                    <p>Información sobre el uso de cookies en nuestro sitio.</p>
+                    <a id="cookies" href="PoliticaDeCookies.html" target="_blank">Más información</a>
+                </div>
+                <div class="col-4 col-md-4">
+                    <h4>Redes Sociales</h4>
+                    <div class="social-icons">
+                        <a href="#" class="fab fa-instagram" text-decoration:none></a>
+                        <a href="#" class="fab fa-facebook"></a>
+                        <a href="#" class="fab fa-twitter"></a>              
+                    </div>
+                </div>
+                <div class="col-4 col-md-4">
+                    <h4>Derechos de Autor</h4>
+                    <p>&copy; 2023 Eon Lux Antiques. Todos los derechos reservados.</p>
+                </div>
+                </div>
+            </div>        
+        </footer>
+        ';
+    }
+    
+    
+    // --------------------------------------------------------------
+    // --------------------- OTRAS PARTES ---------------------------
+    // --------------------------------------------------------------
+    
+    
+    
+    /**
+     * Pinta el código html del about. Hay que incluirlo en el body.
+     */
     public static function about(){
 
         echo '
@@ -151,33 +202,41 @@ class Web {
         
         ';
     }
-
-    public static function footer(){
-
-        echo '
-        <footer class="footer">
-            <div class="container-fluid mt-5 bg-light">
-                <div class="row align-items-center text-center">
-                <div class="col-4 col-md-4">
-                    <h4>Política de Cookies</h4>
-                    <p>Información sobre el uso de cookies en nuestro sitio.</p>
-                    <a id="cookies" href="PoliticaDeCookies.html" target="_blank">Más información</a>
-                </div>
-                <div class="col-4 col-md-4">
-                    <h4>Redes Sociales</h4>
-                    <div class="social-icons">
-                        <a href="#" class="fab fa-instagram" text-decoration:none></a>
-                        <a href="#" class="fab fa-facebook"></a>
-                        <a href="#" class="fab fa-twitter"></a>              
+    
+    
+    
+    public static function barraNavegacion(){
+        
+        echo'
+            <nav class="navbar navbar-expand-sm navbar-light bg-light ">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbarMenu">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Inicio</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav me-5">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Tienda
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="#navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Producto 1</a></li>
+                                    <li><a class="dropdown-item" href="#">Producto 2</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav me-xl-3">
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html" target="_blank">Sobre Nosotros</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-4 col-md-4">
-                    <h4>Derechos de Autor</h4>
-                    <p>&copy; 2023 Eon Lux Antiques. Todos los derechos reservados.</p>
-                </div>
-                </div>
-            </div>        
-        </footer>
-        ';
+            </nav>' ;
     }
+    
+    
 }
