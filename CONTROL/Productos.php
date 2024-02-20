@@ -41,7 +41,7 @@ class Producto implements JSONSerializable{
     public function jsonSerialize(): mixed {
         return [
             'nombre' => $this->nombre,
-            'precio' => $this->precio
+            'precio' => $this->precio,
             'img' => $this->img
         ];
         
