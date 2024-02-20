@@ -6,7 +6,7 @@ class BBDD {
     private  static $password;
     private  static $basededatos;
 
-    public  function __construct($hostname="localhost", $usuario="admin", $password="admin", $basededatos="EonLuxAntiques") {
+    public  function __construct($hostname="localhost", $usuario="admin", $password="administrador", $basededatos="EonLuxAntiques") {
         self::$hostname = $hostname;
         self::$usuario = $usuario;
         self::$password = $password;
@@ -15,7 +15,7 @@ class BBDD {
 
     public static function conectar()
     {
-        return new mysqli("localhost", "admin", "admin", "productos");
+        return new mysqli("localhost", "admin", "administrador", "productos");
     }
 }
 
