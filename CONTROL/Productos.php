@@ -7,7 +7,9 @@ class Producto implements JSONSerializable{
     private $img;
 
     public function __construct($nombre, $precio, $img){
-
+        $this->nombre = $nombre;
+        $this->precio = $precio;
+        $this->img = $img;
     }
 
     /*
