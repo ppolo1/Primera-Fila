@@ -5,11 +5,11 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 /**
- * Description of Modelo
+ * Description of Controlador
  *
  * @author Primera Fila
  */
-class Modelo {
+class Controlador {
     
     
 }

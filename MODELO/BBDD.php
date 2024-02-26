@@ -1,22 +1,22 @@
 <?php
+
 class BBDD {
-    //put your code here
-    private  static $hostname;
-    private  static $usuario;
-    private  static $password;
-    private  static $basededatos;
 
-    public  function __construct($hostname="localhost", $usuario="admin", $password="administrador", $basededatos="eonluxantiques") {
-        self::$hostname = $hostname;
-        self::$usuario = $usuario;
-        self::$password = $password;
-        self::$basededatos = $basededatos;
+    public static function conectar() {
+        $datosconexion = self::sacarDatosJson();
+        try{
+           $connection = new PDO("mysql:host=$datosconexion[server];dbname=$datosconexion[dbname]",$datosconexion["user"],$datosconexion["password"]);
+           $connection->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+           return $connection;
+       } catch(PDOException $e){
+           die("ERROR: ".$e->getMessage());
+       }
     }
 
-    public static function conectar()
-    {
-        return new mysqli("localhost", "admin", "administrador", "productos");
+    public static function sacarDatosJson() {
+        $direccion = dirname(__FILE__);
+        $jsondata = file_get_contents($direccion . "/" . "config.json");
+        return json_decode($jsondata, true);
     }
+
 }
-
-?>
