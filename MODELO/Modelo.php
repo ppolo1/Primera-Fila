@@ -126,17 +126,17 @@ class Modelo {
          
         $conexion = BBDD::conectar();
         
-        $sql = $conexion->prepare("DELETE FROM productos WHERE Id_Producto = :id") ;
+        $sql = $conexion->prepare("DELETE FROM productos WHERE id_producto = :id") ;
         
         $sql->bindParam(':id', $id, PDO::PARAM_STR);  
         
         if ($sql->execute()) {
             
-            
-                header('HTTP/1.1 200 Producto eliminado');
-                return 1;
-            }
+            header('HTTP/1.1 200 Producto eliminado');
+            return 1;
+        }
          else {
+             
             header('HTTP/1.1 404 Error con sentencia');
             return -1;
         }
