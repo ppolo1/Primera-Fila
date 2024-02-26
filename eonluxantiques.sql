@@ -311,7 +311,7 @@ INSERT INTO `pais` (`nombre`) VALUES
 --
 
 CREATE TABLE `prefijo` (
-  `prefijo` varchar(4) NOT NULL
+  `prefijo` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
