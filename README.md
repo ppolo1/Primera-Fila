@@ -1,3 +1,3 @@
 LISTA DE TAREAS
 
-[] Prueba 
+[ ] Sincronizar el prefijo con el país.
