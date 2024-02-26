@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-02-2024 a las 09:39:17
+-- Tiempo de generación: 26-02-2024 a las 10:37:49
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -317,6 +317,20 @@ CREATE TABLE `prefijo` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `productos`
+--
+
+CREATE TABLE `productos` (
+  `Id_Producto` int(11) NOT NULL,
+  `Nombre` varchar(50) NOT NULL,
+  `Descripcion` varchar(100) NOT NULL,
+  `Precio` double NOT NULL,
+  `Imagen` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuario`
 --
 
@@ -358,6 +372,12 @@ ALTER TABLE `pais`
 --
 ALTER TABLE `prefijo`
   ADD PRIMARY KEY (`Prefijo`);
+
+--
+-- Indices de la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD PRIMARY KEY (`Id_Producto`);
 
 --
 -- Indices de la tabla `usuario`
