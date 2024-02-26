@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-02-2024 a las 10:37:49
+-- Tiempo de generación: 26-02-2024 a las 12:27:40
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -325,7 +325,8 @@ CREATE TABLE `productos` (
   `Nombre` varchar(50) NOT NULL,
   `Descripcion` varchar(100) NOT NULL,
   `Precio` double NOT NULL,
-  `Imagen` varchar(50) NOT NULL
+  `Imagen` varchar(50) NOT NULL,
+  `Stock` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -385,6 +386,16 @@ ALTER TABLE `productos`
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`Email`),
   ADD KEY `Email` (`Email`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `productos`
+--
+ALTER TABLE `productos`
+  MODIFY `Id_Producto` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
