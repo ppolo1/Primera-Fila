@@ -15,14 +15,16 @@ class Productos {
     private $descripcion ;
     private $precio ;
     private $imagen ;
+    private $stock ;
     
-    public function __construct($nombre, $descripcion, $precio, $imagen, $idProducto = null) 
+    public function __construct($nombre, $descripcion, $precio, $imagen, $stock, $idProducto = null) 
     {
         $this->idProducto = $idProducto;
         $this->nombre = $nombre;
         $this->descripcion = $descripcion;
         $this->precio = $precio;
         $this->imagen = $imagen;
+        $this->stock = $stock;
     }
 
     
@@ -66,7 +68,15 @@ class Productos {
         $this->imagen = $imagen;
     }
 
+    public function getStock() {
+        return $this->stock;
+    }
 
+    public function setStock($stock): void {
+        $this->stock = $stock;
+    }
+
+    
     public function jsonSerialize(){
    
         return [
@@ -74,7 +84,8 @@ class Productos {
             'Descripcion' => $this->descripcion,
             'Precio' => $this->precio,
             'Imagen' => $this->imagen,
-            'Id' => $this-> idProducto
+            'Id' => $this-> idProducto,
+            'Stock' => $this-> stock
         ];        
     
     }

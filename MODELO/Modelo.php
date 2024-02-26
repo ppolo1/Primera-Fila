@@ -11,7 +11,7 @@ error_reporting(E_ALL);
  */
 class Modelo {
     
-    // Métodos para SACAR los datos de la BBDD (CONSULTAS)
+    // Métodos para SACAR los datos de la BBDD (SELECT)
     
     /**
      * Método que devuelve una array con los CLIENTES de la BBDD.
@@ -110,5 +110,34 @@ class Modelo {
         }
 
         return null;
+    }
+    
+    
+    // Métodos para ELIMINAR los datos de la BBDD (DELETE)
+    
+    
+    /**
+     * Método que elimina un producto concreto de la BBDD.
+     * 
+     * @param type $id Id del producto
+     * @return null No devuelve nada (null) si no se ha hecho la conexión.
+     */
+     public static function eliminarProductos($id) {
+        $conexion = BBDD::conectar();
+        $sql = "DELETE * FROM productos WHERE id=:id";
+        $sql->bindParam(':id', $id, PDO::PARAM_STR);  
+        
+        if ($sql->execute()) {
+            $result = $sql->fetch(PDO::FETCH_ASSOC);
+            if ($result) {
+                header('HTTP/1.1 200 Producto eliminado');
+                return $result;
+            }
+        } else {
+            header('HTTP/1.1 404 Error con sentencia');
+            return -1;
+        }
+        
+        return null ;
     }
 }
