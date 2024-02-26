@@ -37,7 +37,7 @@ CREATE TABLE `cliente` (
   `direccion` varchar(100) NOT NULL,
   `pais` varchar(60) NOT NULL,
   `telefono` int(9) DEFAULT NULL,
-  `prefijo` varchar(4) DEFAULT NULL,
+  `prefijo` varchar(10) DEFAULT NULL,
   `email` varchar(50) NOT NULL,
   `contrasena` varchar(15) NOT NULL,
   `notis` tinyint(1) NOT NULL,
