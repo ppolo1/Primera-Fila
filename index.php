@@ -18,5 +18,5 @@ require_once './CONTROL/Clientes.php';
 
 //echo "Hola, esto es una prueba" ;
 
-Modelo::eliminarProductos(1) ;
+var_dump(Modelo::consultarPrefijos()) ;
 
