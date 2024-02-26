@@ -123,17 +123,20 @@ class Modelo {
      * @return null No devuelve nada (null) si no se ha hecho la conexión.
      */
      public static function eliminarProductos($id) {
+         
         $conexion = BBDD::conectar();
-        $sql = "DELETE * FROM productos WHERE id=:id";
+        
+        $sql = $conexion->prepare("DELETE FROM productos WHERE Id_Producto = :id") ;
+        
         $sql->bindParam(':id', $id, PDO::PARAM_STR);  
         
         if ($sql->execute()) {
-            $result = $sql->fetch(PDO::FETCH_ASSOC);
-            if ($result) {
+            
+            
                 header('HTTP/1.1 200 Producto eliminado');
-                return $result;
+                return 1;
             }
-        } else {
+         else {
             header('HTTP/1.1 404 Error con sentencia');
             return -1;
         }
