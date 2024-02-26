@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-02-2024 a las 12:27:40
+-- Tiempo de generación: 26-02-2024 a las 12:52:43
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -28,20 +28,20 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `cliente` (
-  `Nombre` varchar(50) NOT NULL,
-  `Apellido_1` varchar(50) NOT NULL,
-  `Apellido_2` varchar(50) NOT NULL,
-  `DNI` varchar(9) NOT NULL,
-  `Sexo` varchar(6) DEFAULT NULL,
-  `Fecha_Nac` date DEFAULT NULL,
-  `Direccion` varchar(100) NOT NULL,
-  `Pais` varchar(60) NOT NULL,
-  `Telefono` int(9) DEFAULT NULL,
-  `Prefijo` varchar(4) DEFAULT NULL,
-  `Email` varchar(50) NOT NULL,
-  `Contrasena` varchar(15) NOT NULL,
-  `Notis` tinyint(1) NOT NULL,
-  `Revista` tinyint(1) NOT NULL
+  `nombre` varchar(50) NOT NULL,
+  `apellido_1` varchar(50) NOT NULL,
+  `apellido_2` varchar(50) NOT NULL,
+  `dni` varchar(9) NOT NULL,
+  `genero` varchar(6) DEFAULT NULL,
+  `fecha_nac` date DEFAULT NULL,
+  `direccion` varchar(100) NOT NULL,
+  `pais` varchar(60) NOT NULL,
+  `telefono` int(9) DEFAULT NULL,
+  `prefijo` varchar(4) DEFAULT NULL,
+  `email` varchar(50) NOT NULL,
+  `contrasena` varchar(15) NOT NULL,
+  `notis` tinyint(1) NOT NULL,
+  `revista` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -51,7 +51,7 @@ CREATE TABLE `cliente` (
 --
 
 CREATE TABLE `genero` (
-  `Tipo` varchar(6) NOT NULL
+  `tipo` varchar(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -61,14 +61,14 @@ CREATE TABLE `genero` (
 --
 
 CREATE TABLE `pais` (
-  `Nombre` varchar(60) NOT NULL
+  `nombre` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `pais`
 --
 
-INSERT INTO `pais` (`Nombre`) VALUES
+INSERT INTO `pais` (`nombre`) VALUES
 ('Afganistán'),
 ('Albania'),
 ('Alemania'),
@@ -311,7 +311,7 @@ INSERT INTO `pais` (`Nombre`) VALUES
 --
 
 CREATE TABLE `prefijo` (
-  `Prefijo` varchar(4) NOT NULL
+  `prefijo` varchar(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -321,12 +321,12 @@ CREATE TABLE `prefijo` (
 --
 
 CREATE TABLE `productos` (
-  `Id_Producto` int(11) NOT NULL,
-  `Nombre` varchar(50) NOT NULL,
-  `Descripcion` varchar(100) NOT NULL,
-  `Precio` double NOT NULL,
-  `Imagen` varchar(50) NOT NULL,
-  `Stock` tinyint(1) NOT NULL
+  `id_producto` int(11) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `descripcion` varchar(100) NOT NULL,
+  `precio` double NOT NULL,
+  `imagen` varchar(50) NOT NULL,
+  `stock` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -336,9 +336,9 @@ CREATE TABLE `productos` (
 --
 
 CREATE TABLE `usuario` (
-  `Id_Usuario` int(11) NOT NULL,
-  `Email` varchar(50) NOT NULL,
-  `Contrasena` varchar(15) NOT NULL
+  `id_usuario` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `contrasena` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -349,43 +349,43 @@ CREATE TABLE `usuario` (
 -- Indices de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`DNI`),
-  ADD KEY `Sexo_FK` (`Sexo`),
-  ADD KEY `Pais_FK` (`Pais`),
-  ADD KEY `Prefijo_FK` (`Prefijo`),
-  ADD KEY `Email_FK` (`Email`),
-  ADD KEY `Contrasena_FK` (`Contrasena`);
+  ADD PRIMARY KEY (`dni`),
+  ADD KEY `Sexo_FK` (`genero`),
+  ADD KEY `Pais_FK` (`pais`),
+  ADD KEY `Prefijo_FK` (`prefijo`),
+  ADD KEY `Email_FK` (`email`),
+  ADD KEY `Contrasena_FK` (`contrasena`);
 
 --
 -- Indices de la tabla `genero`
 --
 ALTER TABLE `genero`
-  ADD PRIMARY KEY (`Tipo`);
+  ADD PRIMARY KEY (`tipo`);
 
 --
 -- Indices de la tabla `pais`
 --
 ALTER TABLE `pais`
-  ADD PRIMARY KEY (`Nombre`);
+  ADD PRIMARY KEY (`nombre`);
 
 --
 -- Indices de la tabla `prefijo`
 --
 ALTER TABLE `prefijo`
-  ADD PRIMARY KEY (`Prefijo`);
+  ADD PRIMARY KEY (`prefijo`);
 
 --
 -- Indices de la tabla `productos`
 --
 ALTER TABLE `productos`
-  ADD PRIMARY KEY (`Id_Producto`);
+  ADD PRIMARY KEY (`id_producto`);
 
 --
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`Email`),
-  ADD KEY `Email` (`Email`);
+  ADD PRIMARY KEY (`email`),
+  ADD KEY `Email` (`email`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -395,7 +395,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `Id_Producto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas
@@ -409,7 +409,7 @@ ALTER TABLE `cliente`
   ADD CONSTRAINT `Email_FK` FOREIGN KEY (`Email`) REFERENCES `usuario` (`Email`),
   ADD CONSTRAINT `Pais_FK` FOREIGN KEY (`Pais`) REFERENCES `pais` (`Nombre`),
   ADD CONSTRAINT `Prefijo_FK` FOREIGN KEY (`Prefijo`) REFERENCES `prefijo` (`Prefijo`),
-  ADD CONSTRAINT `Sexo_FK` FOREIGN KEY (`Sexo`) REFERENCES `genero` (`Tipo`);
+  ADD CONSTRAINT `Sexo_FK` FOREIGN KEY (`genero`) REFERENCES `genero` (`Tipo`);
 
 --
 -- Filtros para la tabla `usuario`
