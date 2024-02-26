@@ -6,7 +6,7 @@ class BBDD {
     private  static $password;
     private  static $basededatos;
 
-    public  function __construct($hostname="localhost", $usuario="admin", $password="administrador", $basededatos="EonLuxAntiques") {
+    public  function __construct($hostname="localhost", $usuario="admin", $password="administrador", $basededatos="eonluxantiques") {
         self::$hostname = $hostname;
         self::$usuario = $usuario;
         self::$password = $password;
