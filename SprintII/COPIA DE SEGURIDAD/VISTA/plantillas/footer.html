@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+    <title>Header Responsivo</title>
+    <style>
+        /* Eliminar los márgenes por defecto de la barra de navegación y ajustar el padding */
+        .navbar {
+            margin-bottom: 0;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+
+        .navbar-brand img {
+            max-height: 150px;
+            /* Ajusta el tamaño del logo según sea necesario */
+        }
+        .social-icons{
+            font-size: 20px;
+        }
+
+        /* Ajustes para el espacio superior del header */
+        header {
+            padding: 0.5rem 0;
+            /* Reducir el espacio vertical en el header */
+        }
+
+        /* Ajustes para la alineación de los elementos de la barra de navegación */
+        .navbar-nav {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar-nav .nav-item {
+            flex: 1;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+<footer class="footer">
+    <div class="container-fluid mt-5 bg-light">
+      <div class="row align-items-center text-center">
+        <div class="col-4 col-md-4">
+          <h4>Política de Cookies</h4>
+          <p>Información sobre el uso de cookies en nuestro sitio.</p>
+          <a id="cookies" href="PoliticaDeCookies.html">Más información</a>
+        </div>
+        <div class="col-4 col-md-4">
+          <h4>Redes Sociales</h4>
+          <div class="social-icons">
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-facebook"></a>
+            <a href="#" class="fab fa-twitter"></a>                
+          </div>
+        </div>
+        <div class="col-4 col-md-4">
+          <h4>Derechos de Autor</h4>
+          <p>&copy; 2023 Eon Lux Antiques. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+<!--Se enlaza con la librería js que está en la carpeta Local-->
+<script src="../js/popper.min.js"></script><!--Esto es lo nuevo-->
+<script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
