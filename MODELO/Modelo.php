@@ -127,15 +127,40 @@ class Modelo {
 
         // Aquí va el Json (╯°□°）╯︵ ┻━┻
         
-        $sql = $conexion->prepare("INSERT INTO `usuario` (`id_usuario`, `email`, `contrasena`) VALUES (?, ?, ?)") ;
+        $sql = $conexion->prepare("INSERT INTO `cliente` (`nombre`, `apellido_1`, `apellido_2`, `dni`, `genero`, `fecha_nac`, 
+        `direccion`, `pais`, `telefono`, `prefijo`, `email`, `contrasena`, `notis`, `revista`) 
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ") ;
 
-        $id_usuario = "usuarioPrueba" ;
-        $email = "primerafila@infantaelena.com";
-        $contrasena = "1234" ;
+        $nombre = "Pepito" ;
+        $apellido_1 = "Perez" ;
+        $apellido_2 = "Perez" ;
+        $dni = "12345678A" ;
+        $genero = "H" ;
+        $direccion = "Calle Falsa 123" ;
+        $pais = "Espana" ;
+        $fecha_nac = "2000-01-01" ;
+        $telefono = "666666666" ;
+        $prefijo = "34" ;
+        $email = "PepitoPerez@p.com" ;
+        $contrasena = "12345678" ;
+        $notis = true ;
+        $revista = false ;
         
-        $sql->bindParam(1, $id_usuario, PDO::PARAM_STR) ;
-        $sql->bindParam(2, $email, PDO::PARAM_STR) ;
-        $sql->bindParam(3, $contrasena, PDO::PARAM_STR) ;
+        $sql->bindParam(1, $nombre, PDO::PARAM_STR) ;
+        $sql->bindParam(2, $apellido_1, PDO::PARAM_STR) ;
+        $sql->bindParam(3, $apellido_2, PDO::PARAM_STR) ;
+        $sql->bindParam(4, $dni, PDO::PARAM_STR) ;
+        $sql->bindParam(5, $genero, PDO::PARAM_STR) ;
+        $sql->bindParam(6, $fecha_nac, PDO::PARAM_STR) ;
+        $sql->bindParam(7, $direccion, PDO::PARAM_STR) ;
+        $sql->bindParam(8, $pais, PDO::PARAM_STR) ;
+        $sql->bindParam(9, $telefono, PDO::PARAM_STR) ;
+        $sql->bindParam(10, $prefijo, PDO::PARAM_STR) ;
+        $sql->bindParam(11, $email, PDO::PARAM_STR) ;
+        $sql->bindParam(12, $contrasena, PDO::PARAM_STR) ;
+        $sql->bindParam(13, $notis, PDO::PARAM_BOOL) ;
+        $sql->bindParam(14, $revista, PDO::PARAM_BOOL) ;
+
         
         if ($sql->execute()) {
             
