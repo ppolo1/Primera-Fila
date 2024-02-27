@@ -16,7 +16,9 @@ require_once './CONTROL/Clientes.php';
 //Web::completa() ;
 
 
-echo "Hola, esto es una prueba" ;
+//echo "Hola, esto es una prueba" ;
 
 // var_dump(Modelo::consultarProductos()) ;
+
+Modelo::aniadirProducto() ;
 

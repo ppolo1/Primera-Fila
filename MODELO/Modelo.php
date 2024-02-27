@@ -176,6 +176,44 @@ class Modelo {
         return null ;
     }
     
+    // --------------------- PARA PRUEBAS ------------------------------
+    
+     public static function aniadirProducto() { // ¿DEBERÍA RECIBIR ALGÚN PARÁMETRO? El JSON o un objeto de tipo Cliente
+         
+        $conexion = BBDD::conectar();
+
+        // Aquí va el Json (╯°□°）╯︵ ┻━┻
+        
+        $sql = $conexion->prepare("INSERT INTO `productos` (`nombre`, `descripcion`, `precio`, `imagen`, `stock`) 
+        VALUES (?, ?, ?, ?, ?) ") ;
+
+        $nombre = "Android" ;
+        $descripcion = "Barato" ;
+        $precio = 500 ;
+        $imagen = "Motorola.jpg" ;
+        $stock = false ;
+        
+        $sql->bindParam(1, $nombre, PDO::PARAM_STR) ;
+        $sql->bindParam(2, $descripcion, PDO::PARAM_STR) ;
+        $sql->bindParam(3, $precio, PDO::PARAM_STR) ;
+        $sql->bindParam(4, $imagen, PDO::PARAM_STR) ;
+        $sql->bindParam(5, $stock, PDO::PARAM_BOOL) ;
+
+        
+        if ($sql->execute()) {
+            
+            header('HTTP/1.1 200 Producto añadido');
+            return 1;
+        }
+         else {
+             
+            header('HTTP/1.1 404 Error con sentencia');
+            return -1;
+        }
+        
+        return null ;
+    }
+    
     // Métodos para ELIMINAR los datos de la BBDD (DELETE)
     
     
