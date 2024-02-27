@@ -178,20 +178,20 @@ class Modelo {
     
     // --------------------- PARA PRUEBAS ------------------------------
     
-     public static function aniadirProducto() { // ¿DEBERÍA RECIBIR ALGÚN PARÁMETRO? El JSON o un objeto de tipo Cliente
+     public static function aniadirProducto($json) { 
          
-        $conexion = BBDD::conectar();
-
-        // Aquí va el Json (╯°□°）╯︵ ┻━┻
+         $array = json_decode($json, true) ;
+         
+        $conexion = BBDD::conectar() ;
         
         $sql = $conexion->prepare("INSERT INTO `productos` (`nombre`, `descripcion`, `precio`, `imagen`, `stock`) 
         VALUES (?, ?, ?, ?, ?) ") ;
 
-        $nombre = "Android" ;
-        $descripcion = "Barato" ;
-        $precio = 500 ;
-        $imagen = "Motorola.jpg" ;
-        $stock = false ;
+        $nombre = $array['nombre'] ;
+        $descripcion = $array['descripcion'] ;
+        $precio = $array['precio'] ;
+        $imagen = $array['imagen'] ;
+        $stock = $array['stock'] ;
         
         $sql->bindParam(1, $nombre, PDO::PARAM_STR) ;
         $sql->bindParam(2, $descripcion, PDO::PARAM_STR) ;

@@ -1,0 +1,7 @@
+{
+    "nombre": "iPhone",
+    "descripcion": "caro de cojones",
+    "precio": 5,
+    "imagen": "iPhone.jpg",
+    "stock": true
+}
