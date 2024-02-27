@@ -70,7 +70,7 @@ class Modelo {
      */
      public static function consultarPaises() {
         $conexion = BBDD::conectar();
-        $sql = "SELECT * FROM pais";
+        $sql = "SELECT nombre FROM pais";
         $sql = $conexion->prepare($sql);
 
         if ($sql->execute()) {
@@ -95,7 +95,7 @@ class Modelo {
      */
      public static function consultarPrefijos() {
         $conexion = BBDD::conectar();
-        $sql = "SELECT * FROM prefijo";
+        $sql = "SELECT prefijo FROM pais";
         $sql = $conexion->prepare($sql);
 
         if ($sql->execute()) {
@@ -112,6 +112,44 @@ class Modelo {
         return null;
     }
     
+    
+    // Métodos para INSERTAR los datos de la BBDD (INSERT)
+
+
+     /**
+     * Método que añade un CLIENTE a la BBDD.
+     * 
+     * @return null No devuelve nada (null) si no se ha hecho la conexión.
+     */
+    public static function aniadirCliente() { // ¿DEBERÍA RECIBIR ALGÚN PARÁMETRO? El JSON o un objeto de tipo Cliente
+         
+        $conexion = BBDD::conectar();
+
+        // Aquí va el Json (╯°□°）╯︵ ┻━┻
+        
+        $sql = $conexion->prepare("INSERT INTO `usuario` (`id_usuario`, `email`, `contrasena`) VALUES (?, ?, ?)") ;
+
+        $id_usuario = "usuarioPrueba" ;
+        $email = "primerafila@infantaelena.com";
+        $contrasena = "1234" ;
+        
+        $sql->bindParam(1, $id_usuario, PDO::PARAM_STR) ;
+        $sql->bindParam(2, $email, PDO::PARAM_STR) ;
+        $sql->bindParam(3, $contrasena, PDO::PARAM_STR) ;
+        
+        if ($sql->execute()) {
+            
+            header('HTTP/1.1 200 Cliente añadido');
+            return 1;
+        }
+         else {
+             
+            header('HTTP/1.1 404 Error con sentencia');
+            return -1;
+        }
+        
+        return null ;
+    }
     
     // Métodos para ELIMINAR los datos de la BBDD (DELETE)
     
