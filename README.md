@@ -1,5 +1,1 @@
-LISTA DE TAREAS
-
-[ ] Sincronizar el prefijo con el país.
-[ ] Controlar stock. Si el stock es 0, eliminar el producto.
-[ ] Insertar en la BBDD los prefijos -- Pensamos que se puede unificar prefijos y países.
+Hay dos documentos que sirven de lista de tareas, uno para la parte CLIENTE y otro para la parte SERVIDOR.
