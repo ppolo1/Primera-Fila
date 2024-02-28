@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-02-2024 a las 20:09:33
+-- Tiempo de generación: 28-02-2024 a las 20:44:36
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -43,6 +43,15 @@ CREATE TABLE `cliente` (
   `subscripcion` tinyint(1) NOT NULL,
   `imagen` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Disparadores `cliente`
+--
+DELIMITER $$
+CREATE TRIGGER `copiar_datos` AFTER INSERT ON `cliente` FOR EACH ROW INSERT INTO usuario(email, contrasena) 
+VALUES (new.email, new.contrasena)
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -411,7 +420,3 @@ ALTER TABLE `usuario`
 ALTER TABLE `usuario`
   ADD CONSTRAINT `Contrasena_FK` FOREIGN KEY (`contrasena`) REFERENCES `cliente` (`contrasena`);
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
