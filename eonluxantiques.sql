@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-02-2024 a las 19:42:01
+-- Tiempo de generación: 28-02-2024 a las 20:09:33
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -31,6 +31,7 @@ CREATE TABLE `cliente` (
   `nombre` varchar(50) NOT NULL,
   `apellido_1` varchar(50) NOT NULL,
   `apellido_2` varchar(50) NOT NULL,
+  `contrasena` varchar(15) NOT NULL,
   `dni` varchar(9) NOT NULL,
   `genero` varchar(6) DEFAULT NULL,
   `fecha_nac` date DEFAULT NULL,
@@ -39,7 +40,6 @@ CREATE TABLE `cliente` (
   `telefono` int(9) DEFAULT NULL,
   `prefijo` varchar(10) DEFAULT NULL,
   `email` varchar(50) NOT NULL,
-  `contrasena` varchar(15) NOT NULL,
   `subscripcion` tinyint(1) NOT NULL,
   `imagen` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -355,8 +355,8 @@ ALTER TABLE `cliente`
   ADD PRIMARY KEY (`dni`),
   ADD KEY `Sexo_FK` (`genero`),
   ADD KEY `Email_FK` (`email`),
-  ADD KEY `Contrasena_FK` (`contrasena`),
-  ADD KEY `Pais_Fk` (`pais`);
+  ADD KEY `Pais_Fk` (`pais`),
+  ADD KEY `contrasena` (`contrasena`);
 
 --
 -- Indices de la tabla `genero`
@@ -382,7 +382,8 @@ ALTER TABLE `productos`
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`email`),
   ADD UNIQUE KEY `id_usuario` (`id_usuario`),
-  ADD KEY `Email` (`email`);
+  ADD KEY `Email` (`email`),
+  ADD KEY `Contrasena_FK` (`contrasena`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -405,16 +406,10 @@ ALTER TABLE `usuario`
 --
 
 --
--- Filtros para la tabla `cliente`
---
-ALTER TABLE `cliente`
-  ADD CONSTRAINT `Pais_Fk` FOREIGN KEY (`pais`) REFERENCES `paises` (`nombre`);
-
---
 -- Filtros para la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD CONSTRAINT `Mail_FK` FOREIGN KEY (`email`) REFERENCES `cliente` (`email`);
+  ADD CONSTRAINT `Contrasena_FK` FOREIGN KEY (`contrasena`) REFERENCES `cliente` (`contrasena`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
