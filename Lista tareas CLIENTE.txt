@@ -1,0 +1,85 @@
+------------ CAMBIOS QUE REQUIERE ATENCIÓN ------------------
+
+CABECERA
+
+- Hover del carrito -> se activa poniendo el ratón fuera del icono (encima del "sobre nosotros" en versión escritorio)
+
+BARRA DE NAVEGACIÓN
+
+- Expandir desplegables -> no aprovechan el tamaño del elemento padre
+
+
+FOOTER
+
+- Hay más de un footer
+
+
+TIENDA
+
+- Tamaño imágenes -> no hay uniformidad de tamños
+- Selector de producto -> se pueden añadir infinitamente
+
+
+CARRITO
+
+- Botón eliminación (Sprint 2.1)
+- Array de objetos que devuelve el carrito (Sprint 2.1)
+- Barra de búsqueda (Sprint 2.2)
+- El formato del total (dinero) puede dar lugar a confusión cuando las cantidades son grandes
+- No hay botón de compra
+- Paginación (Sprint 2.2)
+
+
+REGISTRO
+
+- Botón de volver -> si el usuario se equivoca y accede a registro teniendo cuenta, no puede volver al login. Tiene que cerrar la ventana y volver a acceder a través del icono
+- El formulario no concuerda con el diseño de la BBDD
+
+		FORMULARIO ACTUAL Y CAMBIOS A REALIZAR
+
+		* Nombre de usuario -> desaparece
+		* Nombre -> se queda
+		* Apellidos -> se divide en dos: Apellido1, Apellido2
+		* E-mail -> se queda
+		* Contraseña (+ repetir) -> se queda
+		* Avatar -> se añade
+		* Suscripción -> se fusiona
+
+		VISTA PREVIA TRAS LOS CAMBIOS (el orden no es determinante)
+
+		* Nombre
+		* Apellido 1
+		* Apellido 2
+		* E-mail
+		* Contraseña
+		* Avatar
+		* Fecha de nacimiento
+		* Género
+		* DNI
+		* Dirección
+		* País
+		* Teléfono
+		* Prefijo
+		* Suscripción
+
+
+-------------------- CAMBIOS MENORES -------------------------
+
+CABECERA
+
+- Logo -> cambiar link por div (tiene que llevar al home)
+
+
+TIENDA
+
+- Botones -> el diseño puede parecerse al de la landing
+
+
+CARRITO
+
+- Formato salida -> # al otro lado. Si no hay decimales que salga sin el ".00"
+
+
+REGISTRO
+
+- Cambiar botón resgistro -> su posición está al mismo nivel que el de enviar y tienen misma apariencia, pudiendo dar lugar a toques accidentales

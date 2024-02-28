@@ -1,0 +1,10 @@
+--------------------- LISTA DE TAREAS -------------------------
+
+BBDD
+
+[ ] Sincronizar el prefijo con el país.
+[ ] Insertar en la BBDD los prefijos -- Pensamos que se puede unificar prefijos y países.
+
+PHP
+
+[ ] Controlar stock. Si el stock es 0, eliminar el producto.
