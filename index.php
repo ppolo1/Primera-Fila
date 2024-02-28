@@ -20,8 +20,10 @@ require_once './CONTROL/Clientes.php';
 
 // var_dump(Modelo::consultarProductos()) ;
 
- $direccion = dirname(__FILE__);
-$jsondata = file_get_contents($direccion . "/MODELO/" . "producto.json");
+// $direccion = dirname(__FILE__);
+//$jsondata = file_get_contents($direccion . "/MODELO/" . "producto.json");
 
-Modelo::aniadirProducto($jsondata) ;
+//Modelo::aniadirProducto($jsondata) ;
+
+Modelo::aniadirCliente() ;
 

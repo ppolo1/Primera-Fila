@@ -127,8 +127,8 @@ class Modelo {
 
         // Aquí va el Json (╯°□°）╯︵ ┻━┻
         
-        $sql = $conexion->prepare("INSERT INTO `cliente` (`nombre`, `apellido_1`, `apellido_2`, `dni`, `genero`, `fecha_nac`, 
-        `direccion`, `pais`, `telefono`, `prefijo`, `email`, `contrasena`, `notis`, `revista`) 
+        $sql = $conexion->prepare("INSERT INTO `cliente` (`nombre`, `apellido_1`, `apellido_2`, `contrasena`, `dni`, `genero`, 
+        `fecha_nac`, `direccion`, `pais`, `telefono`, `prefijo`, `email`, `subscripcion`, `imagen`) 
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ") ;
 
         $nombre = "Pepito" ;
@@ -143,23 +143,23 @@ class Modelo {
         $prefijo = "34" ;
         $email = "PepitoPerez@p.com" ;
         $contrasena = "12345678" ;
-        $notis = true ;
-        $revista = false ;
+        $subscripcion = false ;
+        $imagen = "Windows/xampp/htdocs/enonluxantiques/VISTA/img/Avatar.png" ;
         
         $sql->bindParam(1, $nombre, PDO::PARAM_STR) ;
         $sql->bindParam(2, $apellido_1, PDO::PARAM_STR) ;
         $sql->bindParam(3, $apellido_2, PDO::PARAM_STR) ;
-        $sql->bindParam(4, $dni, PDO::PARAM_STR) ;
-        $sql->bindParam(5, $genero, PDO::PARAM_STR) ;
-        $sql->bindParam(6, $fecha_nac, PDO::PARAM_STR) ;
-        $sql->bindParam(7, $direccion, PDO::PARAM_STR) ;
-        $sql->bindParam(8, $pais, PDO::PARAM_STR) ;
-        $sql->bindParam(9, $telefono, PDO::PARAM_STR) ;
-        $sql->bindParam(10, $prefijo, PDO::PARAM_STR) ;
-        $sql->bindParam(11, $email, PDO::PARAM_STR) ;
-        $sql->bindParam(12, $contrasena, PDO::PARAM_STR) ;
-        $sql->bindParam(13, $notis, PDO::PARAM_BOOL) ;
-        $sql->bindParam(14, $revista, PDO::PARAM_BOOL) ;
+        $sql->bindParam(4, $contrasena, PDO::PARAM_STR) ;
+        $sql->bindParam(5, $dni, PDO::PARAM_STR) ;
+        $sql->bindParam(6, $genero, PDO::PARAM_STR) ;
+        $sql->bindParam(7, $fecha_nac, PDO::PARAM_STR) ;
+        $sql->bindParam(8, $direccion, PDO::PARAM_STR) ;
+        $sql->bindParam(9, $pais, PDO::PARAM_STR) ;
+        $sql->bindParam(10, $telefono, PDO::PARAM_STR) ;
+        $sql->bindParam(11, $prefijo, PDO::PARAM_STR) ;
+        $sql->bindParam(12, $email, PDO::PARAM_STR) ;
+        $sql->bindParam(13, $subscripcion, PDO::PARAM_BOOL) ;
+        $sql->bindParam(14, $imagen, PDO::PARAM_STR) ;
 
         
         if ($sql->execute()) {
