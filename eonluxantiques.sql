@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-02-2024 a las 19:28:57
+-- Tiempo de generación: 28-02-2024 a las 19:42:01
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -40,8 +40,8 @@ CREATE TABLE `cliente` (
   `prefijo` varchar(10) DEFAULT NULL,
   `email` varchar(50) NOT NULL,
   `contrasena` varchar(15) NOT NULL,
-  `notis` tinyint(1) NOT NULL,
-  `revista` tinyint(1) NOT NULL
+  `subscripcion` tinyint(1) NOT NULL,
+  `imagen` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
