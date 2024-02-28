@@ -134,11 +134,11 @@ class Modelo {
         $nombre = "Pepito" ;
         $apellido_1 = "Perez" ;
         $apellido_2 = "Perez" ;
-        $dni = "12345678A" ;
+        $dni = "53585573A" ;
         $genero = "H" ;
         $direccion = "Calle Falsa 123" ;
         $pais = "Espana" ;
-        $fecha_nac = "2000-01-01" ;
+        $fecha_nac = "28-02-2014" ;
         $telefono = "666666666" ;
         $prefijo = "34" ;
         $email = "PepitoPerez@p.com" ;
