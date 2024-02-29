@@ -83,3 +83,8 @@ CARRITO
 REGISTRO
 
 - Cambiar botón resgistro -> su posición está al mismo nivel que el de enviar y tienen misma apariencia, pudiendo dar lugar a toques accidentales
+
+
+IMÁGENES
+
+- Optimizar las imágenes
