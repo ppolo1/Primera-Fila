@@ -9,6 +9,14 @@
  */
 class Web {
     
+    
+    /**
+     * Método que llamada a la web completa. Hay que pasarle por parámetros 
+     * el contenido.
+     * 
+     * @param type $titulo Título de la web (pestaña navegador)
+     * @param type $metodo Método que pinta el contenido de la web
+     */
     public static function completa($titulo, $metodo) {
         
         echo '
@@ -152,8 +160,7 @@ class Web {
     // --------------------------------------------------------------
     // --------------------- OTRAS PARTES ---------------------------
     // --------------------------------------------------------------
-    
-    
+
     
     /**
      * Pinta el código html del about. Hay que incluirlo en el body.
