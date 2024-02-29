@@ -16,18 +16,18 @@ FOOTER
 
 TIENDA
 
-- Tamaño imágenes -> no hay uniformidad de tamños
+- Tamaño imágenes -> no hay uniformidad de tamaños
 - Selector de producto -> se pueden añadir infinitamente
 
 
 CARRITO
 
-- Botón eliminación (Sprint 2.1)
+- Botón eliminación (Sprint 2.1) [No aclara si la elminación es individual (en un caso real sería lo suyo), por lo que podría valer con el actual botón de "Vaciar carrito". Habría que consultarlo]
 - Array de objetos que devuelve el carrito (Sprint 2.1)
 - Barra de búsqueda (Sprint 2.2)
 - El formato del total (dinero) puede dar lugar a confusión cuando las cantidades son grandes
 - No hay botón de compra
-- Paginación (Sprint 2.2)
+- Paginación (Sprint 2.2) [En el sprint no deja del todo claro si es obligatorio]
 
 
 REGISTRO
