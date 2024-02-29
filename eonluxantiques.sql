@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-02-2024 a las 20:44:36
+-- Tiempo de generación: 29-02-2024 a las 11:58:14
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -389,10 +389,7 @@ ALTER TABLE `productos`
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`email`),
-  ADD UNIQUE KEY `id_usuario` (`id_usuario`),
-  ADD KEY `Email` (`email`),
-  ADD KEY `Contrasena_FK` (`contrasena`);
+  ADD PRIMARY KEY (`id_usuario`) USING BTREE;
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -409,14 +406,8 @@ ALTER TABLE `productos`
 --
 ALTER TABLE `usuario`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `usuario`
---
-ALTER TABLE `usuario`
-  ADD CONSTRAINT `Contrasena_FK` FOREIGN KEY (`contrasena`) REFERENCES `cliente` (`contrasena`);
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
