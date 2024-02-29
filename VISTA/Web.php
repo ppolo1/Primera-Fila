@@ -27,11 +27,12 @@ class Web {
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link href="css/bootstrap.min.css" rel="stylesheet">
-            <link rel="stylesheet" href="style.css">
+            <link href="VISTA/css/bootstrap.min.css" rel="stylesheet">
+            <link rel="stylesheet" href="VISTA/css/style.css">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
                 integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+            <link rel="stylesheet" href="VISTA/css/hojaDeEstilos.css">
 
             <title> ' . $titulo . ' </title>
 
@@ -43,10 +44,18 @@ class Web {
         self::header() ;
         self::barraNavegacion() ;
         self::$metodo() ;
-        self::footer() ;
+        
+        if ($metodo !== "formularioContacto") {
+            
+            self::footer() ;
+        }
+        else
+        {
+            self::footerFormularioContacto() ;
+        }
 
         echo '
-        <script src="javaScript.js"></script>
+        <script src="VISTA/js/javaScript.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
@@ -84,7 +93,7 @@ class Web {
                     </div>
                     <div class="col-xl-5 col-md-6 col-5 ms-xl-4 ms-3 me-xl-5 text-end">
                         <a href="#" class="navbar-brand">
-                            <img src="img/logo_transparente2.png" alt="Logo" class="img-fluid">
+                            <img src="VISTA/img/logo_transparente2.png" alt="Logo" class="img-fluid">
                         </a>
                     </div>
                     <div class="col-xl-4 col-md-4 col-sm-4 col-3 d-flex ms-4 justify-content-end align-items-center cart-container">
@@ -137,7 +146,7 @@ class Web {
                   <a href="#" class="fab fa-facebook"></a>
                   <a href="#" class="fab fa-twitter"></a>                
                 </div>
-                <img class="imagen-producto mt-2" src="img/images.png" alt="Producto 2">
+                <img class="imagen-producto mt-2" src="VISTA/img/images.png" alt="Producto 2">
               </div>
               <div class="col-4 col-md-4">
                 <h5>Derechos de Autor</h5>
@@ -145,6 +154,31 @@ class Web {
               </div>
             </div>
           </footer>' ;
+    }
+    
+    
+    public static function footerFormularioContacto() {
+        
+        echo ''
+        . ' <footer class="container-fluid mt-5 bg-light">
+                <div class="row align-items-center text-center">
+                  <div class="row align-items-center text-center">
+                    <div class="col-4 col-md-4">
+                        <h5>Política de Privacidad</h5>
+                        <p>Información sobre Privacidad en nuestro sitio.</p>
+                        <div class="privacidad">
+                        <a href="politicaPrivacidad.html">Más información</a>
+                    </div>
+                </div>
+                  <div class="col-4 col-md-4">
+                    <img class="imagen-producto mt-2" src="VISTA/img/images.png" alt="Producto 2">
+                  </div>
+                  <div class="col-4 col-md-4">
+                    <h5>Derechos de Autor</h5>
+                    <p>&copy; 2023 Eon Lux Antiques. Todos los derechos reservados.</p>
+                  </div>
+                </div>
+              </footer>' ;
     }
     
     
@@ -287,6 +321,59 @@ class Web {
 
         Este documento de Política de Cookies ha sido creado mediante el generador de plantilla de política de cookies web gratis online el día 19/02/2024.
         ' ;
+    }
+    
+    
+    public static function formularioContacto() {
+        
+        echo ''
+        . ' <main>
+                <div class="container-fluid mt-5">
+                    <div class="row d-flex justify-content-around">
+
+                        <div class="localizacion col-12 col-md-5 col-xl-5 text-center mt-3">
+                            <h1>Localización</h1>
+                            <p>Calle Primavera, 7 <br>
+                                Pueblo Encantado <br>
+                                Provincia de Sueños <br>
+                                Código Postal: 24321 <br>
+                                España</p>
+                            <h2>Número de Contacto</h2>
+                                <p>+34621457895</p> 
+                            <h2>Horario de Atención al Cliente</h2>
+                                <p>10:00 a 14:00 y de 17:00 a 20:00</p> 
+                            <h2> Síganos en Redes Sociales</h2>
+                            <div class="social-icons-contacto">
+                              <a href="#" class="fab fa-instagram"></a>
+                              <a href="#" class="fab fa-facebook"></a>
+                              <a href="#" class="fab fa-twitter"></a>                
+                            </div>
+                          </div>
+
+
+                        <form class="col-12 col-md-5 col-xl-5 mt-3">
+                        <h1 class="localizacion">Formulario de Contacto</h1>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre y Apellidos</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="asunto" class="form-label">Asunto</label>
+                            <input type="text" class="form-control" id="asunto" placeholder="Asunto del mensaje">
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="mensaje" rows="3" placeholder="Escribe tu mensaje aquí"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        </form>
+                    </div>   
+                  </div>
+            </main>' ;
     }
     
 }
