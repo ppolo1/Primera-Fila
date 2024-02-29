@@ -1,4 +1,4 @@
------------- CAMBIOS QUE REQUIERE ATENCIÓN ------------------
+------------ CAMBIOS QUE REQUIEREN ATENCIÓN ------------------
 
 CABECERA
 
