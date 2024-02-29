@@ -13,7 +13,7 @@ require_once './CONTROL/Controlador.php' ;
 require_once './CONTROL/Productos.php' ;
 require_once './CONTROL/Clientes.php';
 
-//Web::completa() ;
+Web::completa("Este es el título", "prueba") ;
 
 
 //echo "Hola, esto es una prueba" ;
@@ -25,5 +25,5 @@ require_once './CONTROL/Clientes.php';
 
 //Modelo::aniadirProducto($jsondata) ;
 
-Modelo::aniadirCliente() ;
+//Modelo::aniadirCliente() ;
 
