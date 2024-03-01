@@ -35,6 +35,50 @@ class Web {
             <link rel="stylesheet" href="VISTA/css/hojaDeEstilos.css">
 
             <title> ' . $titulo . ' </title>
+                
+            <style>
+                .icon-container {
+                  display: flex;
+                  align-items: center;
+                }
+                .rotate {
+                  transform: rotate(180deg);
+                  transition: transform 0.3s ease;
+                }
+                .info {
+                  display: none;
+                }
+                .show-info .info {
+                  display: block;
+                }
+                /* Personalización de estilos para los botones del acordeón */
+              .accordion-button:not(.collapsed) {
+                  background-color: transparent; /* Cambiar el color de fondo cuando está activo */
+                  color: #000; /* Cambiar el color del texto cuando está activo */
+                  border-color: transparent; /* Opcional: eliminar el borde cuando está activo */
+              }
+
+              .accordion-button:not(.collapsed):hover {
+                  background-color: rgba(0, 0, 0, 0.1); /* Cambiar el color de fondo en el hover cuando está activo */
+                  border-color: transparent;
+                }
+
+              .accordion-button.collapsed {
+                  background-color: transparent; /* Cambiar el color de fondo cuando está inactivo */
+                  color: #000; /* Cambiar el color del texto cuando está inactivo */
+                  border-color: transparent; /* Opcional: eliminar el borde cuando está inactivo */
+                  border-color: transparent;
+                }
+
+              .accordion-button.collapsed:hover {
+                  background-color: rgba(0, 0, 0, 0.1); /* Cambiar el color de fondo en el hover cuando está inactivo */
+
+                }
+                footer p,a{
+                  font-size: 14px;
+                }
+
+            </style>
 
 
         </head>
@@ -65,6 +109,7 @@ class Web {
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
         </body>
 
         </html>' ;
@@ -120,6 +165,46 @@ class Web {
                 </div>
             </header>
         ';
+    }
+    
+    public static function barraNavegacion(){
+        
+        echo ''
+        . ' <!-- Barra de navegación debajo del logo y los iconos, visible solo en lg y mayores -->
+            <nav class="navbar navbar-expand-sm navbar-light bg-light">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbarMenu">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="home.html">Inicio</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav me-5">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                                    Tienda
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item smaller-text" href="mueblesTienda.html">Muebles</a></li>
+                                    <li><a class="dropdown-item smaller-text" href="decoracionTienda.html">Decoración</a></li>
+                                    <li><a class="dropdown-item smaller-text" href="arteTienda.html">Arte</a></li>
+                                    <li><a class="dropdown-item smaller-text" href="iluminación.html">Iluminación</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav me-xl-5">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="SobreNosotros.html">Sobre Nosotros</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav me-xl-5">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="contacto.html">Contacto</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>' ;
     }
 
     
@@ -187,112 +272,133 @@ class Web {
     // --------------------------------------------------------------
 
     
-    /**
-     * Pinta el código html del about. Hay que incluirlo en el body.
-     */
-    public static function about(){
-
-        echo '
-
-        <div class="quienes">
-            <h1>¿QUIÉNES SOMOS?</h1>
-            <p>En <b>Eon Lux Antiques</b>, nuestra pasión es preservar la historia y la belleza a través 
-            de objetos atemporales. <br>Somos más que un simple anticuario; 
-            curadores de piezas únicas y asesores apasionados.</p>
-        </div>
+    public static function home() {
         
-        <div id="atencion">
-            <figcaption>
-            <a class="abrir" href="#atencion"><span class="icon-plus"></span></a></br>
-            <a class="cerrar"href="#icon-minus"><span class="icon-minus"></span></a>
-            </figcaption>
-            <h1>Atención Personalizada<br></h1>
-            <p id="atencion"> Cada cliente es especial para nosotros. 
-                No somos una gran cadena de muebles impersonales y en secuencia. Nos tomamos el tiempo 
-                para conocerte, entender tus gustos y necesidades. Tu satisfacción es nuestra prioridad.
-            </p>
-        </div>
-        
-        <div id="productos">
-            <aption>
-            <a class="abrir" href="#productos"><span class="icon-plus"></span></a></br>
-            <a class="cerrar"href="#icon-minus"><span class="icon-minus"></span></a>
-            </aption>
-            <h1>Asesoramiento Personalizado<br></h1>
-            <p id="personalizado"> ¿Buscas algo específico? No te preocupes. 
-            Nuestros expertos están aquí para ayudarte. Si no tenemos lo que necesitas, lo encontraremos
-                para ti. Tu búsqueda es nuestra misión.</p>
-        </div>
-        
-        <div id="trato">
-        <figcaption>
-            <a class="abrir" href="#trato"><span class="icon-plus"></span></a></br>
-            <a class="cerrar"href="#icon-minus"><span class="icon-minus"></span></a>
-        </figcaption>
-            <h1>Trato Preferente<br></h1>
-            <p id="trato"> No importa si eres un coleccionista experimentado o un 
-            amante de las antigüedades por primera vez. Te trataremos con respeto y dedicación. 
-            Tu satisfacción es nuestro éxito.</p>
-        </div>
-        
-        <div id="mundo">
-        <figcaption>
-            <a class="abrir" href="#mundo"><span class="icon-plus"></span></a></br>
-            <a class="cerrar"href="#icon-minus"><span class="icon-minus"></span></a>
-        </figcaption>
-            <h1>Envío a Todo el Mundo<br></h1>
-            <p id="mundo">No importa dónde te encuentres, 
-            llevamos nuestras joyas a tu puerta. Cada pieza se empaqueta con cuidado y se envía con amor.</p>
-        </div>
-        
-            
-            <div id="llamadaAccion"><P>&nbsp &nbsp Únete a una experiencia única. Descubre la magia de lo auténtico y lo excepcional.<br>
-            Bienvenido al mundo Eon Lux Antiques, donde lo único es lo verdaderamente valioso.</p>
+        echo ''
+        . '<main>
+            <div class="slider-frame">
+                <ul>
+                    <li><img src="VISTA/img/antiguedades1.png"></li>
+                    <li><img src="VISTA/img/telefono.jpg"></li>
+                    <li><img src="VISTA/img/estanteria.jpg"></li>
+                    <li><img src="VISTA/img/decoracion.jpg"></li>
+                </ul>
             </div>
-        
-        ';
+        </main>' ;
     }
     
     
-    
-    public static function barraNavegacion(){
-        
+    /**
+     * Pinta el código html del about. Hay que incluirlo en el body.
+     */
+    public static function sobreNosotros(){
+
         echo ''
-        . ' <!-- Barra de navegación debajo del logo y los iconos, visible solo en lg y mayores -->
-            <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        . '<main >
                 <div class="container-fluid">
-                    <div class="collapse navbar-collapse" id="navbarMenu">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="home.html">Inicio</a>
-                            </li>
-                        </ul>
-                        <ul class="navbar-nav me-5">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                                    Tienda
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item smaller-text" href="mueblesTienda.html">Muebles</a></li>
-                                    <li><a class="dropdown-item smaller-text" href="decoracionTienda.html">Decoración</a></li>
-                                    <li><a class="dropdown-item smaller-text" href="arteTienda.html">Arte</a></li>
-                                    <li><a class="dropdown-item smaller-text" href="iluminación.html">Iluminación</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul class="navbar-nav me-xl-5">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="SobreNosotros.html">Sobre Nosotros</a>
-                            </li>
-                        </ul>
-                        <ul class="navbar-nav me-xl-5">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="contacto.html">Contacto</a>
-                            </li>
-                        </ul>
+                    <div class="row align-items-center p-4">  
+                      <div class="col-12 text-center">
+                        <div class="quienes">
+                          <h3>¿QUIÉNES SOMOS?</h3>
+                          <p>En <b>Eon Lux Antiques</b>, nuestra pasión es preservar la historia y la belleza a través 
+                          de objetos atemporales. <br>Somos más que un simple anticuario; 
+                          curadores de piezas únicas y asesores apasionados.</p>
+                        </div>
+                      </div>
+
+                      <div class="col-12 col-md-4 col-xl-12 m-1">
+                        <div class="accordion" id="accordionExample1">
+                          <div class="accordion-item">
+                            <h3 class="accordion-header" id="atencionHeading">
+                              <button class="accordion-button abrir" type="button" data-bs-toggle="collapse" data-bs-target="#atencionCollapse" aria-expanded="true" aria-controls="atencionCollapse">
+                                <h4>Atención Personalizada</h4>
+                              </button>
+                            </h3>
+                            <div id="atencionCollapse" class="accordion-collapse collapse" aria-labelledby="atencionHeading" data-bs-parent="#accordionExample1"> 
+                              <div class="accordion-body">
+                                <p>Cada cliente es especial para nosotros. No somos una gran cadena de muebles impersonales y en secuencia. Nos tomamos el tiempo para conocerte, entender tus gustos y necesidades. Tu satisfacción es nuestra prioridad.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-12 m-1">
+                        <div class="accordion" id="accordionExample2"> 
+                          <div class="accordion-item">
+                            <h3 class="accordion-header" id="productosHeading">
+                              <button class="accordion-button abrir" type="button" data-bs-toggle="collapse" data-bs-target="#productosCollapse" aria-expanded="true" aria-controls="productosCollapse">
+                                <h4>Productos Exclusivos</h4>
+                              </button>
+                            </h3>
+                            <div id="productosCollapse" class="accordion-collapse collapse" aria-labelledby="productosHeading" data-bs-parent="#accordionExample2"> 
+                              <div class="accordion-body">
+                                <p>Nuestro catálogo está lleno de tesoros inigualables. Desde antigüedades hasta piezas de arte contemporáneo, cada artículo ha sido seleccionado con esmero. No encontrarás estas joyas en ningún otro lugar.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-12 m-1">
+                        <div class="accordion" id="accordionExample3"> 
+                          <div class="accordion-item">
+                            <h3 class="accordion-header" id="AsesoramientoHeading">
+                              <button class="accordion-button abrir" type="button" data-bs-toggle="collapse" data-bs-target="#AsesoramientoCollapse" aria-expanded="true" aria-controls="AsesoramientoCollapse">
+                                <h4>Asesoramiento Personalizado</h4>
+                              </button>
+                            </h3>
+                            <div id="AsesoramientoCollapse" class="accordion-collapse collapse" aria-labelledby="AsesoramientoHeading" data-bs-parent="#accordionExample3"> 
+                              <div class="accordion-body">
+                                <p>¿Buscas algo específico? No te preocupes. 
+                                    Nuestros expertos están aquí para ayudarte. Si no tenemos lo que necesitas, lo encontraremos
+                                     para ti. Tu búsqueda es nuestra misión.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-12 m-1">
+                        <div class="accordion" id="accordionExample4"> 
+                          <div class="accordion-item">
+                            <h3 class="accordion-header" id="TratoHeading">
+                              <button class="accordion-button abrir" type="button" data-bs-toggle="collapse" data-bs-target="#TratoCollapse" aria-expanded="true" aria-controls="AsesoramientoCollapse">
+                                <h4>Trato Preferente</h1>
+                              </button>
+                            </h2>
+                            <div id="TratoCollapse" class="accordion-collapse collapse" aria-labelledby="TratoHeading" data-bs-parent="#accordionExample4"> 
+                              <div class="accordion-body">
+                                <p> No importa si eres un coleccionista experimentado o un 
+                                  amante de las antigüedades por primera vez. Te trataremos con respeto y dedicación. 
+                                  Tu satisfacción es nuestro éxito.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-12 m-1">
+                        <div class="accordion" id="accordionExample5"> 
+                          <div class="accordion-item">
+                            <h3 class="accordion-header" id="EnvioHeading">
+                              <button class="accordion-button abrir" type="button" data-bs-toggle="collapse" data-bs-target="#EnvioCollapse" aria-expanded="true" aria-controls="EnvioCollapse">
+                                <h4>Envío a Todo el Mundo</h4>
+                              </button>
+                            </h3>
+                            <div id="EnvioCollapse" class="accordion-collapse collapse" aria-labelledby="EnvioHeading" data-bs-parent="#accordionExample5"> 
+                              <div class="accordion-body">
+                                <p>No importa dónde te encuentres, 
+                                  levamos nuestras joyas a tu puerta. Cada pieza se empaqueta con cuidado y se envía con amor.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
                     </div>
-                </div>
-            </nav>' ;
+                  </div>
+            </main>' ;
     }
     
     
@@ -324,7 +430,7 @@ class Web {
     }
     
     
-    public static function formularioContacto() {
+    public static function contacto() {
         
         echo ''
         . ' <main>
@@ -376,4 +482,305 @@ class Web {
             </main>' ;
     }
     
+    
+    public static function arteTienda() {
+        
+        echo ''
+        . '<main>
+
+            <!-- Galería de productos -->
+            <div class="container-fluid mt-5">
+
+
+                    <div class=" titulos col-12 text-center mb-5">
+                        <h1>Arte</h1>
+                        <h4>Embellece tus paredes con obras que cuentan historias y despiertan emociones, <br>
+                             transformando tu hogar en un lienzo de expresión artística.
+                    </div>
+
+                    <div class="row justify-content-around" id="products1">
+
+
+                    <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
+                            <img src="VISTA/img/arte1.jpg" alt="Producto 1">
+                            <h4>Oleo Sobre Lienzo San Pedro</h4>
+                            <p class="price">€7250</p>
+                            <input type="number" min="1" value="1">
+                            <button class="add-to-cart m-2">Añadir al Carrito</button>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
+                            <img src="VISTA/img/arte2.jpg" alt="Producto 2">
+                            <h4>Lámina Virgen y niño</h4>
+                            <p class="price">€1125</p>
+                            <input type="number" min="1" value="1">
+                            <button class="add-to-cart m-2">Añadir al Carrito</button>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
+                            <img src="VISTA/img/arte3.jpg" alt="Producto 3">
+                            <h4>Lamina Renacentista</h4>
+                            <p class="price">€2450</p>
+                            <input type="number" min="1" value="1">
+                            <button class="add-to-cart m-2">Añadir al Carrito</button>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 col-12 d-flex flex-column">
+                            <img src="VISTA/img/arte4.jpg" alt="Producto 4">
+                            <h4>Racimos De Uvas</h4>
+                            <p class="price">€1970</p>
+                            <input type="number" min="1" value="1">
+                            <button class="add-to-cart m-2">Añadir al Carrito</button>
+                    </div>
+
+
+                    <div class="col-xl-3 col-md-6 col-12 d-flex flex-column">
+                            <img src="VISTA/img/arte5.jpg" alt="Producto 5">
+                            <h4>Oleografía De La Adoración</h4>
+                            <p class="price">€2700</p>
+                            <input type="number" min="1" value="1">
+                            <button class="add-to-cart m-2">Añadir al Carrito</button>
+                        </div>
+
+
+                    <div class="col-xl-3 col-md-6 col-12 d-flex flex-column">
+                            <img src="VISTA/img/arte6.jpg" alt="Producto 6">
+                            <h4>Paseo siglo XVIII</h4>
+                            <p class="price">€3000</p>
+                            <input type="number" min="1" value="1">
+                            <button class="add-to-cart m-2">Añadir al Carrito</button>
+                        </div>
+
+                </div>
+            </div>
+        </main>' ;
+    }
+    
+    
+    public static function decoracionTienda() {
+        
+        echo ''
+        . ' <main>
+
+                <!-- Galería de productos -->
+                <div class="container-fluid mt-5">
+
+                    <div class=" titulos col-12 text-center mb-5">
+                            <h1>Decoración</h1>
+                            <h4>Inspira tus espacios con detalles encantadores que reflejan tu estilo personal <br>
+                                y agregan un toque de creatividad a tu hogar.</h4>
+                        </div>
+
+                        <div class="row justify-content-around" id="products1">
+
+                        <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
+                                <img src="VISTA/img/decoracion1.jpg" alt="Producto 1">
+                                <h4>Plato Antiguo</h4>
+                                <p class="price">€250</p>
+                                <input type="number" min="1" value="1">
+                                <button class="add-to-cart m-2">Añadir al Carrito</button>
+                            </div>
+
+
+                            <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
+                                <img src="VISTA/img/decoracion2.jpg" alt="Producto 2">
+                                <h4>Cibeles de Resina</h4>
+                                <p class="price">€125</p>
+                                <input type="number" min="1" value="1">
+                                <button class="add-to-cart m-2">Añadir al Carrito</button>
+                            </div>
+
+
+                            <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
+                                <img src="VISTA/img/decoracion3.jpg" alt="Producto 3">
+                                <h4>Busto de Águila</h4>
+                                <p class="price">€450</p>
+                                <input type="number" min="1" value="1">
+                                <button class="add-to-cart m-2">Añadir al Carrito</button>
+                            </div>
+
+
+                            <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
+                                <img src="VISTA/img/decoracion4.jpg" alt="Producto 4">
+                                <h4>Tibor Griego De Cerámica </h4>
+                                <p class="price">€570</p>
+                                <input type="number" min="1" value="1">
+                                <button class="add-to-cart m-2">Añadir al Carrito</button>
+                            </div>
+
+
+                            <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
+                                <img src="VISTA/img/decoracion5.jpg" alt="Producto 5">
+                                <h4>Globo Terraqueo Vintage</h4>
+                                <p class="price">€300</p>
+                                <input type="number" min="1" value="1">
+                                <button class="add-to-cart m-2">Añadir al Carrito</button>
+                            </div>
+
+                            <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
+                                <img src="VISTA/img/decoracion6.jpg" alt="Producto 6">
+                                <h4>Tetera de Latón</h4>
+                                <p class="price">€100</p>
+                                <input type="number" min="1" value="1">
+                                <button class="add-to-cart m-2">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </main>' ;
+    }
+    
+    
+    public static function iluminacion() {
+        
+        echo ''
+        . ' <main>
+
+                <!-- Galería de productos -->
+                <div class="container-fluid mt-5">
+
+
+                        <div class=" titulos col-12 text-center mb-5">
+                            <h1>Iluminación</h1>
+                            <h4>Crea atmósferas cautivadoras con nuestra selección de iluminación que añade estilo y sofisticación, <br>
+                                convirtiendo la luz en una obra de arte en tu hogar.</h4>
+                        </div>
+
+                        <div class="row justify-content-around" id="products1">
+
+                            <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
+                                <img src="VISTA/img/iluminacion1.jpg" alt="Producto 1">
+                                <h4>Mesa De Mármol</h4>
+                                <p class="price">€250</p>
+                                <input type="number" min="1" value="1">
+                                <button class="add-to-cart m-2">Añadir al Carrito</button>
+                            </div>
+
+
+                            <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
+                                <img src="VISTA/img/iluminacion2.jpg" alt="Producto 2">
+                                <h4>Redonda De Cerámica</h4>
+                                <p class="price">€525</p>
+                                <input type="number" min="1" value="1">
+                                <button class="add-to-cart m-2">Añadir al Carrito</button>
+                            </div>
+
+
+                            <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
+                                <img src="VISTA/img/iluminacion3.jpg" alt="Producto 3">
+                                <h4>Lámpara De Bronce</h4>
+                                <p class="price">€250</p>
+                                <input type="number" min="1" value="1">
+                                <button class="add-to-cart m-2">Añadir al Carrito</button>
+                            </div>
+
+                            <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
+                                <img src="VISTA/img/iluminacion4.jpg" alt="Producto 4">
+                                <h4>Tibor Griego De Cerámica </h4>
+                                <p class="price">€450</p>
+                                <input type="number" min="1" value="1">
+                                <button class="add-to-cart m-2">Añadir al Carrito</button>
+                            </div>
+
+                            <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
+                                <img src="VISTA/img/iluminacion5.jpg" alt="Producto 5">
+                                <h4>Antiguo Farol De Pared</h4>
+                                <p class="price">€140</p>
+                                <input type="number" min="1" value="1">
+                                <button class="add-to-cart m-2">Añadir al Carrito</button>
+                            </div>
+
+                            <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
+                                <img src="VISTA/img/iluminacion6.jpg" alt="Producto 6">
+                                <h4>Farol De Bronce Y Latón</h4>
+                                <p class="price">€230</p>
+                                <input type="number" min="1" value="1">
+                                <button class="add-to-cart m-2">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </main>' ;
+    }
+    
+    
+    // --------------------------------------------------------------
+    // ------------------- HOJAS DE ESTILO --------------------------
+    // --------------------------------------------------------------
+
+
+    public static function hojaEstilosAbout() {
+        
+        echo ''
+        . '<style>
+
+            .icon-container {
+                display: flex;
+                align-items: center;
+            }
+
+            .rotate {
+                transform: rotate(180deg);
+                transition: transform 0.3s ease;
+            }
+
+            .info {
+                display: none;
+            }
+
+            .show-info .info {
+                display: block;
+            }
+
+            /* Personalización de estilos para los botones del acordeón */
+            .accordion-button:not(.collapsed) {
+                background-color: transparent;
+                /* Cambiar el color de fondo cuando está activo */
+                color: #000;
+                /* Cambiar el color del texto cuando está activo */
+                border-color: transparent;
+                /* Opcional: eliminar el borde cuando está activo */
+            }
+
+            .accordion-button:not(.collapsed):hover {
+                background-color: rgba(0, 0, 0, 0.1);
+                /* Cambiar el color de fondo en el hover cuando está activo */
+                border-color: transparent;
+            }
+
+            .accordion-button.collapsed {
+                background-color: transparent;
+                /* Cambiar el color de fondo cuando está inactivo */
+                color: #000;
+                /* Cambiar el color del texto cuando está inactivo */
+                border-color: transparent;
+                /* Opcional: eliminar el borde cuando está inactivo */
+                border-color: transparent;
+            }
+
+            .accordion-button.collapsed:hover {
+                background-color: rgba(0, 0, 0, 0.1);
+                /* Cambiar el color de fondo en el hover cuando está inactivo */
+
+            }
+
+            footer p,
+            a {
+                font-size: 14px;
+            }
+
+        </style>' ;
+    }
+    
 }
+
+
+/*
+ * Esta hoja de estilos forma parte del diseño original. Hace el logo más 
+ * pequeño y en principio queda mejor sin este efecto. Guardamos aquí el enlace 
+ * por si hay que rescatarlo.
+ */
+
+// <link rel="stylesheet" href="VISTA/css/estilo_logo.css">
