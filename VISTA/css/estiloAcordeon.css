@@ -1,0 +1,41 @@
+
+    .icon-container {
+        display: flex;
+        align-items: center;
+    }
+    .rotate {
+        transform: rotate(180deg);
+        transition: transform 0.3s ease;
+    }
+    .info {
+        display: none;
+    }
+    .show-info .info {
+        display: block;
+    }
+    /* Personalización de estilos para los botones del acordeón */
+    .accordion-button:not(.collapsed) {
+        background-color: transparent; /* Cambiar el color de fondo cuando está activo */
+        color: #000; /* Cambiar el color del texto cuando está activo */
+        border-color: transparent; /* Opcional: eliminar el borde cuando está activo */
+    }
+
+    .accordion-button:not(.collapsed):hover {
+        background-color: rgba(0, 0, 0, 0.1); /* Cambiar el color de fondo en el hover cuando está activo */
+        border-color: transparent;
+    }
+
+    .accordion-button.collapsed {
+        background-color: transparent; /* Cambiar el color de fondo cuando está inactivo */
+        color: #000; /* Cambiar el color del texto cuando está inactivo */
+        border-color: transparent; /* Opcional: eliminar el borde cuando está inactivo */
+        border-color: transparent;
+    }
+
+    .accordion-button.collapsed:hover {
+        background-color: rgba(0, 0, 0, 0.1); /* Cambiar el color de fondo en el hover cuando está inactivo */
+
+    }
+    footer p,a{
+        font-size: 14px;
+    }

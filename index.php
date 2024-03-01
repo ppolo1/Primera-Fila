@@ -14,7 +14,7 @@ require_once './CONTROL/Productos.php' ;
 require_once './CONTROL/Clientes.php';
 
 //Web::completa("Este es el título", "prueba") ;
-Web::completa("Formulario de contacto", "formularioContacto") ;
+Web::completa("Formulario de contacto", "contacto") ;
 
 //echo "Hola, esto es una prueba" ;
 

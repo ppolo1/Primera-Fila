@@ -32,53 +32,9 @@ class Web {
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
                 integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-            <link rel="stylesheet" href="VISTA/css/hojaDeEstilos.css">
+            <link rel="stylesheet" href="VISTA/css/estiloAcordeon.css">
 
             <title> ' . $titulo . ' </title>
-                
-            <style>
-                .icon-container {
-                  display: flex;
-                  align-items: center;
-                }
-                .rotate {
-                  transform: rotate(180deg);
-                  transition: transform 0.3s ease;
-                }
-                .info {
-                  display: none;
-                }
-                .show-info .info {
-                  display: block;
-                }
-                /* Personalización de estilos para los botones del acordeón */
-              .accordion-button:not(.collapsed) {
-                  background-color: transparent; /* Cambiar el color de fondo cuando está activo */
-                  color: #000; /* Cambiar el color del texto cuando está activo */
-                  border-color: transparent; /* Opcional: eliminar el borde cuando está activo */
-              }
-
-              .accordion-button:not(.collapsed):hover {
-                  background-color: rgba(0, 0, 0, 0.1); /* Cambiar el color de fondo en el hover cuando está activo */
-                  border-color: transparent;
-                }
-
-              .accordion-button.collapsed {
-                  background-color: transparent; /* Cambiar el color de fondo cuando está inactivo */
-                  color: #000; /* Cambiar el color del texto cuando está inactivo */
-                  border-color: transparent; /* Opcional: eliminar el borde cuando está inactivo */
-                  border-color: transparent;
-                }
-
-              .accordion-button.collapsed:hover {
-                  background-color: rgba(0, 0, 0, 0.1); /* Cambiar el color de fondo en el hover cuando está inactivo */
-
-                }
-                footer p,a{
-                  font-size: 14px;
-                }
-
-            </style>
 
 
         </head>
@@ -89,7 +45,7 @@ class Web {
         self::barraNavegacion() ;
         self::$metodo() ;
         
-        if ($metodo !== "formularioContacto") {
+        if ($metodo !== "contacto") {
             
             self::footer() ;
         }
@@ -128,7 +84,7 @@ class Web {
 
         echo '
             <header class="container-fluid">
-                <div class="row align-items-center">
+                <div class="row contactoalign-items-center">
                     <div class="col-xl-1 col-md-6 col-3 ms-xl-4 me-xl-5">
                         <div class="navbar navbar-expand-sm navbar-light">
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu">
