@@ -63,6 +63,11 @@ REGISTRO
 		* Suscripción
 
 
+COMUNICACIÓN SERVIDOR
+
+- Hace falta una API para la comunicación con el servidor
+
+
 -------------------- CAMBIOS MENORES -------------------------
 
 CABECERA
