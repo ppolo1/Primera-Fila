@@ -14,11 +14,21 @@ require_once './CONTROL/Productos.php' ;
 require_once './CONTROL/Clientes.php';
 
 //Web::completa("Este es el título", "prueba") ;
-Web::completa("Formulario de contacto", "contacto") ;
+//Web::completa("Formulario de contacto", "contacto") ;
 
 //echo "Hola, esto es una prueba" ;
 
 // var_dump(Modelo::consultarProductos()) ;
+ 
+ // VOY A HACER UN JSON CON LOS PRODUCTOS
+
+//$array = Modelo::consultarProductos() ;
+//
+//$archivoJson = json_encode($array) ;
+//
+//echo $archivoJson ;
+
+// -----------------------------------
 
 // $direccion = dirname(__FILE__);
 //$jsondata = file_get_contents($direccion . "/MODELO/" . "producto.json");
