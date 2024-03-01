@@ -4,6 +4,7 @@ BBDD
 
 [ ] Sincronizar el prefijo con el país.
 [ ] Insertar en la BBDD los prefijos -- Pensamos que se puede unificar prefijos y países.
+[ ] Añadir los productos a la base de datos
 
 PHP
 
