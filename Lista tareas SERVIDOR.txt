@@ -12,3 +12,5 @@ PHP
 [ ] Incluir código HTML en PHP.
 [ ] Modificar código HTML para que pinte usando los datos de la BBDD (tienda, los select del formulario, etc.).
 [ ] Crear comunicación con la parte cliente.
+[ ] Añadir "implements JsonSerializable" a las clases de cliente, producto, etc.
+[ ] Repasar y ajustar las clases para ajustarlas a los nuevos cambios en la BBDD
