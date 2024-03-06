@@ -8,7 +8,7 @@ error_reporting(E_ALL);
  *
  * @author Primera Fila
  */
-class Productos implements JsonSerializable {
+class Productos {
     
     private $idProducto ;
     private $nombre ;

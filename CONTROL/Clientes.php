@@ -8,7 +8,14 @@ error_reporting(E_ALL);
  *
  * @author Primera Fila
  */
-class Clientes implements JsonSerializable {
+class Clientes { // ¿DEBERÍA LLEVAR EL IMPLEMENTS JSONSERIALIZABLE?
+    
+    /*
+     * En caso de llevar el implements JsonSserializable dará un error que se 
+     * solventa añadiendo mixed en el método de jsonSerialize().
+     * 
+     * Lo mismo se aplica para la clase Productos.
+     */
     
     private $nombre ;
     private $apellido1 ;
