@@ -8,7 +8,7 @@ error_reporting(E_ALL);
  *
  * @author Primera Fila
  */
-class Clientes {
+class Clientes implements JsonSerializable {
     
     private $nombre ;
     private $apellido1 ;
