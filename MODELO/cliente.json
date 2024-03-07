@@ -1,0 +1,16 @@
+{
+    "nombre": "Juanita",
+    "apellido1": "Revilla",
+    "apellido2": "Montalbán",
+    "contrasena": "12345",
+    "dni": "54786332G",
+    "genero": "M",
+    "fechaNac": "2014-02-28",
+    "direccion": "Calle No Verdadosa 321",
+    "pais": "Narnia",
+    "telefono": "666666666",
+    "prefijo": "34",
+    "email": "juanitalaloca@jl.com",
+    "subscripcion": true,
+    "imagen": "Windows/xampp/htdocs/enonluxantiques/VISTA/img/Avatar.png"
+}
