@@ -65,7 +65,14 @@
         require_once './BarraNavegacion.php';
         ?>
 
-        <main >
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="home.html">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Sobre Nosotros</li>
+            </ol>
+        </nav>
+
+        <main>
             <div class="container-fluid">
                 <div class="row align-items-center p-4">  
                     <div class="col-12 text-center">

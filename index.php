@@ -23,7 +23,7 @@ require_once './CONTROL/Productos.php' ;
 require_once './CONTROL/Clientes.php';
 
 //Web::completa("Este es el título", "prueba") ;
-Web::completa("Formulario de contacto", "home") ;
+//Web::completa("Formulario de contacto", "home") ;
 
 //echo "Hola, esto es una prueba" ;
 
@@ -46,61 +46,36 @@ Web::completa("Formulario de contacto", "home") ;
 
 //Modelo::aniadirCliente() ;
 
-$ruta = $_SERVER['REQUEST_URI'];
+// ------------------------------------------------
 
-if (strpos($ruta, '/contacto') === 0) {
-    
-    $metodo = $_SERVER['REQUEST_METHOD'];
-    
-    switch ($metodo) {
-        case 'GET':
-            
-            if (preg_match('~/contacto~', $ruta)) {
-                ob_clean() ; // Limpia la pantalla. No quita el encabezado, así que se pinta lo que hay debajo           
-                Web::contacto() ;
-                Web::footerFormularioContacto() ;
-                }
-            
-            break;
-        case 'POST':
-            echo json_encode($myresp->error_405());
-            break;
-        case 'PUT':
-            echo json_encode($myresp->error_405());
-            break;
-        default:
-            echo 'Método no permitido';
-            break;
-    }
-}else{
-    echo  "La ruta no es igual";
-}
+//$ruta = $_SERVER['REQUEST_URI'];
+//
+//if (strpos($ruta, '/contacto') === 0) {
+//    
+//    $metodo = $_SERVER['REQUEST_METHOD'];
+//    
+//    switch ($metodo) {
+//        case 'GET':
+//            
+//            if (preg_match('~/contacto~', $ruta)) {
+//                ob_clean() ; // Limpia la pantalla. No quita el encabezado, así que se pinta lo que hay debajo           
+//                Web::contacto() ;
+//                Web::footerFormularioContacto() ;
+//                }
+//            
+//            break;
+//        case 'POST':
+//            echo json_encode($myresp->error_405());
+//            break;
+//        case 'PUT':
+//            echo json_encode($myresp->error_405());
+//            break;
+//        default:
+//            echo 'Método no permitido';
+//            break;
+//    }
+//}else{
+//    echo  "La ruta no es igual";
+//}
 
-if (strpos($ruta, '/') === 0) {
-    
-    $metodo = $_SERVER['REQUEST_METHOD'];
-    
-    switch ($metodo) {
-        case 'GET':
-            
-            if (preg_match('~/about~', $ruta)) {
-                ob_clean() ; // Limpia la pantalla. No quita el encabezado, así que se pinta lo que hay debajo           
-                Web::sobreNosotros() ;
-                Web::footer() ;
-                }
-            
-            break;
-        case 'POST':
-            echo json_encode($myresp->error_405());
-            break;
-        case 'PUT':
-            echo json_encode($myresp->error_405());
-            break;
-        default:
-            echo 'Método no permitido';
-            break;
-    }
-}else{
-    echo  "La ruta no es igual";
-}
-
+header("Location: ../VISTA/Home.php") ;

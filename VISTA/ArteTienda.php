@@ -20,6 +20,15 @@
         require_once './BarraNavegacion.php';
         ?>
 
+        <!--Migas de pan-->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="home.html">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="mueblesTienda.html">Muebles</a></li>
+                <li class="breadcrumb-item"><a href="decoracionTienda.html">Decoración</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Arte</li>
+            </ol>
+        </nav>
         <main>
 
             <!-- Galería de productos -->
