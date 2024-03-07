@@ -28,7 +28,7 @@
         </ul>
         <ul class="navbar-nav me-xl-5">
             <li class="nav-item">
-                <a class="nav-link active" href="contacto.html">Contacto</a>
+                <a class="nav-link active" href="contacto">Contacto</a>
             </li>
         </ul>
     </div>

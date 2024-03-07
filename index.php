@@ -41,11 +41,11 @@ require_once './CONTROL/Clientes.php';
 
 // AÑADIR DATOS
 
- $direccion = dirname(__FILE__);
-$jsondata = file_get_contents($direccion . "/MODELO/" . "cliente.json");
-
-//Modelo::aniadirProducto($jsondata) ;
-Modelo::aniadirCliente($jsondata) ;
+// $direccion = dirname(__FILE__);
+//$jsondata = file_get_contents($direccion . "/MODELO/" . "cliente.json");
+//
+////Modelo::aniadirProducto($jsondata) ;
+//Modelo::aniadirCliente($jsondata) ;
 
 // ------------------------------------------------
 
@@ -80,3 +80,5 @@ Modelo::aniadirCliente($jsondata) ;
 //}
 
 //header("Location: ../VISTA/Home.php") ;
+
+require_once './CONTROL/Route.php' ;
