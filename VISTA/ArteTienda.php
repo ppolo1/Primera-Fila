@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-        <title> Tienda - Decoración </title>
+        <title> Tienda - Arte </title>
 
     </head>
 
@@ -24,69 +24,68 @@
         <!-- Galería de productos -->
         <div class="container-fluid mt-5">
 
-            <div class=" titulos col-12 text-center mb-5">
-                    <h1>Decoración</h1>
-                    <h4>Inspira tus espacios con detalles encantadores que reflejan tu estilo personal <br>
-                        y agregan un toque de creatividad a tu hogar.</h4>
+                
+                <div class=" titulos col-12 text-center mb-5">
+                    <h1>Arte</h1>
+                    <h4>Embellece tus paredes con obras que cuentan historias y despiertan emociones, <br>
+                         transformando tu hogar en un lienzo de expresión artística.
                 </div>
 
                 <div class="row justify-content-around" id="products1">
 
+
                 <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
-                        <img src="img/decoracion1.jpg" alt="Producto 1">
-                        <h4>Plato Antiguo</h4>
-                        <p class="price">€250</p>
-                        <input type="number" min="1" value="1">
-                        <button class="add-to-cart m-2">Añadir al Carrito</button>
-                    </div>
-              
-
-                    <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
-                        <img src="img/decoracion2.jpg" alt="Producto 2">
-                        <h4>Cibeles de Resina</h4>
-                        <p class="price">€125</p>
-                        <input type="number" min="1" value="1">
-                        <button class="add-to-cart m-2">Añadir al Carrito</button>
-                    </div>
-              
-
-                    <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
-                        <img src="img/decoracion3.jpg" alt="Producto 3">
-                        <h4>Busto de Águila</h4>
-                        <p class="price">€450</p>
-                        <input type="number" min="1" value="1">
-                        <button class="add-to-cart m-2">Añadir al Carrito</button>
-                    </div>
-                
-    
-                    <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
-                        <img src="img/decoracion4.jpg" alt="Producto 4">
-                        <h4>Tibor Griego De Cerámica </h4>
-                        <p class="price">€570</p>
-                        <input type="number" min="1" value="1">
-                        <button class="add-to-cart m-2">Añadir al Carrito</button>
-                    </div>
-                
-
-                    <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
-                        <img src="img/decoracion5.jpg" alt="Producto 5">
-                        <h4>Globo Terraqueo Vintage</h4>
-                        <p class="price">€300</p>
-                        <input type="number" min="1" value="1">
-                        <button class="add-to-cart m-2">Añadir al Carrito</button>
-                    </div>
-               
-                    <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
-                        <img src="img/decoracion6.jpg" alt="Producto 6">
-                        <h4>Tetera de Latón</h4>
-                        <p class="price">€100</p>
+                        <img src="img/arte1.jpg" alt="Producto 1">
+                        <h4>Oleo Sobre Lienzo San Pedro</h4>
+                        <p class="price">€7250</p>
                         <input type="number" min="1" value="1">
                         <button class="add-to-cart m-2">Añadir al Carrito</button>
                 </div>
+
+                <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
+                        <img src="img/arte2.jpg" alt="Producto 2">
+                        <h4>Lámina Virgen y niño</h4>
+                        <p class="price">€1125</p>
+                        <input type="number" min="1" value="1">
+                        <button class="add-to-cart m-2">Añadir al Carrito</button>
+                </div>
+
+                <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
+                        <img src="img/arte3.jpg" alt="Producto 3">
+                        <h4>Lamina Renacentista</h4>
+                        <p class="price">€2450</p>
+                        <input type="number" min="1" value="1">
+                        <button class="add-to-cart m-2">Añadir al Carrito</button>
+                </div>
+    
+                <div class="col-xl-3 col-md-6 col-12 d-flex flex-column">
+                        <img src="img/arte4.jpg" alt="Producto 4">
+                        <h4>Racimos De Uvas</h4>
+                        <p class="price">€1970</p>
+                        <input type="number" min="1" value="1">
+                        <button class="add-to-cart m-2">Añadir al Carrito</button>
+                </div>
+                
+
+                <div class="col-xl-3 col-md-6 col-12 d-flex flex-column">
+                        <img src="img/arte5.jpg" alt="Producto 5">
+                        <h4>Oleografía De La Adoración</h4>
+                        <p class="price">€2700</p>
+                        <input type="number" min="1" value="1">
+                        <button class="add-to-cart m-2">Añadir al Carrito</button>
+                    </div>
+            
+
+                <div class="col-xl-3 col-md-6 col-12 d-flex flex-column">
+                        <img src="img/arte6.jpg" alt="Producto 6">
+                        <h4>Paseo siglo XVIII</h4>
+                        <p class="price">€3000</p>
+                        <input type="number" min="1" value="1">
+                        <button class="add-to-cart m-2">Añadir al Carrito</button>
+                    </div>
+    
             </div>
         </div>
-
-
     </main>
 
     <?php

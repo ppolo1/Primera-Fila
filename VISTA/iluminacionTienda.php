@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-        <title> Tienda - Decoración </title>
+        <title> Tienda - Iluminación </title>
 
     </head>
 
@@ -19,67 +19,66 @@
     require_once './BarraNavegacion.php';
     ?>
 
-    <main>
+   <main>
 
         <!-- Galería de productos -->
         <div class="container-fluid mt-5">
-
-            <div class=" titulos col-12 text-center mb-5">
-                    <h1>Decoración</h1>
-                    <h4>Inspira tus espacios con detalles encantadores que reflejan tu estilo personal <br>
-                        y agregan un toque de creatividad a tu hogar.</h4>
+            
+                
+                <div class=" titulos col-12 text-center mb-5">
+                    <h1>Iluminación</h1>
+                    <h4>Crea atmósferas cautivadoras con nuestra selección de iluminación que añade estilo y sofisticación, <br>
+                        convirtiendo la luz en una obra de arte en tu hogar.</h4>
                 </div>
 
                 <div class="row justify-content-around" id="products1">
 
-                <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
-                        <img src="img/decoracion1.jpg" alt="Producto 1">
-                        <h4>Plato Antiguo</h4>
+                    <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
+                        <img src="img/iluminacion1.jpg" alt="Producto 1">
+                        <h4>Mesa De Mármol</h4>
                         <p class="price">€250</p>
                         <input type="number" min="1" value="1">
                         <button class="add-to-cart m-2">Añadir al Carrito</button>
                     </div>
-              
+            
 
                     <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
-                        <img src="img/decoracion2.jpg" alt="Producto 2">
-                        <h4>Cibeles de Resina</h4>
-                        <p class="price">€125</p>
+                        <img src="img/iluminacion2.jpg" alt="Producto 2">
+                        <h4>Redonda De Cerámica</h4>
+                        <p class="price">€525</p>
                         <input type="number" min="1" value="1">
                         <button class="add-to-cart m-2">Añadir al Carrito</button>
                     </div>
-              
+        
 
                     <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
-                        <img src="img/decoracion3.jpg" alt="Producto 3">
-                        <h4>Busto de Águila</h4>
-                        <p class="price">€450</p>
-                        <input type="number" min="1" value="1">
-                        <button class="add-to-cart m-2">Añadir al Carrito</button>
-                    </div>
-                
-    
-                    <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
-                        <img src="img/decoracion4.jpg" alt="Producto 4">
-                        <h4>Tibor Griego De Cerámica </h4>
-                        <p class="price">€570</p>
-                        <input type="number" min="1" value="1">
-                        <button class="add-to-cart m-2">Añadir al Carrito</button>
-                    </div>
-                
-
-                    <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
-                        <img src="img/decoracion5.jpg" alt="Producto 5">
-                        <h4>Globo Terraqueo Vintage</h4>
-                        <p class="price">€300</p>
+                        <img src="img/iluminacion3.jpg" alt="Producto 3">
+                        <h4>Lámpara De Bronce</h4>
+                        <p class="price">€250</p>
                         <input type="number" min="1" value="1">
                         <button class="add-to-cart m-2">Añadir al Carrito</button>
                     </div>
                
                     <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
-                        <img src="img/decoracion6.jpg" alt="Producto 6">
-                        <h4>Tetera de Latón</h4>
-                        <p class="price">€100</p>
+                        <img src="img/iluminacion4.jpg" alt="Producto 4">
+                        <h4>Tibor Griego De Cerámica </h4>
+                        <p class="price">€450</p>
+                        <input type="number" min="1" value="1">
+                        <button class="add-to-cart m-2">Añadir al Carrito</button>
+                    </div>
+               
+                    <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
+                        <img src="img/iluminacion5.jpg" alt="Producto 5">
+                        <h4>Antiguo Farol De Pared</h4>
+                        <p class="price">€140</p>
+                        <input type="number" min="1" value="1">
+                        <button class="add-to-cart m-2">Añadir al Carrito</button>
+                    </div>
+           
+                    <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
+                        <img src="img/iluminacion6.jpg" alt="Producto 6">
+                        <h4>Farol De Bronce Y Latón</h4>
+                        <p class="price">€230</p>
                         <input type="number" min="1" value="1">
                         <button class="add-to-cart m-2">Añadir al Carrito</button>
                 </div>
