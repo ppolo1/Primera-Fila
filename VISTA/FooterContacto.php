@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="col-4 col-md-4">
-                <img class="imagen-producto mt-2" src="VISTA/img/images.png" alt="Producto 2">
+                <img class="imagen-producto mt-2" src="img/images.png" alt="Producto 2">
             </div>
             <div class="col-4 col-md-4">
                 <h5>Derechos de Autor</h5>

@@ -14,88 +14,90 @@
 
     </head>
 
-    <?php
-    require_once './Header.php';
-    require_once './BarraNavegacion.php';
-    ?>
+    <body>
+        <?php
+        require_once './Header.php';
+        require_once './BarraNavegacion.php';
+        ?>
 
-    <main>
+        <main>
 
-        <!-- Galería de productos -->
-        <div class="container-fluid mt-5">
+            <!-- Galería de productos -->
+            <div class="container-fluid mt-5">
 
-                
+
                 <div class=" titulos col-12 text-center mb-5">
                     <h1>Arte</h1>
                     <h4>Embellece tus paredes con obras que cuentan historias y despiertan emociones, <br>
-                         transformando tu hogar en un lienzo de expresión artística.
+                        transformando tu hogar en un lienzo de expresión artística.
+                        </div>
+
+                        <div class="row justify-content-around" id="products1">
+
+
+                            <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
+                                <img src="img/arte1.jpg" alt="Producto 1">
+                                <h4>Oleo Sobre Lienzo San Pedro</h4>
+                                <p class="price">€7250</p>
+                                <input type="number" min="1" value="1">
+                                <button class="add-to-cart m-2">Añadir al Carrito</button>
+                            </div>
+
+                            <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
+                                <img src="img/arte2.jpg" alt="Producto 2">
+                                <h4>Lámina Virgen y niño</h4>
+                                <p class="price">€1125</p>
+                                <input type="number" min="1" value="1">
+                                <button class="add-to-cart m-2">Añadir al Carrito</button>
+                            </div>
+
+                            <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
+                                <img src="img/arte3.jpg" alt="Producto 3">
+                                <h4>Lamina Renacentista</h4>
+                                <p class="price">€2450</p>
+                                <input type="number" min="1" value="1">
+                                <button class="add-to-cart m-2">Añadir al Carrito</button>
+                            </div>
+
+                            <div class="col-xl-3 col-md-6 col-12 d-flex flex-column">
+                                <img src="img/arte4.jpg" alt="Producto 4">
+                                <h4>Racimos De Uvas</h4>
+                                <p class="price">€1970</p>
+                                <input type="number" min="1" value="1">
+                                <button class="add-to-cart m-2">Añadir al Carrito</button>
+                            </div>
+
+
+                            <div class="col-xl-3 col-md-6 col-12 d-flex flex-column">
+                                <img src="img/arte5.jpg" alt="Producto 5">
+                                <h4>Oleografía De La Adoración</h4>
+                                <p class="price">€2700</p>
+                                <input type="number" min="1" value="1">
+                                <button class="add-to-cart m-2">Añadir al Carrito</button>
+                            </div>
+
+
+                            <div class="col-xl-3 col-md-6 col-12 d-flex flex-column">
+                                <img src="img/arte6.jpg" alt="Producto 6">
+                                <h4>Paseo siglo XVIII</h4>
+                                <p class="price">€3000</p>
+                                <input type="number" min="1" value="1">
+                                <button class="add-to-cart m-2">Añadir al Carrito</button>
+                            </div>
+
+                        </div>
                 </div>
+        </main>
 
-                <div class="row justify-content-around" id="products1">
+        <?php
+        require_once './Footer.php';
+        ?>
 
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-                <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
-                        <img src="img/arte1.jpg" alt="Producto 1">
-                        <h4>Oleo Sobre Lienzo San Pedro</h4>
-                        <p class="price">€7250</p>
-                        <input type="number" min="1" value="1">
-                        <button class="add-to-cart m-2">Añadir al Carrito</button>
-                </div>
-
-                <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
-                        <img src="img/arte2.jpg" alt="Producto 2">
-                        <h4>Lámina Virgen y niño</h4>
-                        <p class="price">€1125</p>
-                        <input type="number" min="1" value="1">
-                        <button class="add-to-cart m-2">Añadir al Carrito</button>
-                </div>
-
-                <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
-                        <img src="img/arte3.jpg" alt="Producto 3">
-                        <h4>Lamina Renacentista</h4>
-                        <p class="price">€2450</p>
-                        <input type="number" min="1" value="1">
-                        <button class="add-to-cart m-2">Añadir al Carrito</button>
-                </div>
-    
-                <div class="col-xl-3 col-md-6 col-12 d-flex flex-column">
-                        <img src="img/arte4.jpg" alt="Producto 4">
-                        <h4>Racimos De Uvas</h4>
-                        <p class="price">€1970</p>
-                        <input type="number" min="1" value="1">
-                        <button class="add-to-cart m-2">Añadir al Carrito</button>
-                </div>
-                
-
-                <div class="col-xl-3 col-md-6 col-12 d-flex flex-column">
-                        <img src="img/arte5.jpg" alt="Producto 5">
-                        <h4>Oleografía De La Adoración</h4>
-                        <p class="price">€2700</p>
-                        <input type="number" min="1" value="1">
-                        <button class="add-to-cart m-2">Añadir al Carrito</button>
-                    </div>
-            
-
-                <div class="col-xl-3 col-md-6 col-12 d-flex flex-column">
-                        <img src="img/arte6.jpg" alt="Producto 6">
-                        <h4>Paseo siglo XVIII</h4>
-                        <p class="price">€3000</p>
-                        <input type="number" min="1" value="1">
-                        <button class="add-to-cart m-2">Añadir al Carrito</button>
-                    </div>
-    
-            </div>
-        </div>
-    </main>
-
-    <?php
-    require_once './Footer.php';
-    ?>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-    <script src="js/javaScript.js"></script>
-</body>
+        <script src="js/javaScript.js"></script>
+    </body>
 </html>
