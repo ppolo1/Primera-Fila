@@ -20,34 +20,36 @@ class Clientes { // ¿DEBERÍA LLEVAR EL IMPLEMENTS JSONSERIALIZABLE?
     private $nombre ;
     private $apellido1 ;
     private $apellido2 ;
+    private $contrasena ;
     private $dni ;
-    private $sexo ;
-    private $fechNac ;
+    private $genero ;
+    private $fechaNac ;
     private $direccion ;
     private $pais ;
-    private $prefijo ;
     private $telefono ;
+    private $prefijo ;
     private $email ;
-    private $contrasena ;
-    private $notificaciones ;
-    private $revista ;
+    private $suscripcion ;
+    private $imagen ;
     
-    public function __construct($nombre, $apellido1, $apellido2, $dni, $sexo, $fechNac, $direccion, $pais, $prefijo, $telefono, $email, $contrasena, $notificaciones, $revista) {
+    
+    public function __construct($nombre, $apellido1, $apellido2, $contrasena, $dni, $genero, $fechaNac, $direccion, $pais, $telefono, $prefijo, $email, $suscripcion, $imagen) {
         $this->nombre = $nombre;
         $this->apellido1 = $apellido1;
         $this->apellido2 = $apellido2;
+        $this->contrasena = $contrasena;
         $this->dni = $dni;
-        $this->sexo = $sexo;
-        $this->fechNac = $fechNac;
+        $this->genero = $genero;
+        $this->fecha_nac = $fechaNac;
         $this->direccion = $direccion;
         $this->pais = $pais;
-        $this->prefijo = $prefijo;
         $this->telefono = $telefono;
+        $this->prefijo = $prefijo;
         $this->email = $email;
-        $this->contrasena = $contrasena;
-        $this->notificaciones = $notificaciones;
-        $this->revista = $revista;
+        $this->suscripcion = $suscripcion;
+        $this->imagen = $imagen;
     }
+    
     
     public function getNombre() {
         return $this->nombre;
@@ -61,16 +63,20 @@ class Clientes { // ¿DEBERÍA LLEVAR EL IMPLEMENTS JSONSERIALIZABLE?
         return $this->apellido2;
     }
 
+    public function getContrasena() {
+        return $this->contrasena;
+    }
+
     public function getDni() {
         return $this->dni;
     }
 
-    public function getSexo() {
-        return $this->sexo;
+    public function getGenero() {
+        return $this->genero;
     }
 
-    public function getFechNac() {
-        return $this->fechNac;
+    public function getFechaNac() {
+        return $this->fechaNac;
     }
 
     public function getDireccion() {
@@ -81,28 +87,24 @@ class Clientes { // ¿DEBERÍA LLEVAR EL IMPLEMENTS JSONSERIALIZABLE?
         return $this->pais;
     }
 
-    public function getPrefijo() {
-        return $this->prefijo;
-    }
-
     public function getTelefono() {
         return $this->telefono;
+    }
+
+    public function getPrefijo() {
+        return $this->prefijo;
     }
 
     public function getEmail() {
         return $this->email;
     }
 
-    public function getContrasena() {
-        return $this->contrasena;
+    public function getSuscripcion() {
+        return $this->suscripcion;
     }
 
-    public function getNotificaciones() {
-        return $this->notificaciones;
-    }
-
-    public function getRevista() {
-        return $this->revista;
+    public function getImagen() {
+        return $this->imagen;
     }
 
     public function setNombre($nombre): void {
@@ -117,16 +119,20 @@ class Clientes { // ¿DEBERÍA LLEVAR EL IMPLEMENTS JSONSERIALIZABLE?
         $this->apellido2 = $apellido2;
     }
 
+    public function setContrasena($contrasena): void {
+        $this->contrasena = $contrasena;
+    }
+
     public function setDni($dni): void {
         $this->dni = $dni;
     }
 
-    public function setSexo($sexo): void {
-        $this->sexo = $sexo;
+    public function setGenero($genero): void {
+        $this->genero = $genero;
     }
 
-    public function setFechNac($fechNac): void {
-        $this->fechNac = $fechNac;
+    public function setFecha_nac($fecha_nac): void {
+        $this->fecha_nac = $fecha_nac;
     }
 
     public function setDireccion($direccion): void {
@@ -137,29 +143,26 @@ class Clientes { // ¿DEBERÍA LLEVAR EL IMPLEMENTS JSONSERIALIZABLE?
         $this->pais = $pais;
     }
 
-    public function setPrefijo($prefijo): void {
-        $this->prefijo = $prefijo;
-    }
-
     public function setTelefono($telefono): void {
         $this->telefono = $telefono;
+    }
+
+    public function setPrefijo($prefijo): void {
+        $this->prefijo = $prefijo;
     }
 
     public function setEmail($email): void {
         $this->email = $email;
     }
 
-    public function setContrasena($contrasena): void {
-        $this->contrasena = $contrasena;
+    public function setSuscripcion($suscripcion): void {
+        $this->suscripcion = $suscripcion;
     }
 
-    public function setNotificaciones($notificaciones): void {
-        $this->notificaciones = $notificaciones;
+    public function setImagen($imagen): void {
+        $this->imagen = $imagen;
     }
-
-    public function setRevista($revista): void {
-        $this->revista = $revista;
-    }
+    
 
     public function jsonSerialize(){
    
@@ -168,16 +171,16 @@ class Clientes { // ¿DEBERÍA LLEVAR EL IMPLEMENTS JSONSERIALIZABLE?
             'Apellido1' => $this->apellido1,
             'Apellido2' => $this->apellido2,
             'DNI' => $this->dni,
-            'Sexo' => $this->sexo,
-            'Fecha de nacimiento' => $this->fechNac,
+            'Género' => $this->genero,
+            'Fecha de nacimiento' => $this->fechaNac,
             'Dirección' => $this->direccion,
             'País' => $this->pais,
             'Prefijo' => $this->prefijo,
             'Teléfono' => $this->telefono,
             'Email' => $this->email,
             'Contraseña' => $this->contrasena,
-            'Notificaciones' => $this->notificaciones,
-            'Revista' => $this->revista
+            'Suscripción' => $this->suscripcion,
+            'Imagen' => $this->imagen
         ];        
     
     }
