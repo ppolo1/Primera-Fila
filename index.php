@@ -31,11 +31,13 @@ require_once './CONTROL/Clientes.php';
  
  // VOY A HACER UN JSON CON LOS PRODUCTOS
 
-//$array = Modelo::consultarProductos() ;
+$array = Modelo::consultarProductos() ;
+
+//var_dump($array) ;
 //
-//$archivoJson = json_encode($array) ;
-//
-//echo $archivoJson ;
+$archivoJson = json_encode($array) ;
+
+echo $archivoJson ;
 
 // -----------------------------------
 
@@ -81,4 +83,4 @@ require_once './CONTROL/Clientes.php';
 
 //header("Location: ../VISTA/Home.php") ;
 
-require_once './CONTROL/Route.php' ;
+//require_once './CONTROL/Route.php' ;

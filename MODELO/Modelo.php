@@ -62,6 +62,13 @@ class Modelo {
         return null;
     }
     
+//    while ($row = $result->fetch_array(MYSQLI_ASSOC))
+//        {
+//         array_push($lista, new Automovil($row["id"], $row["marca"], $row["modelo"],$row["anio"], $row["precio"]));
+//              
+//        }
+//        return $lista;
+    
     
     /**
      * Método que devuelve una array con los PAÍSES de la BBDD.
