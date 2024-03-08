@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-03-2024 a las 19:09:32
+-- Tiempo de generación: 08-03-2024 a las 21:29:13
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -355,30 +355,30 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id_producto`, `nombre`, `descripcion`, `precio`, `categoria`, `imagen`, `stock`) VALUES
-(1, 'Aparador castellano', 'Un aparador del siglo XIX de madera de pino', 2500, 'Mueble', 'VISTA/img/mueble1.jpg', 0),
-(2, 'Secreté Artesanal', 'Secreter hecho amano con madera de haya', 5000, 'Mueble', 'VISTA/img/mueble2.jpg', 0),
-(3, 'Secreté Escritorio', 'Secreter de pino que sirve para estudiar', 5150, 'Mueble', 'VISTA/img/mueble3.jpg', 0),
-(4, 'Taburete Rústico', 'Juego de dos taburetes de madera maciza', 850, 'Mueble', 'VISTA/img/mueble4.jpg', 0),
-(5, 'Mueble Chinero', 'Mueble de madera fabricado en china', 6500, 'Mueble', 'VISTA/img/mueble5.jpg', 0),
-(6, 'Mesilla de pino Rústica', 'Mesilla de pino', 670, 'Mueble', 'VISTA/img/mueble6.jpg', 0),
-(7, 'Plato antiguo', 'Plato de tiempos inmemoriables', 250, 'Decoracion', 'VISTA/img/decoracion1.jpg', 0),
-(8, 'Cibeles de resina', 'Estatuilla de la fuente de cibeles', 125, 'Decoracion', 'VISTA/img/decoracion2.jpg', 0),
-(9, 'Busto águila', 'Busto de la cabeza de un águila real', 450, 'Decoracion', 'VISTA/img/decoracion3.jpg', 0),
-(10, 'Tibord Griego De Cerámica', 'Tribord griego antiguo bien conservado', 570, 'Decoracion', 'VISTA/img/decoracion4.jpg', 0),
-(11, 'Globo Terraqueo vintage', 'Globo terráqueo bastante antiguo pero funcional', 300, 'Decoracion', 'VISTA/img/decoracion5.jpg', 0),
-(12, 'Tetera de Latón', 'Una tetera de latón usable', 100, 'Decoracion', 'VISTA/img/decoracion6.jpg', 0),
-(13, 'Oleo sobre lienzo San Pedro', 'Cuadro Oleo sobre Lienzo de San Pedro', 7250, 'Arte', 'VISTA/img/arte1.jpg', 0),
-(14, 'Lamina Virgen y niño', 'Cuadro de la Virgen con el Niño', 1125, 'Arte', 'VISTA/img/arte2.jpg', 0),
-(15, 'Lamina Renacentista', 'Lamina renacentista de una mujer', 2450, 'Arte', 'VISTA/img/arte3.jpg', 0),
-(16, 'Racimo de Uvas', 'Cuadro de un racimo de uvas', 1970, 'Arte', 'VISTA/img/arte4.jpg', 0),
-(17, 'Oleografía de la Adoración', 'Oleo de la Adoración', 2700, 'Arte', 'VISTA/img/arte5.jpg', 0),
-(18, 'Paseo siglo XVIII', 'Cuadro de un paseo', 3000, 'Arte', 'VISTA/img/arte6.jpg', 0),
-(19, 'Mesa de Mármol', 'Lámpara con base de mármol', 250, 'Iluminacion', 'VISTA/img/iluminacion1.jpg', 0),
-(20, 'Redonda de Cerámica', 'Lámpara redonda con base de cerámica', 525, 'Iluminacion', 'VISTA/img/iluminacion2.jpg', 0),
-(21, 'Lámpara de Bronce', 'Lámpara con base de bronce ', 250, 'Iluminacion', 'VISTA/img/iluminacion3.jpg', 0),
-(22, 'Lámpara griega', 'Lámpara griega de cerámica', 450, 'Iluminacion', 'VISTA/img/iluminacion4.jpg', 0),
-(23, 'Antiguo Farol de Pared', 'Lampará antigua de pared', 140, 'Iluminacion', 'VISTA/img/iluminacion5.jpg', 0),
-(24, 'Farol de Bronce y Latón', 'Farol de pared de bronce y latón', 230, 'Iluminacion', 'VISTA/img/iluminacion6.jpg', 0);
+(1, 'Aparador castellano', 'Un aparador del siglo XIX de madera de pino', 2500, 'Mueble', 'mueble1.jpg', 0),
+(2, 'Secreté Artesanal', 'Secreter hecho amano con madera de haya', 5000, 'Mueble', 'mueble2.jpg', 0),
+(3, 'Secreté Escritorio', 'Secreter de pino que sirve para estudiar', 5150, 'Mueble', 'mueble3.jpg', 0),
+(4, 'Taburete Rústico', 'Juego de dos taburetes de madera maciza', 850, 'Mueble', 'mueble4.jpg', 0),
+(5, 'Mueble Chinero', 'Mueble de madera fabricado en China', 6500, 'Mueble', 'mueble5.jpg', 0),
+(6, 'Mesilla de pino Rústica', 'Mesilla de pino', 670, 'Mueble', 'mueble6.jpg', 0),
+(7, 'Plato antiguo', 'Plato de tiempos inmemoriables', 250, 'Decoracion', 'decoracion1.jpg', 0),
+(8, 'Cibeles de resina', 'Estatuilla de la fuente de Cibeles', 125, 'Decoracion', 'decoracion2.jpg', 0),
+(9, 'Busto águila', 'Busto de la cabeza de un águila real', 450, 'Decoracion', 'decoracion3.jpg', 0),
+(10, 'Tribord Griego De Cerámica', 'Tribord griego antiguo bien conservado', 570, 'Decoracion', 'decoracion4.jpg', 0),
+(11, 'Globo Terráqueo vintage', 'Globo terráqueo bastante antiguo pero funcional', 300, 'Decoracion', 'decoracion5.jpg', 0),
+(12, 'Tetera de Latón', 'Una tetera de latón usable', 100, 'Decoracion', 'decoracion6.jpg', 0),
+(13, 'Óleo sobre lienzo San Pedro', 'Cuadro óleo sobre lienzo de San Pedro', 7250, 'Arte', 'arte1.jpg', 0),
+(14, 'Lamina Virgen y niño', 'Cuadro de la Virgen con el Niño', 1125, 'Arte', 'arte2.jpg', 0),
+(15, 'Lamina Renacentista', 'Lamina renacentista de una mujer', 2450, 'Arte', 'arte3.jpg', 0),
+(16, 'Racimo de Uvas', 'Cuadro de un racimo de uvas', 1970, 'Arte', 'arte4.jpg', 0),
+(17, 'Oleografía de la Adoración', 'Óleo de la Adoración', 2700, 'Arte', 'arte5.jpg', 0),
+(18, 'Paseo siglo XVIII', 'Cuadro de un paseo', 3000, 'Arte', 'arte6.jpg', 0),
+(19, 'Mesa de Mármol', 'Lámpara con base de mármol', 250, 'Iluminacion', 'iluminacion1.jpg', 0),
+(20, 'Redonda de Cerámica', 'Lámpara redonda con base de cerámica', 525, 'Iluminacion', 'iluminacion2.jpg', 0),
+(21, 'Lámpara de Bronce', 'Lámpara con base de bronce ', 250, 'Iluminacion', 'iluminacion3.jpg', 0),
+(22, 'Lámpara griega', 'Lámpara griega de cerámica', 450, 'Iluminacion', 'iluminacion4.jpg', 0),
+(23, 'Antiguo Farol de Pared', 'Lampará antigua de pared', 140, 'Iluminacion', 'iluminacion5.jpg', 0),
+(24, 'Farol de Bronce y Latón', 'Farol de pared de bronce y latón', 230, 'Iluminacion', 'iluminacion6.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -428,7 +428,8 @@ ALTER TABLE `productos`
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id_usuario`) USING BTREE;
+  ADD PRIMARY KEY (`id_usuario`) USING BTREE,
+  ADD KEY `Contrasena_FK` (`contrasena`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
