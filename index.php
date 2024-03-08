@@ -35,9 +35,9 @@ $array = Modelo::consultarProductos() ;
 
 var_dump($array) ;
 //
-//$archivoJson = json_encode($array) ;
+// $archivoJson = json_encode($array) ;
 
-//echo $archivoJson ;
+// echo $archivoJson ;
 
 // -----------------------------------
 

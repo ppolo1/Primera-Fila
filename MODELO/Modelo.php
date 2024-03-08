@@ -70,15 +70,16 @@ class Modelo {
         $sql = $conexion->prepare($sql);
 
         if ($sql->execute()) {
-            while ($row = $sql->fetch_array(MYSQLI_ASSOC)){
+            $lista = array() ;
+            while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
                 
-                 array_push($lista, new Productos($row["nombre"], $row["descripcion"], $row["precio"], $row["categoria"], $row["imagen"], $row["stock"]));
+                 array_push($lista, new Productos($row["nombre"], $row["descripcion"], $row["precio"], $row["categoria"], $row["imagen"], $row["stock"])) ;
 
             }
             if ($row) {
                 header('HTTP/1.1 200 Producto seleccionado');
-                return $lista;
             }
+            return $lista;
         } else {
             header('HTTP/1.1 404 Error con sentencia');
             return -1;
