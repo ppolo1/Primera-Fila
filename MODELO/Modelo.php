@@ -87,6 +87,32 @@ class Modelo {
 
         return null;
     }
+
+
+    public static function consultarProductosCategoria($categoria) {
+        
+        $conexion = BBDD::conectar();
+        $sql = "SELECT id_producto,nombre,descripcion,precio,categoria,imagen,stock FROM productos WHERE categoria = '$categoria'" ;
+        $sql = $conexion->prepare($sql);
+
+        if ($sql->execute()) {
+            $lista = array() ;
+            while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
+                
+                 array_push($lista, new Productos($row["nombre"], $row["descripcion"], $row["precio"], $row["categoria"], $row["imagen"], $row["stock"])) ;
+
+            }
+            if ($row) {
+                header('HTTP/1.1 200 Producto seleccionado');
+            }
+            return $lista;
+        } else {
+            header('HTTP/1.1 404 Error con sentencia');
+            return -1;
+        }
+
+        return null;
+    }
     
     // while ($row = $result->fetch_array(MYSQLI_ASSOC))
     //    {

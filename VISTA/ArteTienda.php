@@ -43,8 +43,35 @@
 
                         <div class="row justify-content-around" id="products1">
 
+                        <?php
 
-                            <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
+                            require_once '../MODELO/Modelo.php';
+                            require_once '../MODELO/BBDD.php';
+                            require_once '../CONTROL/Productos.php';
+
+                            $array = Modelo::consultarProductosCategoria("Arte") ;
+
+                            $render = "" ;
+
+                            foreach ($array as $key => $value) {
+                                
+                                $render .= '<div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">' ;
+                                $render .= '<img src="'. $value->getImagen() .'" alt="Producto '. ($key + 1) .'">' ;
+                                $render .= '<h4>'. $value->getNombre() .'</h4>' ;
+                                $render .= '<p class="price">'. $value->getPrecio() .'€</p>' ;
+                                $render .= '<input type="number" min="1" max="'. $value->getStock() .'" value="1">' ;
+                                $render .= '<button class="add-to-cart m-2">Añadir al Carrito</button>' ;
+
+                                $render .= '</div>' ;
+
+                            }
+
+                            echo $render ;
+
+                        ?>
+
+
+                            <!-- <div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">
                                 <img src="img/arte1.jpg" alt="Producto 1">
                                 <h4>Oleo Sobre Lienzo San Pedro</h4>
                                 <p class="price">€7250</p>
@@ -92,7 +119,7 @@
                                 <p class="price">€3000</p>
                                 <input type="number" min="1" value="1">
                                 <button class="add-to-cart m-2">Añadir al Carrito</button>
-                            </div>
+                            </div> -->
 
                         </div>
                 </div>

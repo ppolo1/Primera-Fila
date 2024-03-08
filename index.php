@@ -31,7 +31,8 @@ require_once './CONTROL/Clientes.php';
  
  // VOY A HACER UN JSON CON LOS PRODUCTOS
 
-$array = Modelo::consultarProductos() ;
+// $array = Modelo::consultarProductos() ;
+$array = Modelo::consultarProductosCategoria("Arte") ;
 
 var_dump($array) ;
 //
