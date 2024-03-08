@@ -45,14 +45,18 @@ class Modelo {
      */
      public static function consultarProductos() {
         $conexion = BBDD::conectar();
-        $sql = "SELECT * FROM productos";
+        $sql = "SELECT id_producto,nombre,descripcion,precio,categoria,imagen,stock FROM productos";
         $sql = $conexion->prepare($sql);
 
         if ($sql->execute()) {
-            $result = $sql->fetchAll(PDO::FETCH_ASSOC);
-            if ($result) {
+            while ($row = $sql->fetch_array(MYSQLI_ASSOC)){
+                
+                 array_push($lista, new Productos($row["nombre"], $row["descripcion"], $row["precio"], $row["categoria"], $row["imagen"], $row["stock"]));
+
+            }
+            if ($lista) {
                 header('HTTP/1.1 200 Producto seleccionado');
-                return $result;
+                return $lista;
             }
         } else {
             header('HTTP/1.1 404 Error con sentencia');

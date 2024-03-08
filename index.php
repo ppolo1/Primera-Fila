@@ -33,11 +33,11 @@ require_once './CONTROL/Clientes.php';
 
 $array = Modelo::consultarProductos() ;
 
-//var_dump($array) ;
+var_dump($array) ;
 //
-$archivoJson = json_encode($array) ;
+//$archivoJson = json_encode($array) ;
 
-echo $archivoJson ;
+//echo $archivoJson ;
 
 // -----------------------------------
 

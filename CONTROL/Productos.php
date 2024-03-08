@@ -14,21 +14,30 @@ class Productos {
     private $nombre ;
     private $descripcion ;
     private $precio ;
+    private $categoria ;
     private $imagen ;
     private $stock ;
     
-    public function __construct($nombre, $descripcion, $precio, $imagen, $stock, $idProducto = null) 
+    public function __construct($nombre, $descripcion, $precio, $categoria, $imagen, $stock, $idProducto = null) 
     {
         $this->idProducto = $idProducto;
         $this->nombre = $nombre;
         $this->descripcion = $descripcion;
         $this->precio = $precio;
+        $this->categoria = $categoria ;
         $this->imagen = $imagen;
         $this->stock = $stock;
     }
 
-    
-    public function getIdProducto() {
+    public function getCategoria() {
+        return $this->categoria;
+    }
+
+    public function setCategoria($categoria): void {
+        $this->categoria = $categoria;
+    }
+
+        public function getIdProducto() {
         return $this->idProducto;
     }
 
@@ -80,12 +89,13 @@ class Productos {
     public function jsonSerialize(){
    
         return [
-            'Nombre' => $this->nombre,
-            'Descripcion' => $this->descripcion,
-            'Precio' => $this->precio,
-            'Imagen' => $this->imagen,
-            'Id' => $this-> idProducto,
-            'Stock' => $this-> stock
+            'nombre' => $this->nombre,
+            'descripcion' => $this->descripcion,
+            'precio' => $this->precio,
+            'categoria' => $this->categoria,
+            'imagen' => $this->imagen,
+            'id' => $this-> idProducto,
+            'stock' => $this-> stock
         ];        
     
     }
