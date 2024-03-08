@@ -56,7 +56,7 @@
                             foreach ($array as $key => $value) {
                                 
                                 $render .= '<div class="col-xl-3 col-md-6 col-12 m-1 d-flex flex-column">' ;
-                                $render .= '<img src="'. $value->getImagen() .'" alt="Producto '. ($key + 1) .'">' ;
+                                $render .= '<img src="img/'. $value->getImagen() .'" alt="Producto '. ($key + 1) .'">' ;
                                 $render .= '<h4>'. $value->getNombre() .'</h4>' ;
                                 $render .= '<p class="price">'. $value->getPrecio() .'€</p>' ;
                                 $render .= '<input type="number" min="1" max="'. $value->getStock() .'" value="1">' ;
