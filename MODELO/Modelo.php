@@ -36,7 +36,27 @@ class Modelo {
 
         return null;
     }
-    
+
+
+    // public static function consultarProductos() {
+
+    //     $conexion = BBDD::conectar();
+    //     $sql = "SELECT * FROM productos";
+    //     $sql = $conexion->prepare($sql);
+
+    //     if ($sql->execute()) {
+    //         $result = $sql->fetchAll(PDO::FETCH_ASSOC);
+    //         if ($result) {
+    //             header('HTTP/1.1 200 Producto seleccionado');
+    //             return $result;
+    //         }
+    //     } else {
+    //         header('HTTP/1.1 404 Error con sentencia');
+    //         return -1;
+    //     }
+
+    //     return null;
+    // }
     
     /**
      * Método que devuelve una array con los PRODUCTOS de la BBDD.
@@ -44,6 +64,7 @@ class Modelo {
      * @return null No retorna nada (null) si no se ha podido acceder.
      */
      public static function consultarProductos() {
+        
         $conexion = BBDD::conectar();
         $sql = "SELECT id_producto,nombre,descripcion,precio,categoria,imagen,stock FROM productos";
         $sql = $conexion->prepare($sql);
@@ -54,7 +75,7 @@ class Modelo {
                  array_push($lista, new Productos($row["nombre"], $row["descripcion"], $row["precio"], $row["categoria"], $row["imagen"], $row["stock"]));
 
             }
-            if ($lista) {
+            if ($row) {
                 header('HTTP/1.1 200 Producto seleccionado');
                 return $lista;
             }
@@ -66,12 +87,12 @@ class Modelo {
         return null;
     }
     
-//    while ($row = $result->fetch_array(MYSQLI_ASSOC))
-//        {
-//         array_push($lista, new Automovil($row["id"], $row["marca"], $row["modelo"],$row["anio"], $row["precio"]));
-//              
-//        }
-//        return $lista;
+    // while ($row = $result->fetch_array(MYSQLI_ASSOC))
+    //    {
+    //     array_push($lista, new Automovil($row["id"], $row["marca"], $row["modelo"],$row["anio"], $row["precio"]));
+             
+    //    }
+    //    return $lista;
     
     
     /**
