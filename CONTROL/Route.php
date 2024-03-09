@@ -3,14 +3,14 @@
 $url = $_GET["ruta"] ;
 $ruta = $_SERVER['REQUEST_URI'];
 
-if (strpos($ruta, '/home') === 0) {
+if (strpos($ruta, 'Primera-Fila/home') === 0) {
     $metodo = $_SERVER['REQUEST_METHOD'];
     switch ($metodo) {
         case 'GET':
-            if (preg_match('~^/home~', $ruta)) {
+            if (preg_match('~^/Primera-Fila/home~', $ruta)) {
                 if (isset($matches[0])) {
                     
-                    echo "estoy dentro del HOme" ;
+                    echo "estoy dentro del Home" ;
                 }
             }
             break;
@@ -25,7 +25,7 @@ if (strpos($ruta, '/home') === 0) {
             break;
     }
 }else{
-    echo  "La ruta noe s igual";
+    echo  "La ruta no es igual";
 }
 
 if (strpos($ruta, '/Primera-Fila/contacto') === 0) {
@@ -50,5 +50,5 @@ if (strpos($ruta, '/Primera-Fila/contacto') === 0) {
             break;
     }
 }else{
-    echo  "La ruta noe s igual";
+    echo  "La ruta no es igual";
 }

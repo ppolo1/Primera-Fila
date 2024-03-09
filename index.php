@@ -35,9 +35,9 @@ require_once './CONTROL/Genero.php' ;
 
 // $array = Modelo::consultarProductos() ;
 //$array = Modelo::consultarProductosCategoria("Arte") ;
-$array = Modelo::consultarGenero() ;
+// $array = Modelo::consultarGenero() ;
 
-var_dump($array) ;
+// var_dump($array) ;
 //
 // $archivoJson = json_encode($array) ;
 
@@ -88,3 +88,13 @@ var_dump($array) ;
 //header("Location: ../VISTA/Home.php") ;
 
 //require_once './CONTROL/Route.php' ;
+
+
+if(isset($_POST["registro"]))
+{
+    echo "El nombre es:" . $_POST["nombre"] ;
+}
+else
+{
+    header("Location:http://localhost/Primera-Fila/VISTA/FormularioRegistro.php") ;
+}

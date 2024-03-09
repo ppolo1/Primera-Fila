@@ -9,7 +9,9 @@ error_reporting(E_ALL);
  *
  * @author Primera Fila
  */
-class Controlador {
+// class Controlador {
     
     
-}
+// }
+
+echo "Hola" ;

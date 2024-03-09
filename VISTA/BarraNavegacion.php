@@ -5,7 +5,7 @@
     <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link active" href="home.html">Inicio</a>
+                <a class="nav-link active" href="home">Inicio</a>
             </li>
         </ul>
         <ul class="navbar-nav me-5">
