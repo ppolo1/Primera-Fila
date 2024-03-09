@@ -17,10 +17,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 <img src="img/logo_transparente2.png" alt="Logo" class="img-fluid">
             </a>
         </div>
-
         <div class="col-12 d-none d-md-flex col-lg-6 col-xl-6 justify-content-center">
           <form class="input-group" role="search">
-              <!-- Selector de categorías -->
+          <!-- Selector de categorías -->
               <select class="form-select btn btn-dark" aria-label="Categorías">
                   <option selected>Todas las categorías</option>
                   <option value="1">Muebles</option>
@@ -193,6 +192,18 @@ document.addEventListener("DOMContentLoaded", function () {
         window.open("form_logado.html", "_blank", windowFeatures);
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+
+    const registrate = document.getElementById("registro");
+
+    registrate.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        const windowFeatures = "width=800,height=800,top=100,left=350";
+
+        window.open("form_registro.html", "_blank", windowFeatures);
+    });
+});
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -297,17 +308,24 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateCartDisplay() {
         cartItemsElement.innerHTML = '';
         let totalPrice = 0;
-
-        cart.forEach(item => {
+    
+        cart.forEach((item, index) => { // Añadir el índice del ítem para identificarlo
             const li = document.createElement('li');
             li.innerText = `${item.name} x ${item.quantity} - ${item.price * item.quantity}€`;
+    
+            // Crear botón de eliminar
+            const deleteButton = document.createElement('button');
+            deleteButton.innerText = 'Eliminar';
+            deleteButton.onclick = function() { removeItemFromCart(index); }; // Función para eliminar ítem
+            li.appendChild(deleteButton);
+    
             cartItemsElement.appendChild(li);
             totalPrice += item.price * item.quantity;
         });
-
+    
         cartTotalElement.textContent = totalPrice.toFixed(2);
     }
-
+    
     function saveCartToLocalStorage() {
         localStorage.setItem('cart', JSON.stringify(cart));
     }
@@ -319,6 +337,14 @@ document.addEventListener('DOMContentLoaded', function () {
         updateCartDisplay();
         updateCartCount();
     }
+    // función para eliminar los artículos individualmente
+    function removeItemFromCart(index) {
+        cart.splice(index, 1); // Elimina el ítem del arreglo cart basado en su índice
+        updateCartDisplay(); // Actualiza la visualización del carrito
+        updateCartCount(); // Actualiza el contador de ítems del carrito
+        saveCartToLocalStorage(); // Guarda el estado actualizado del carrito en localStorage
+    }
+    
 
     // Llama a loadCart cuando la página se carga completamente para cargar los ítems del carrito
     loadCart();
