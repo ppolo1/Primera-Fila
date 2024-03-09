@@ -73,8 +73,24 @@
                     <div class="col-md-6">
                         <label for="pais" class="form-label">País:</label>
                         <select class="form-select" id="pais">
-
+                            <option selected> Selecciona </option>
                             <!-- Opciones de países -->
+                            
+                            <?php
+                            require_once '../CONTROL/Pais.php' ;
+                            require_once '../MODELO/Modelo.php';
+                            require_once '../MODELO/BBDD.php' ;
+                            
+                            $array = Modelo::consultarPaises() ;
+                            $render = "" ;
+                            
+                            foreach ($array as $key => $value) {
+                                
+                                $render.= '<option value="'. $value->getNombre() .'"> '. $value->getNombre() .' </option>' ;
+                            }
+                            echo $render ;
+                            
+                            ?>
                         </select>
                     </div>
                     <div class="col-md-6">

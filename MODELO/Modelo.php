@@ -59,7 +59,8 @@ class Modelo {
     // }
     
     /**
-     * Método que devuelve una array con los PRODUCTOS de la BBDD.
+     * Método que devuelve una array con objetos de tipo PRODUCTOS 
+     * cogiendo los datos de la BBDD.
      * 
      * @return null No retorna nada (null) si no se ha podido acceder.
      */
@@ -89,6 +90,14 @@ class Modelo {
     }
 
 
+    /**
+     * Método que devuelve un ARRAY con objetos de tipo PRODUCTOS clasificado 
+     * por categoría de la tienda. Extrae los datos de la BBDD.
+     * 
+     * @param type $categoria Categoría de la tienda de la que quieren extraer 
+     * los productos.
+     * @return array Devuelve un array de objetos de tipo PRODUCTOS.
+     */
     public static function consultarProductosCategoria($categoria) {
         
         $conexion = BBDD::conectar();
@@ -129,15 +138,23 @@ class Modelo {
      */
      public static function consultarPaises() {
         $conexion = BBDD::conectar();
-        $sql = "SELECT nombre FROM pais";
+        $sql = "SELECT nombre,prefijo FROM paises";
         $sql = $conexion->prepare($sql);
 
         if ($sql->execute()) {
-            $result = $sql->fetchAll(PDO::FETCH_ASSOC);
-            if ($result) {
-                header('HTTP/1.1 200 País seleccionado');
-                return $result;
+            
+            $lista = array() ;
+            
+            while ($row = $sql->fetch(PDO::FETCH_ASSOC)){
+                
+                array_push($lista, new Pais($row["nombre"], $row["prefijo"])) ;
             }
+            
+            if ($row) {
+                header('HTTP/1.1 200 País seleccionado');
+            }
+            return $lista ;
+            
         } else {
             header('HTTP/1.1 404 Error con sentencia');
             return -1;
