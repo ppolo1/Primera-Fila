@@ -8,7 +8,7 @@
             </div>
         <!-- Logo a la izquierda para todas las pantallas -->
         <div class="col-3 col-md-3 col-lg-3 col-xl-3">
-            <a href="#" class="navbar-brand">
+            <a href="home" class="navbar-brand">
                 <img src="img/logo_transparente2.png" alt="Logo" class="img-fluid">
             </a>
         </div>
@@ -37,7 +37,7 @@
 
         <!-- Iconos de usuario y carrito a la derecha para todas las pantallas -->
         <div class="col-9 col-md-3 col-lg-3 col-xl-3 d-flex justify-content-end">
-            <a id="logado" href="form_logado.html" class="btn">
+            <a id="logado" href="form_logado" class="btn">
                 <button id="logado" class="btn" type="button">
                     <i class="fas fa-user-circle"></i>
                 </button>

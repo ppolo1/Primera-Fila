@@ -90,11 +90,13 @@ require_once './CONTROL/Genero.php' ;
 //require_once './CONTROL/Route.php' ;
 
 
-if(isset($_POST["registro"]))
-{
-    echo "El nombre es:" . $_POST["nombre"] ;
-}
-else
-{
-    header("Location:http://localhost/Primera-Fila/VISTA/FormularioRegistro.php") ;
-}
+//if(isset($_POST["registro"]))
+//{
+//    echo "El nombre es:" . $_POST["nombre"] ;
+//}
+//else
+//{
+//    header("Location:http://localhost/Primera-Fila/VISTA/FormularioRegistro.php") ;
+//}
+
+require_once './CONTROL/Route.php' ;

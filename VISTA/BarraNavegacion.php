@@ -23,7 +23,7 @@
         </ul>
         <ul class="navbar-nav me-xl-5">
             <li class="nav-item">
-                <a class="nav-link active" href="SobreNosotros.html">Sobre Nosotros</a>
+                <a class="nav-link active" href="SobreNosotros">Sobre Nosotros</a>
             </li>
         </ul>
         <ul class="navbar-nav me-xl-5">

@@ -12,4 +12,6 @@ RewriteRule ^(.*)$ $1.html
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-D
-RewriteRule ^(.+?)/?$ index.php?url=$1 [L,QSA]
+
+
+RewriteRule ^([^/]+)/?$ /$1 [L,QSA]

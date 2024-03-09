@@ -53,7 +53,7 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
-                            <form>
+                            <form action="#" method="post">
                                 <h1 class="text-center mb-4">Usuario Registrado</h1>
                                 <div class="mb-3">
                                     <label for="inputEmail" class="form-label">Email</label>

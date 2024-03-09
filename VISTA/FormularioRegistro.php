@@ -15,7 +15,7 @@
     <body>
         <div class="container py-5">
             <h2 class="mb-4 text-center">Registro de Usuario</h2>
-            <form action="index.php" method="POST" id="formularioRegistro" novalidate>
+            <form action="#" method="post" id="formularioRegistro" novalidate>
                 <div class="row g-3">
                     <div class="col-md-4">
                         <label for="nombre" class="form-label">Nombre:</label>
