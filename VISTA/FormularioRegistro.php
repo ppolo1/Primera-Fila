@@ -61,8 +61,23 @@
                         <label for="genero" class="form-label">Género:</label>
                         <select class="form-select" id="genero">
                             <option selected>Selecciona</option>
-                            <option value="hombre">Hombre</option>
-                            <option value="mujer">Mujer</option>
+                            
+                            <?php
+                            require_once '../CONTROL/Genero.php' ;
+                            require_once '../MODELO/Modelo.php';
+                            require_once '../MODELO/BBDD.php' ;
+                            
+                            $array = Modelo::consultarGenero() ;
+                            $render = "" ;
+                            
+                            foreach ($array as $key => $value) {
+                                
+                                $render.= '<option value="'. $value->getTipo() .'"> '. $value->getTipo() .' </option>' ;
+                            }
+                            echo $render ;
+                            
+                            ?>
+
                         </select>
                     </div>
                     <div class="col-md-6">
@@ -74,7 +89,6 @@
                         <label for="pais" class="form-label">País:</label>
                         <select class="form-select" id="pais">
                             <option selected> Selecciona </option>
-                            <!-- Opciones de países -->
                             
                             <?php
                             require_once '../CONTROL/Pais.php' ;

@@ -132,7 +132,7 @@ class Modelo {
     
     
     /**
-     * Método que devuelve una array con los PAÍSES de la BBDD.
+     * Método que devuelve una array con objetos de tipo PAIS de la BBDD.
      * 
      * @return null No retorna nada (null) si no se ha podido acceder.
      */
@@ -152,6 +152,39 @@ class Modelo {
             
             if ($row) {
                 header('HTTP/1.1 200 País seleccionado');
+            }
+            return $lista ;
+            
+        } else {
+            header('HTTP/1.1 404 Error con sentencia');
+            return -1;
+        }
+
+        return null;
+    }
+    
+    
+     /**
+     * Método que devuelve una array de objetos de tipo GENERO de la BBDD.
+     * 
+     * @return null No retorna nada (null) si no se ha podido acceder.
+     */
+     public static function consultarGenero() {
+        $conexion = BBDD::conectar();
+        $sql = "SELECT tipo FROM genero";
+        $sql = $conexion->prepare($sql);
+
+        if ($sql->execute()) {
+            
+            $lista = array() ;
+            
+            while ($row = $sql->fetch(PDO::FETCH_ASSOC)){
+                
+                array_push($lista, new Genero($row["tipo"])) ;
+            }
+            
+            if ($row) {
+                header('HTTP/1.1 200 Género seleccionado');
             }
             return $lista ;
             

@@ -22,6 +22,7 @@ require_once './CONTROL/Controlador.php' ;
 require_once './CONTROL/Productos.php' ;
 require_once './CONTROL/Clientes.php';
 require_once './CONTROL/Pais.php' ;
+require_once './CONTROL/Genero.php' ;
 
 //Web::completa("Este es el título", "prueba") ;
 //Web::completa("Formulario de contacto", "home") ;
@@ -34,7 +35,7 @@ require_once './CONTROL/Pais.php' ;
 
 // $array = Modelo::consultarProductos() ;
 //$array = Modelo::consultarProductosCategoria("Arte") ;
-$array = Modelo::consultarPaises() ;
+$array = Modelo::consultarGenero() ;
 
 var_dump($array) ;
 //
