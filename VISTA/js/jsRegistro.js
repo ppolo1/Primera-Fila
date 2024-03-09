@@ -22,11 +22,12 @@ let minusculaObligatoria = document.getElementById("minusculaObligatoria") ;
 let digitoObligatorio = document.getElementById("digitoObligatorio") ;
 let espaciosProhibidos = document.getElementById("espaciosProhibidos") ;
 let caracterEspecialObligatorio = document.getElementById("caracterEspecialObligatorio") ;
+let botonResetear = document.getElementById("botonResetear") ;
 
 // MENSAJES DE ERROR
 
 let errorNombre = document.getElementById("errorNombre") ; // Nombre
-let errorApellido = document.getElementById("errorApellido") ; // 
+let errorApellido = document.getElementById("errorApellido") ; // Apellido
 let errorEmail = document.getElementById("errorEmail") ; // Email
 let errorPassword = document.getElementById("errorPassword") ; // Contraseña
 let errorPasswordRepetida = document.getElementById("errorPasswordRepetida") ; // Confirmación de contraseña
@@ -679,7 +680,31 @@ function eliminaGuiones(cadena) {
     return cadena ;
 }
 
+function resetearMensajesError() {
 
+    // Resetea los mensajes de error
+    
+    errorNombre.innerHTML = "" ; // Nombre
+    errorApellido.innerHTML = "" ; // Apellido
+    errorEmail.innerHTML = "" ; // Email
+    errorPassword.innerHTML = "" ; // Contraseña
+    listaRequisitosPassword.innerHTML = "" ; // Lista de requisitos de la contraseña
+    errorPasswordRepetida.innerHTML = "" ; // Confirmación de contraseña
+    errorDni.innerHTML = "" ; // DNI
+    errorFecha.innerHTML = "" ; // Fecha de nacimiento
+    parrafo.innerHTML = ""  ; // Mensaje de registro
+
+    // Resetea los colores de los inputs
+
+    nombre.style.backgroundColor = "white" ;
+    apellido.style.backgroundColor = "white" ;
+    email.style.backgroundColor = "white" ;
+    password.style.backgroundColor = "white" ;
+    passwordRepetida.style.backgroundColor = "white" ;
+    dni.style.backgroundColor = "white" ;
+    fecha.style.backgroundColor = "white" ;
+
+}
 
 // ---------------- EVENTOS ------------------
 
@@ -730,6 +755,9 @@ passwordRepetida.addEventListener("input", function() {
 dni.addEventListener("input", function() {
     cambiaColorInput(dni, validarDNI()) ;
 }, false) ;
+botonResetear.addEventListener("click", function() {
+    resetearMensajesError() ;
+})
 
 window.addEventListener("load", comenzar, false) ;
 

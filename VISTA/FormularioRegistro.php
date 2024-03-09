@@ -97,7 +97,7 @@
                 <section class="d-flex justify-content-between">
                     <button type="submit" aria-label="Enviar registro" class="btn btn-dark text-light" id="registro">
                         Registrarme</button>
-                    <input type="reset" value="Resetear valores" aria-label="Resetear los valores del formulario" class="btn btn-dark text-light">
+                    <input type="reset" id="botonResetear" value="Resetear valores" aria-label="Resetear los valores del formulario" class="btn btn-dark text-light">
                 </section>
             </form>
             <p id="mensajeRegistro"></p>
