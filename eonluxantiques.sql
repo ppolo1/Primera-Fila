@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-03-2024 a las 21:29:13
+-- Tiempo de generación: 09-03-2024 a las 13:46:32
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -69,7 +69,8 @@ CREATE TABLE `genero` (
 
 INSERT INTO `genero` (`tipo`) VALUES
 ('Hombre'),
-('Mujer');
+('Mujer'),
+('Otro');
 
 -- --------------------------------------------------------
 
