@@ -24,9 +24,9 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="home.html">Inicio</a></li>
-                <li class="breadcrumb-item"><a href="mueblesTienda.html">Muebles</a></li>
-                <li class="breadcrumb-item"><a href="arteTienda.html">Arte</a></li>
-                <li class="breadcrumb-item"><a href="decoracionTienda.html">Decoración</a></li>
+                <li class="breadcrumb-item"><a href="mueblesTienda">Muebles</a></li>
+                <li class="breadcrumb-item"><a href="arteTienda">Arte</a></li>
+                <li class="breadcrumb-item"><a href="decoracionTienda">Decoración</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Iluminación</li>
             </ol>
         </nav>

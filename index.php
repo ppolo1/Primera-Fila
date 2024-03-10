@@ -13,16 +13,24 @@ error_reporting(E_ALL);
      - MASTER (proyecto) --> https://github.com/ppolo1/Primera-Fila/tree/master
  */
 
-require_once "./VISTA/Web.php" ;
+//require_once './MODELO/BBDD.php';
+//require_once './MODELO/Modelo.php';
+//
+//require_once './CONTROL/Controlador.php' ;
+//require_once './CONTROL/Route.php' ;
+//require_once './CONTROL/Productos.php' ;
+//require_once './CONTROL/Clientes.php';
+//require_once './CONTROL/Pais.php' ;
+//require_once './CONTROL/Genero.php' ;
 
-require_once './MODELO/BBDD.php';
-require_once './MODELO/Modelo.php';
 
-require_once './CONTROL/Controlador.php' ;
-require_once './CONTROL/Productos.php' ;
-require_once './CONTROL/Clientes.php';
-require_once './CONTROL/Pais.php' ;
-require_once './CONTROL/Genero.php' ;
+//------------------------------------------------------
+
+
+require_once 'CONTROL/Route.php' ;
+
+
+//------------------------------------------------------
 
 //Web::completa("Este es el título", "prueba") ;
 //Web::completa("Formulario de contacto", "home") ;
@@ -54,6 +62,8 @@ require_once './CONTROL/Genero.php' ;
 //Modelo::aniadirCliente($jsondata) ;
 
 // ------------------------------------------------
+
+// ----------------- ENRUTAMIENTO ---------------------------
 
 //$ruta = $_SERVER['REQUEST_URI'];
 //
@@ -99,4 +109,29 @@ require_once './CONTROL/Genero.php' ;
 //    header("Location:http://localhost/Primera-Fila/VISTA/FormularioRegistro.php") ;
 //}
 
-require_once './CONTROL/Route.php' ;
+//require_once './CONTROL/Route.php' ;
+
+//$ruta = $_SERVER['REQUEST_URI'];
+//
+//echo $ruta ;
+//
+//// HOME
+//
+//if (strpos($ruta, '/Primera-Fila') === 0) {
+//    
+//    if (preg_match('/index/', $ruta)) {
+//            
+//        require_once './VISTA/Home.php' ; 
+//    }
+//    if (preg_match('/home/', $ruta)) {
+//            
+//        require_once './VISTA/Home.php' ; 
+//    }
+//    if (preg_match('/form_logado/', $ruta)) {
+//            
+//        header("Location:VISTA/FormularioLogado.php") ;
+//    }
+//else {
+//    echo  "La ruta no es igual";
+//}
+//}

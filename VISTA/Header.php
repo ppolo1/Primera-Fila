@@ -9,7 +9,7 @@
         <!-- Logo a la izquierda para todas las pantallas -->
         <div class="col-3 col-md-3 col-lg-3 col-xl-3">
             <a href="home" class="navbar-brand">
-                <img src="img/logo_transparente2.png" alt="Logo" class="img-fluid">
+                <img src="VISTA/img/logo_transparente2.png" alt="Logo" class="img-fluid">
             </a>
         </div>
 

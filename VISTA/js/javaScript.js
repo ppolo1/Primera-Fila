@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const windowFeatures = "width=800,height=800,top=100,left=350";
 
-        window.open("form_logado.html", "_blank", windowFeatures);
+        window.open("form_logado", "_blank", windowFeatures);
     });
 });
 document.addEventListener("DOMContentLoaded", function () {
@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const windowFeatures = "width=800,height=800,top=100,left=350";
 
-        window.open("form_registro.html", "_blank", windowFeatures);
+        window.open("form_registro", "_blank", windowFeatures);
     });
 });
 
@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const windowFeatures = "width=800,height=800,top=100,left=350";
 
-        window.open("politicaPrivacidad.html", "_blank", windowFeatures);
+        window.open("politicaPrivacidad", "_blank", windowFeatures);
     });
 });
 
@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const windowFeatures = "width=800,height=800,top=100,left=350";
 
-        window.open("cookies.html", "_blank", windowFeatures);
+        window.open("cookies", "_blank", windowFeatures);
     });
 });
 
@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const windowFeatures = "width=800,height=800,top=100,left=350";
 
-        window.open("avisolegal.html", "_blank", windowFeatures);
+        window.open("avisolegal", "_blank", windowFeatures);
     });
 });
 
