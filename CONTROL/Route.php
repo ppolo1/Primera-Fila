@@ -1,6 +1,8 @@
 
 <?php
 
+session_start() ;
+
 $ruta = $_SERVER['REQUEST_URI'];
 $metodo = $_SERVER['REQUEST_METHOD'];
 
@@ -58,6 +60,10 @@ if ($metodo == 'GET') {
             
             case "politicaPrivacidad":
                 require_once 'VISTA/PoliticaPrivacidad.php';
+                break;
+
+            case "busqueda":
+                require_once 'VISTA/Busqueda.php' ;
                 break;
 
             default:

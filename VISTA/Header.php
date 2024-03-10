@@ -36,21 +36,25 @@
                 <div class="col-12 d-none d-md-flex col-lg-6 col-xl-6 justify-content-center">
                     <form class="input-group" role="search">
                         <!-- Selector de categorías -->
-                        <select class="form-select btn btn-dark" aria-label="Categorías">
+                        <!-- <select class="form-select btn btn-dark" aria-label="Categorías">
                             <option selected>Todas las categorías</option>
                             <option value="1">Muebles</option>
                             <option value="2">Decoración</option>
                             <option value="3">Arte</option>
                             <option value="4">Iluminación</option>
-                        </select>
-                        <!-- Entrada de búsqueda -->
-                        <input type="text" class="form-control" placeholder="Buscar" aria-label="Buscador de antiguedades" aria-describedby="buscador" style="width: 40%;">
-                        <!-- Botón de búsqueda -->
-                        <button type="submit" class="btn btn-dark" name="buscador" id="buscador" role="button" aria-label="Buscar">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
-                            </svg>
+                        </select> -->
+                        <!-- Botón para cargar datos -->
+                        <button type="button" id="botonBusqueda">
+                            <a href="index.php?pagina=busqueda"> Botón </a>
                         </button>
+                        <!-- Entrada de búsqueda -->
+                        <input type="text" id="inputBuscador" class="form-control" placeholder="Buscar" aria-label="Buscador de antiguedades" aria-describedby="buscador" style="width: 40%;">
+                        <!-- Botón de búsqueda -->
+                        <!-- <button type="submit" class="btn btn-dark" name="buscador" id="buscador" role="button" aria-label="Buscar"> -->
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+                            </svg> -->
+                        <!-- </button> -->
                     </form>
                 </div>
 

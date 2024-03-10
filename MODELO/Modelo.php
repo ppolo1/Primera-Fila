@@ -90,6 +90,29 @@ class Modelo {
     }
 
 
+    public static function consultarProductosAPI($textoBusqueda = null) {
+
+        $conexion = BBDD::conectar();
+
+        if ($textoBusqueda == null) {
+
+            $sql = "SELECT * FROM productos" ;
+        }
+        if ($textoBusqueda != null) {
+            // $textoBusqueda = $conexion->real_escape_string($textoBusqueda);
+            $sql= "SELECT * FROM productos WHERE nombre LIKE '%$textoBusqueda%'" ;
+        }
+
+        $statement = $conexion->prepare($sql);
+        $statement->execute();
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        $arrayDatosConsulta["datosConsultaProductos"]= $result;
+
+        return $arrayDatosConsulta ;
+    }
+
+
     /**
      * Método que devuelve un ARRAY con objetos de tipo PRODUCTOS clasificado 
      * por categoría de la tienda. Extrae los datos de la BBDD.

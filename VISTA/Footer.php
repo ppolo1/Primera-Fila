@@ -39,5 +39,6 @@
 <!--<script src="../VISTA/js/javaScript.js"></script>-->
 <script src="VISTA/js/jsRegistro.js"></script>
 <!--<script src="../VISTA/js/jsRegistro.js"></script>-->
+<script src="VISTA/js/buscador.js"></script>
 </body>
 </html>
