@@ -1,4 +1,7 @@
 
+<?php
+    require_once 'VISTA/Header.php';
+?>
 
 <style>
     .slider-frame img {
@@ -29,3 +32,7 @@
         </ul>
     </div>
 </main>
+
+<?php
+            require_once 'VISTA/Footer.php' ;
+        ?>

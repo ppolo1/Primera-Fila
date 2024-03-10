@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/styleRegistro.css">
+        <link href="VISTA/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="VISTA/css/style.css">
+        <link rel="stylesheet" href="VISTA/css/styleRegistro.css">
 
         <title> Formulario de Registro </title>
 
@@ -63,9 +63,9 @@
                             <option selected>Selecciona</option>
                             
                             <?php
-                            require_once '../CONTROL/Genero.php' ;
-                            require_once '../MODELO/Modelo.php';
-                            require_once '../MODELO/BBDD.php' ;
+                            require_once 'CONTROL/Genero.php' ;
+                            require_once 'MODELO/Modelo.php';
+                            require_once 'MODELO/BBDD.php' ;
                             
                             $array = Modelo::consultarGenero() ;
                             $render = "" ;
@@ -91,9 +91,9 @@
                             <option selected> Selecciona </option>
                             
                             <?php
-                            require_once '../CONTROL/Pais.php' ;
-                            require_once '../MODELO/Modelo.php';
-                            require_once '../MODELO/BBDD.php' ;
+                            require_once 'CONTROL/Pais.php' ;
+                            require_once 'MODELO/Modelo.php';
+                            require_once 'MODELO/BBDD.php' ;
                             
                             $array = Modelo::consultarPaises() ;
                             $render = "" ;
@@ -135,7 +135,8 @@
         </div>
 
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
-        <script src="js/jsRegistro.js"></script>
+        <script src="VISTA/js/jsRegistro.js"></script>
+        <script src="VISTA/js/javaScript.js"></script>
     </body>
 </html>
 

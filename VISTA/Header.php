@@ -5,12 +5,12 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--<link href="VISTA/css/bootstrap.min.css" rel="stylesheet">-->
-        <link href="../VISTA/css/bootstrap.min.css" rel="stylesheet">
-        <!--<link rel="stylesheet" href="VISTA/css/style.css">-->
-        <link rel="stylesheet" href="../VISTA/css/style.css">
-        <!--<link rel="stylesheet" href="VISTA/css/styleRegistro.css">-->
-        <link rel="stylesheet" href="../VISTA/css/styleRegistro.css">
+        <link href="VISTA/css/bootstrap.min.css" rel="stylesheet">
+        <!--<link href="../VISTA/css/bootstrap.min.css" rel="stylesheet">-->
+        <link rel="stylesheet" href="VISTA/css/style.css">
+        <!--<link rel="stylesheet" href="../VISTA/css/style.css">-->
+        <link rel="stylesheet" href="VISTA/css/styleRegistro.css">
+        <!--<link rel="stylesheet" href="../VISTA/css/styleRegistro.css">-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
                 </div>
                 <!-- Logo a la izquierda para todas las pantallas -->
                 <div class="col-3 col-md-3 col-lg-3 col-xl-3">
-                    <a href="index.php/home" class="navbar-brand">
+                    <a href="index.php?pagina=home" class="navbar-brand">
                         <img src="VISTA/img/logo_transparente2.png" alt="Logo" class="img-fluid">
                     </a>
                 </div>
@@ -57,7 +57,7 @@
 
                 <!-- Iconos de usuario y carrito a la derecha para todas las pantallas -->
                 <div class="col-9 col-md-3 col-lg-3 col-xl-3 d-flex justify-content-end">
-                    <a id="logado" href="index.php/form_logado" class="btn">
+                    <a id="logado" href="index.php?pagina=form_logado" class="btn">
                         <button id="logado" class="btn" type="button">
                             <i class="fas fa-user-circle"></i>
                         </button>
@@ -114,7 +114,7 @@
                 <div class="collapse navbar-collapse" id="navbarMenu">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.php/home"> Inicio </a>
+                            <a class="nav-link active" href="index.php?pagina=home"> Inicio </a>
                         </li>
                     </ul>
                     <ul class="navbar-nav me-5">
@@ -123,21 +123,21 @@
                                 Tienda
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item smaller-text" href="index.php/mueblesTienda">Muebles</a></li>
-                                <li><a class="dropdown-item smaller-text" href="index.php/decoracionTienda">Decoración</a></li>
-                                <li><a class="dropdown-item smaller-text" href="index.php/arteTienda">Arte</a></li>
-                                <li><a class="dropdown-item smaller-text" href="index.php/iluminacionTienda">Iluminación</a></li>
+                                <li><a class="dropdown-item smaller-text" href="index.php?pagina=mueblesTienda">Muebles</a></li>
+                                <li><a class="dropdown-item smaller-text" href="index.php?pagina=decoracionTienda">Decoración</a></li>
+                                <li><a class="dropdown-item smaller-text" href="index.php?pagina=arteTienda">Arte</a></li>
+                                <li><a class="dropdown-item smaller-text" href="index.php?pagina=iluminacionTienda">Iluminación</a></li>
                             </ul>
                         </li>
                     </ul>
                     <ul class="navbar-nav me-xl-5">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.php/about">Sobre Nosotros</a>
+                            <a class="nav-link active" href="index.php?pagina=about">Sobre Nosotros</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav me-xl-5">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.php/contacto">Contacto</a>
+                            <a class="nav-link active" href="index.php?pagina=contacto">Contacto</a>
                         </li>
                     </ul>
                 </div>

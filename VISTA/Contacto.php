@@ -1,8 +1,12 @@
 
-          <!--Migas de pan-->
+          
+<?php
+    require_once 'VISTA/Header.php';
+?>
+<!--Migas de pan-->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="home.html">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="index.php?pagina=home">Inicio</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Contacto</li>
             </ol>
         </nav>
@@ -54,3 +58,7 @@
                 </div>   
             </div>
         </main>
+
+    <?php
+            require_once 'VISTA/FooterContacto.php' ;
+        ?>

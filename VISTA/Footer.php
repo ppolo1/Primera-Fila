@@ -21,10 +21,10 @@
         <div class="col-4">
             <h5>Tienda</h5>
             <ul class="list-unstyled">
-                <li><a href="index.php/mueblesTienda" class="text-decoration-none text-dark">Muebles</a></li>
-                <li><a href="index.php/decoracionTienda" class="text-decoration-none text-dark">Decoración</a></li>
-                <li><a href="index.php/arteTienda" class="text-decoration-none text-dark">Arte</a></li>
-                <li><a href="index.php/iluminacionTienda" class="text-decoration-none text-dark">Iluminación</a></li>
+                <li><a href="index.php?pagina=mueblesTienda" class="text-decoration-none text-dark">Muebles</a></li>
+                <li><a href="index.php?pagina=decoracionTienda" class="text-decoration-none text-dark">Decoración</a></li>
+                <li><a href="index.php?pagina=arteTienda" class="text-decoration-none text-dark">Arte</a></li>
+                <li><a href="index.php?pagina=iluminacionTienda" class="text-decoration-none text-dark">Iluminación</a></li>
             </ul>
         </div>
     </div>
