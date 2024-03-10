@@ -5,7 +5,7 @@
     <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link active" href="home"> Inicio </a>
+                <a class="nav-link active" href="index.php/home"> Inicio </a>
             </li>
         </ul>
         <ul class="navbar-nav me-5">
@@ -14,16 +14,16 @@
                     Tienda
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item smaller-text" href="mueblesTienda">Muebles</a></li>
-                    <li><a class="dropdown-item smaller-text" href="decoracionTienda">Decoración</a></li>
-                    <li><a class="dropdown-item smaller-text" href="arteTienda">Arte</a></li>
-                    <li><a class="dropdown-item smaller-text" href="iluminacionTienda">Iluminación</a></li>
+                    <li><a class="dropdown-item smaller-text" href="index.php/mueblesTienda">Muebles</a></li>
+                    <li><a class="dropdown-item smaller-text" href="index.php/decoracionTienda">Decoración</a></li>
+                    <li><a class="dropdown-item smaller-text" href="index.php/arteTienda">Arte</a></li>
+                    <li><a class="dropdown-item smaller-text" href="index.php/iluminacionTienda">Iluminación</a></li>
                 </ul>
             </li>
         </ul>
         <ul class="navbar-nav me-xl-5">
             <li class="nav-item">
-                <a class="nav-link active" href="SobreNosotros">Sobre Nosotros</a>
+                <a class="nav-link active" href="index.php/about">Sobre Nosotros</a>
             </li>
         </ul>
         <ul class="navbar-nav me-xl-5">

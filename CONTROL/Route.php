@@ -1,40 +1,82 @@
+
 <?php
 
-//require_once './Controlador.php' ;
-
-//$url = $_GET["ruta"] ;
 $ruta = $_SERVER['REQUEST_URI'];
 $metodo = $_SERVER['REQUEST_METHOD'];
 
-//echo $url ;
-echo $ruta ;
+require_once 'VISTA/Header.php' ;
 
-// http://localhost/Primera-Fila/index.php
+echo $ruta ; // http://localhost/Primera-Fila/index.php
 
 if (strpos($ruta, '/Primera-Fila') === 0) {
     echo "La ruta actual es: " . $ruta ;
     
-    echo $metodo ;
     switch ($metodo) {
         case 'GET':
             
-            switch ($ruta) {
+            switch ($ruta) 
+            {
                 case "/Primera-Fila/index.php":
-
-                    require_once 'VISTA/Home.php' ;
-                    
+                    require_once 'VISTA/Home.php' ;                    
+                    break;
+                
+                case "/Primera-Fila/index.php/home": // HOME SE ROMPE
+                    require_once 'VISTA/Home.php' ;                
                     break;
                 
                 case "/Primera-Fila/index.php/contacto":
-
-                    require_once 'VISTA/Contacto.php' ;
-                
+                    require_once 'VISTA/Contacto.php' ;                
                     break;
+                
+                case "/Primera-Fila/index.php/mueblesTienda":
+                    require_once 'VISTA/MueblesTienda.php' ;                
+                    break;
+                
+                case "/Primera-Fila/index.php/arteTienda":
+                    require_once 'VISTA/ArteTienda.php' ;                
+                    break;
+                
+                case "/Primera-Fila/index.php/iluminacionTienda":
+                    require_once 'VISTA/IluminacionTienda.php' ;                
+                    break;
+                
+                case "/Primera-Fila/index.php/decoracionTienda":
+                    require_once 'VISTA/DecoracionTienda.php' ;                
+                    break;
+                
+                case "/Primera-Fila/index.php/about":
+                   require_once 'VISTA/SobreNosotros.php' ;                
+                   break;
+               
+                case "/Primera-Fila/index.php/form_logado":
+                   require_once 'VISTA/FormularioLogado.php' ;                
+                   break;
+               
+               case "/Primera-Fila/index.php/form_registro":
+                   require_once 'VISTA/FormularioRegistro.php' ;                
+                   break;
+               
+               case "/Primera-Fila/index.php/politicaPrivacidad":
+                   require_once 'VISTA/PoliticaPrivacidad.php' ;                
+                   break;
+               
+               case "/Primera-Fila/index.php/cookies":
+                   require_once 'VISTA/Cookies.php' ;                
+                   break;
+               
+               case "/Primera-Fila/index.php/avisoLegal":
+                   require_once 'VISTA/AvisoLegal.php' ;                
+                   break;
                 
                 default:
                     break;
             }
+            break ; // Break del switch($metodo)
+            
+        default:
+            echo "Estamos en el default del GET" ;
             break ;
+            
 //            if (preg_match('~index~', $ruta)) {
 //                
 //                require_once 'VISTA/Home.php' ;
@@ -60,7 +102,9 @@ else{
     echo  "La ruta no es igual";
 }
 
+require_once 'VISTA/footer.php' ;
 
+// ------------------------------------ PRUEBAS SIN ÉXITO -----------------------------------------------
 
 //class Route{
 //    
@@ -255,3 +299,4 @@ else{
 
 // $parteRoute = obtenerParteRoute($url);
 // echo "Parte con 'Route': $parteRoute"; // Imprimirá "Parte con 'Route': Route"
+?>

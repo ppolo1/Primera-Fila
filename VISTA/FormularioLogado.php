@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary">Enviar</button>
-                                    <a href="form_registro.html">
+                                    <a href="form_registro">
                                         <button type="button" class="btn btn-success">Registrarse</button>
                                     </a>
 
