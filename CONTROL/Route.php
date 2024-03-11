@@ -75,7 +75,20 @@ if ($metodo == 'GET') {
 }
 
 if ($metodo == 'POST') {
-    
+
+    // if(isset($_POST["btnregistro"])){
+        
+    //     $existe = modeloControl::validar();
+    //     if($existe == 0){
+    //         modeloControl::Registro();
+    //         require_once("VISTA/home.php");
+    //     }else if ($existe == 1) { // NICK Y EMAIL USADOS
+    //         $_SESSION["Registro"] = $_POST;
+    //         header("Location:VISTA/landing.php?error=0"); 
+    //     }else if ($existe == 2) { // SOLO  NICK USADO
+    //         $_SESSION["Registro"] = $_POST;
+    //         header("Location:VISTA/landing.php?error=1) ;
+    //     }
 }
 
 // ------------------------------------ PRUEBAS SIN ÉXITO -----------------------------------------------
