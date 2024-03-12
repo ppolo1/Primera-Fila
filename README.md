@@ -22,18 +22,18 @@ Trabajo formado por: Adriana, Cayetana, Adrián y Pablo
 # Sprint 2: Página Web
 
 > Enlace a nuestra Página Web
-[Página WEB]()
+[Página WEB](https://github.com/ppolo1/Primera-Fila/tree/master)
 
 ---
 
 >Enlace a la carpeta  de Cliente
 
-[Cliente]()
+[Cliente](https://github.com/ppolo1/Primera-Fila/blob/main/SprintII/readme%20Cliente.pdf)
 
 ---
 >Enlace a la carpeta de Diseño
 
-[Diseño]()
+[Diseño](https://github.com/ppolo1/Primera-Fila/blob/main/SprintII/GU%C3%8DA%20DE%20ESTILO%20EON%20LUX%20ANTIQUES.pdf)
 
 ---
 >Enlace a la carpeta de Servidor
