@@ -47,6 +47,6 @@ Trabajo formado por: Adriana, Cayetana, Adrián y Pablo
 [Videojuegos](https://github.com/ppolo1/Primera-Fila/tree/main/SPRINT%20II%20-%20PRIMERA%20FILA/VIDEOJUEGOS)
 
 ---
->Enlace al proyecto de Móviles (descarga)
+>Enlace a la carpeta de Móviles
 
-[Móviles](https://github.com/ppolo1/Primera-Fila/blob/main/SprintII/M%C3%B3viles.rar)
+[Móviles](https://github.com/ppolo1/Primera-Fila/tree/main/SPRINT%20II%20-%20PRIMERA%20FILA/M%C3%93VILES)
