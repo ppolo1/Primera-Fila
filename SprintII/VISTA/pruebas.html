@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Muebles Tienda</title>
+</head>
+<body>
+    <!-- Aquí irá tu galería de fotos -->
+    <div id="photoGallery"></div>
+
+    <!-- Agrega un input para la búsqueda -->
+    <input type="text" id="searchInput" placeholder="BUSCAR FOTOS...">
+
+    <!-- Scripts -->
+    <script>
+        // Datos del archivo JSON (reemplaza con tus propios datos)
+        const photos = [
+        {
+      "albumId": 1,
+      "id": 1,
+      "name": "Oleo Sobre Lienzo San Pedro",
+      "price": 7250,
+      "url": src="img/arte1.jpg"
+    
+    },
+    {
+      "albumId": 1,
+      "id": 2,
+      "title": "Lámina Virgen y niño",
+      "url": "https://subir-imagen.com/i/AwvfU",
+      "price": 1125
+    },
+    {
+      "albumId": 1,
+      "id": 3,
+      "title": "Lamina Renacentista",
+      "url": "https://subir-imagen.com/i/AwLby",
+      "price": 2450
+    },
+    {
+        "albumId": 1,
+        "id": 4,
+        "title": "Racimos De Uvas",
+        "url": "https://subir-imagen.com/i/AweTe",
+        "price": 1970
+      },
+      {
+        "albumId": 1,
+        "id": 5,
+        "title": "Oleografía De La Adoración",
+        "url": "https://subir-imagen.com/i/Aw6ci",
+        "price": 2700
+      },
+      {
+        "albumId": 1,
+        "id": 6,
+        "title": "Paseo siglo XVIII",
+        "url": "https://subir-imagen.com/i/Awbkg",
+        "price": 3000
+      }
+        ];
+
+        // Muestra las fotos en la galería
+        function displayPhotos(photos) {
+            const photoGallery = document.getElementById('photoGallery');
+            photoGallery.innerHTML = ''; // Limpia la galería
+
+            photos.forEach(photo => {
+                const img = document.createElement('img');
+                img.src = photo.url;
+                img.alt = photo.title;
+                photoGallery.appendChild(img);
+            });
+        }
+
+        // Filtra las fotos por título al escribir en el input de búsqueda
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            const filteredPhotos = photos.filter(photo =>
+                photo.title.toLowerCase().includes(searchTerm)
+            );
+            displayPhotos(filteredPhotos);
+        });
+
+        // Muestra todas las fotos al cargar la página
+        displayPhotos(photos);
+    </script>
+</body>
+</html>
