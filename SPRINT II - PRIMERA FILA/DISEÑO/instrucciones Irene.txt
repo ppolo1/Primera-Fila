@@ -5,6 +5,6 @@ Te explicamos los elementos de esta carpeta:
 - Carpeta VISTA --> carpeta que incluye archivos archivos html junto a otras utilidades para facilitar la corrección y visualización del diseño.
 - Carpeta prototipos --> carpeta que incluye los bocetos.
 - Guía de estilo en pdf.
-- Archivo zip --> es lo mismo que la carpeta VISTA, pero en formato zip para que te lo puedas descargar en un solo clic.
+- Archivo zip --> es lo mismo que la carpeta VISTA, pero en formato zip para que te lo puedas descargar en un solo clic. Una vez descargado bastaría con abrir Home.html.
 
 Un saludo.
