@@ -32,7 +32,7 @@ Trabajo formado por: Adriana, Cayetana, Adrián y Pablo
 [Cliente](https://github.com/ppolo1/Primera-Fila/tree/main/SPRINT%20II%20-%20PRIMERA%20FILA/CLIENTE)
 
 ---
->Enlace a la documentación de Diseño
+>Enlace a la carpeta de Diseño
 
 [Diseño](https://github.com/ppolo1/Primera-Fila/blob/main/SprintII/GU%C3%8DA%20DE%20ESTILO%20EON%20LUX%20ANTIQUES.pdf)
 
