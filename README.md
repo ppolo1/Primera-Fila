@@ -42,11 +42,11 @@ Trabajo formado por: Adriana, Cayetana, Adrián y Pablo
 [Servidor]()
 
 ---
->Enlace a la carpeta de Videjuegos
+>Enlace a la documentación de Videjuegos
 
 [Videojuegos](https://github.com/ppolo1/Primera-Fila/blob/main/SprintII/Videojuegos.pdf)
 
 ---
->Enlace a la carpeta de Móviles
+>Enlace al proyecto de Móviles (descarga)
 
 [Móviles](https://github.com/ppolo1/Primera-Fila/blob/main/SprintII/M%C3%B3viles.rar)
