@@ -1,0 +1,212 @@
+@font-face {
+    font-family:'primeraFila' ;
+    src: url('Gikany-Regular.ttf');
+  }
+/* Ajustes generales */
+body, header, nav, main {
+      font-family: Georgia, serif;
+    /* Fuente elegante y clásica */
+    margin: 0;
+    padding: 0;
+
+}
+footer{
+    margin-top: -50;
+
+}
+header{
+    height:240px;
+}
+
+/* Eliminar los márgenes por defecto de la barra de navegación y ajustar el padding */
+.navbar {
+    margin-bottom: 0;
+}
+.navbar a{
+    font-size: 19px;
+}
+#logado{
+    font-size: 22px;
+}
+#cart-icon{
+    font-size: 22px;
+}
+.titulos{
+    font-family:'primeraFila' ;
+    font-size: 52px;
+}
+
+.btn:hover {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+
+/*Carrito superPuesto*/
+.cart-container {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 9999;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: none;
+}
+
+.cart-container:hover .cart-dropdown {
+    display: block;
+}
+
+.dropdown-item.smaller-text {
+    font-size: 0.85rem; /* Puedes ajustar este valor según tus preferencias */
+}
+
+
+.navbar-brand img {
+    max-height: 230px;
+  
+    /* Ajusta el tamaño del logo según sea necesario */
+}
+.social-icons{
+    font-size: 20px;
+}
+.social-icons a {
+    color: black;
+    margin-right: 10px;
+    text-decoration: none;
+  }
+.privacidad a{
+    color: black;
+    margin-right: 10px;
+    text-decoration: none;
+  }
+  
+
+/* Ajustes para el espacio superior del header */
+header,main{
+    padding: 0.5rem 0;
+    background: linear-gradient(to bottom, #D3A97B, #fff);
+}
+footer{
+    background: linear-gradient(to bottom, #fbfbfb, #996515 );
+    padding-top: 10px;
+    padding-bottom: 1%;
+}
+.imagen-producto {
+    max-width: 26%;
+    max-height: 26%; 
+}
+/* Ajustes para la alineación de los elementos de la barra de navegación */
+.navbar-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-nav .nav-item {
+    flex: 1;
+    text-align: center;
+}
+
+
+.slider-frame {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.slider-frame ul {
+display: flex;
+padding: 0;
+width: 400%;
+
+animation: slide 10S infinite alternate ease-in-out;
+}
+
+.slider-frame li {
+width: 100%;
+list-style: none;
+}
+
+.slider-frame img {
+width: 100%;
+}
+
+@keyframes slide {
+	0% {margin-left: 0;}
+	20% {margin-left: 0;}
+	
+	25% {margin-left: -100%;}
+	45% {margin-left: -100%;}
+	
+	50% {margin-left: -200%;}
+	70% {margin-left: -200%;}
+	
+	75% {margin-left: -300%;}
+	100% {margin-left: -300%;}
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+/*Contacto.html*/
+.localizacion{
+    font-family: Georgia, serif;
+    /* Fuente elegante y clásica */
+  }
+  .social-icons-contacto a{
+    font-size: 30px;
+    color: black;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+
+  /* Estilo general del carrito */
+.cart-dropdown {
+    background-color: #F5F5F5; /* Fondo claro para contraste */
+    color: #333; /* Color de texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Títulos y botones con el color destacado */
+.cart-dropdown h4,
+#clear-cart,
+#checkout-button {
+    color: #D3A97B; /* Color destacado para elementos importantes */
+}
+
+/* Estilo de los botones */
+.btn {
+    color: black; /* Texto del botón */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #b38f68; /* Oscurecer botón al pasar el ratón */
+}
+
+/* Estilo de los ítems en el carrito */
+#cart-items li {
+    border-bottom: 2px solid #D3A97B; /* Separador de ítems */
+    padding: 8px 0;
+}
+
+/* Mejoras en la legibilidad y espaciado para los elementos dentro del carrito */
+#cart-total {
+    font-weight: bold;
+}
+
+#cart-items {
+    margin-bottom: 20px;
+}
+

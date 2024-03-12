@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #D3A97B, #fff);
+  }
+  
+  .error {
+    color: red;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #503B0A; 
+  }

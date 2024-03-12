@@ -1,0 +1,46 @@
+{
+    "arte": [
+    {
+      "albumId": 1,
+      "id": 1,
+      "title": "Oleo Sobre Lienzo San Pedro",
+      "url": "https://subir-imagen.com/i/AwCRS",
+      "price": 7250
+    },
+    {
+      "albumId": 1,
+      "id": 2,
+      "title": "Lámina Virgen y niño",
+      "url": "https://subir-imagen.com/i/AwvfU",
+      "price": 1125
+    },
+    {
+      "albumId": 1,
+      "id": 3,
+      "title": "Lamina Renacentista",
+      "url": "https://subir-imagen.com/i/AwLby",
+      "price": 2450
+    },
+    {
+        "albumId": 1,
+        "id": 4,
+        "title": "Racimos De Uvas",
+        "url": "https://subir-imagen.com/i/AweTe",
+        "price": 1970
+      },
+      {
+        "albumId": 1,
+        "id": 5,
+        "title": "Oleografía De La Adoración",
+        "url": "https://via.placeholder.com/600/771796",
+        "price": 2700
+      },
+      {
+        "albumId": 1,
+        "id": 6,
+        "title": "Paseo siglo XVIII",
+        "url": "https://subir-imagen.com/i/Awbkg",
+        "price": 3000
+      }
+  ]
+}
