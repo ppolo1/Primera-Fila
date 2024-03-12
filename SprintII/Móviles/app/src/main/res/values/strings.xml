@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">EONLUX antiques</string>
+    <string name="Email">Email</string>
+    <string name="botonAceptar">Iniciar Sesion</string>
+    <string name="botonSiguiente">Siguiente ventana</string>
+    <string name="botonAlta">Date de alta</string>
+    <string name="Registro">Registrate aquí</string>
+    <string name="Atras">Atrás</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="categoria_halloween">Halloween</string>
+    <string name="categoria_accion_de_gracias">Acción de Gracias</string>
+    <string name="categoria_navidad">Navidad</string>
+    <string name="categoria_san_valentin">San Valentín</string>
+</resources>
