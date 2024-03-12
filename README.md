@@ -37,9 +37,9 @@ Trabajo formado por: Adriana, Cayetana, Adrián y Pablo
 [Diseño](https://github.com/ppolo1/Primera-Fila/tree/main/SPRINT%20II%20-%20PRIMERA%20FILA/DISE%C3%91O)
 
 ---
->Enlace a la carpeta de Servidor
+>Enlace al proyecto
 
-[Servidor]()
+[Servidor](https://github.com/ppolo1/Primera-Fila/tree/master)
 
 ---
 >Enlace a la documentación de Videjuegos
