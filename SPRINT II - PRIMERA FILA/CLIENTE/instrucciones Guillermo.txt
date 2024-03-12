@@ -1,0 +1,10 @@
+Buenas Guillermo,
+
+Tal y como solicitaste te incluimos los pasos para incluir la base de datos:
+
+- Tener funcionando XAMPP
+- Abrir PHPMyAdmin
+- Crear base de datos con el nombre eonluxantiques
+- Importar el código
+
+Un saludo.
