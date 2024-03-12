@@ -27,7 +27,7 @@ Trabajo formado por: Adriana, Cayetana, Adrián y Pablo
 
 ---
 
->Enlace a la carpeta  de Cliente
+>Enlace a la documentación de Cliente
 
 [Cliente](https://github.com/ppolo1/Primera-Fila/blob/main/SprintII/readme%20Cliente.pdf)
 
