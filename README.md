@@ -27,7 +27,7 @@ Trabajo formado por: Adriana, Cayetana, Adrián y Pablo
 
 ---
 
->Enlace a la documentación de Cliente
+>Enlace a la carpeta de Cliente
 
 [Cliente](https://github.com/ppolo1/Primera-Fila/tree/main/SPRINT%20II%20-%20PRIMERA%20FILA/CLIENTE)
 
